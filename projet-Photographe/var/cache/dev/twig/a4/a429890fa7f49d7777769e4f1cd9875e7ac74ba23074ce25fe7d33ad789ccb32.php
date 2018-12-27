@@ -47,11 +47,14 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
     <body>
         ";
         // line 10
-        $this->displayBlock('body', $context, $blocks);
+        $this->loadTemplate("header/header.html", "base.html.twig", 10)->display($context);
         // line 11
         echo "        ";
-        $this->displayBlock('javascripts', $context, $blocks);
+        $this->displayBlock('body', $context, $blocks);
         // line 12
+        echo "        ";
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 13
         echo "        <script src=\"asset/script.js\"></script>
     </body>
 </html>
@@ -99,7 +102,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 10
+    // line 11
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -116,7 +119,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 11
+    // line 12
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -138,9 +141,14 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  120 => 11,  103 => 10,  86 => 7,  68 => 5,  55 => 12,  52 => 11,  50 => 10,  46 => 8,  44 => 7,  39 => 5,  33 => 1,);
+        return array (  123 => 12,  106 => 11,  89 => 7,  71 => 5,  58 => 13,  55 => 12,  52 => 11,  50 => 10,  46 => 8,  44 => 7,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -154,6 +162,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {% include 'header/header.html' %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <script src=\"asset/script.js\"></script>

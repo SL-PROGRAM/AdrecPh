@@ -71,29 +71,90 @@ class __TwigTemplate_d0535667e25af6724c717f9775ba04c8397143889a1d7b7ad03de683dd0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        echo "    <div class=\"presentation-photographe\">
+        <img id=\"BO-photo-presentation-accueil\" src=\"./asset/img/Presentation.jpg\" alt = \"Photo du photographe\">
+        <p class=\"text-presentation-photographe\"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new Twig_Error_Runtime('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
+    <div class=\"container\">
+        <section class=\"section-presentation pro\">
+            <div>
+                <h1> ESPACE PROFESSIONNEL</h1>
+                <h2 id=\"BO-text-presentation-pro\"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h2>
+            </div>
+            <div class=\"presentation-global\">
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-pro\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-1-pro\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-pro\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-2-pro\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-pro\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-3-pro\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-pro\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-4-pro\">Lorem Ipsum is simply</P> </a>
+                </div>
+            </div>
+            <div class=\"presentation-global\">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("src/Controller/AccueilController.php", 0), "html", null, true);
-        echo "\">src/Controller/AccueilController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("templates/accueil/index.html.twig", 0), "html", null, true);
-        echo "\">templates/accueil/index.html.twig</a></code></li>
-    </ul>
-</div>
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+            </div>
+        </section>
+        <section class=\"section-presentation particulier\">
+            <div>
+                <h1> ESPACE  PARTICULIER</h1>
+                <h2 id=\"BO-text-presentation-particulier\"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h2>
+            </div>
+            <div class=\"presentation-global\">
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-1-particulier\">Lorem Ipsum is simply </P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-2-particulier\">Lorem Ipsum is simply </P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-3-particulier\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-4-particulier\">Lorem Ipsum is simply</P> </a>
+                </div>
+
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-5-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-5-particulier\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-6-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-6-particulier\">Lorem Ipsum is simply</P> </a>
+                </div>
+            </div>
+        </section>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -115,7 +176,7 @@ class __TwigTemplate_d0535667e25af6724c717f9775ba04c8397143889a1d7b7ad03de683dd0
 
     public function getDebugInfo()
     {
-        return array (  93 => 17,  89 => 16,  82 => 12,  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
+        return array (  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -125,21 +186,91 @@ class __TwigTemplate_d0535667e25af6724c717f9775ba04c8397143889a1d7b7ad03de683dd0
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class=\"presentation-photographe\">
+        <img id=\"BO-photo-presentation-accueil\" src=\"./asset/img/Presentation.jpg\" alt = \"Photo du photographe\">
+        <p class=\"text-presentation-photographe\"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class=\"container\">
+        <section class=\"section-presentation pro\">
+            <div>
+                <h1> ESPACE PROFESSIONNEL</h1>
+                <h2 id=\"BO-text-presentation-pro\"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h2>
+            </div>
+            <div class=\"presentation-global\">
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-pro\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-1-pro\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-pro\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-2-pro\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-pro\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-3-pro\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-pro\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-4-pro\">Lorem Ipsum is simply</P> </a>
+                </div>
+            </div>
+            <div class=\"presentation-global\">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'src/Controller/AccueilController.php'|file_link(0) }}\">src/Controller/AccueilController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'templates/accueil/index.html.twig'|file_link(0) }}\">templates/accueil/index.html.twig</a></code></li>
-    </ul>
-</div>
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+
+                <img class=\"logo-client\" src=\"asset/img/Presentation.jpg\">
+            </div>
+        </section>
+        <section class=\"section-presentation particulier\">
+            <div>
+                <h1> ESPACE  PARTICULIER</h1>
+                <h2 id=\"BO-text-presentation-particulier\"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h2>
+            </div>
+            <div class=\"presentation-global\">
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-1-particulier\">Lorem Ipsum is simply </P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-2-particulier\">Lorem Ipsum is simply </P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-3-particulier\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-4-particulier\">Lorem Ipsum is simply</P> </a>
+                </div>
+
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-5-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-5-particulier\">Lorem Ipsum is simply</P> </a>
+                </div>
+                <div class=\"presentation\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-6-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
+                        <P class=\"text-presentation\" id=\"BO-titre-photo-6-particulier\">Lorem Ipsum is simply</P> </a>
+                </div>
+            </div>
+        </section>
+    </div>
 {% endblock %}
-", "accueil/index.html.twig", "/media/julien/Stockage/php/projet-Photographe/templates/accueil/index.html.twig");
+", "accueil/index.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/accueil/index.html.twig");
     }
 }
