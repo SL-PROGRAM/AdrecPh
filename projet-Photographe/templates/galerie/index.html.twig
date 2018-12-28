@@ -2,19 +2,29 @@
 
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
+{% block head %}
+    <meta charset="UTF-8">
+    <title>Mon joli menu en HTML/CSS !</title>
+    <link rel="stylesheet" href="style.css" />  <!-- Fichier CSS -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+{% endblock %}
+
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/GalerieController.php'|file_link(0) }}">src/Controller/GalerieController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/galerie/index.html.twig'|file_link(0) }}">templates/galerie/index.html.twig</a></code></li>
-    </ul>
+<div id="galerie-menu">
+    <nav><a href="#" tabindex="0" title="Allez, vas y!"    ><img src="http://lorempixel.com/400/300/sports/1/"  alt="sport 1"  />
+        </a><a href="#" tabindex="0" title="J'y vais"         ><img src="http://lorempixel.com/400/300/sports/2/"  alt="sport 2"  />
+        </a><a href="#" tabindex="0" title="Tenir la distance"><img src="http://lorempixel.com/400/300/sports/3/"  alt="sport 3"  />
+        </a><a href="#" tabindex="0" title="Surf"             ><img src="http://lorempixel.com/400/300/sports/4/"  alt="sport 4"  />
+        </a><a href="#" tabindex="0" title="Sur du velours   "><img src="http://lorempixel.com/400/300/sports/5/"  alt="sport 5"  />
+        </a><a href="#" tabindex="0" title="Couché de soleil" ><img src="http://lorempixel.com/400/300/sports/6/"  alt="sport 6"  />
+        </a><a href="#" tabindex="0" title="Plongez!"         ><img src="http://lorempixel.com/400/300/sports/7/"  alt="sport 7"  />
+        </a><a href="#" tabindex="0" title="Je vole !"        ><img src="http://lorempixel.com/400/300/sports/8/"  alt="sport 8"  />
+        </a><a href="#" tabindex="0" title="1er jusqu'au bout"><img src="http://lorempixel.com/400/300/sports/9/"  alt="sport 9"  />
+        </a><a href="#" tabindex="0" title="Prêt, contact !"  ><img src="http://lorempixel.com/400/300/sports/10/" alt="sport 10" />
+        </a></nav>
 </div>
+
 {% endblock %}
