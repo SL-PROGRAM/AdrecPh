@@ -37,31 +37,37 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
         );
         $this->regexpList = array(
             0 => '{^(?'
+                    .'|/media/cache/resolve/(?'
+                        .'|([A-z0-9_-]*)/rc/([^/]++)/(.+)(*:61)'
+                        .'|([A-z0-9_-]*)/(.+)(*:86)'
+                    .')'
                     .'|/_(?'
-                        .'|error/(\\d+)(?:\\.([^/]++))?(*:38)'
-                        .'|wdt/([^/]++)(*:57)'
+                        .'|error/(\\d+)(?:\\.([^/]++))?(*:125)'
+                        .'|wdt/([^/]++)(*:145)'
                         .'|profiler/([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:102)'
-                                .'|router(*:116)'
+                                .'|search/results(*:191)'
+                                .'|router(*:205)'
                                 .'|exception(?'
-                                    .'|(*:136)'
-                                    .'|\\.css(*:149)'
+                                    .'|(*:225)'
+                                    .'|\\.css(*:238)'
                                 .')'
                             .')'
-                            .'|(*:159)'
+                            .'|(*:248)'
                         .')'
                     .')'
                 .')(?:/?)$}sDu',
         );
         $this->dynamicRoutes = array(
-            38 => array(array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null, false, null)),
-            57 => array(array(array('_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'), array('token'), null, null, false, null)),
-            102 => array(array(array('_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'), array('token'), null, null, false, null)),
-            116 => array(array(array('_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'), array('token'), null, null, false, null)),
-            136 => array(array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null, false, null)),
-            149 => array(array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null, false, null)),
-            159 => array(array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null, false, null)),
+            61 => array(array(array('_route' => 'liip_imagine_filter_runtime', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterRuntimeAction'), array('filter', 'hash', 'path'), array('GET' => 0), null, false, null)),
+            86 => array(array(array('_route' => 'liip_imagine_filter', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterAction'), array('filter', 'path'), array('GET' => 0), null, false, null)),
+            125 => array(array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null, false, null)),
+            145 => array(array(array('_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'), array('token'), null, null, false, null)),
+            191 => array(array(array('_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'), array('token'), null, null, false, null)),
+            205 => array(array(array('_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'), array('token'), null, null, false, null)),
+            225 => array(array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null, false, null)),
+            238 => array(array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null, false, null)),
+            248 => array(array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null, false, null)),
         );
     }
 }
