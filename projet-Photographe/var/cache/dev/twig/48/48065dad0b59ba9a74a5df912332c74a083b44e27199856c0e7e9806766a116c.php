@@ -54,7 +54,7 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
         echo "        <div class=\"connexion\">
             ";
         // line 14
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\IdentificationController::index"));
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SecurityController::login"));
         echo "
         </div>
         </div>
@@ -177,7 +177,7 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
         <div class=\"bandeau\">
         {% include 'header/header.html' %}
         <div class=\"connexion\">
-            {{ render(controller('App\\\\Controller\\\\IdentificationController::index')) }}
+            {{ render(controller('App\\\\Controller\\\\SecurityController::login')) }}
         </div>
         </div>
     </header>

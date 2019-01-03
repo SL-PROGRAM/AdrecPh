@@ -11,7 +11,7 @@
         <div class="bandeau">
         {% include 'header/header.html' %}
         <div class="connexion">
-            {{ render(controller('App\\Controller\\IdentificationController::index')) }}
+            {{ render(controller('App\\Controller\\SecurityController::login')) }}
         </div>
         </div>
     </header>
