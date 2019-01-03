@@ -33,8 +33,8 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
     <title>Title</title>
 </head>
 
-<header>
-    <div class=\"bandeau\">
+
+
         <img class=\"logo\" src=\"asset/1.jpg\">
 
         <div class=\"menu\">
@@ -78,12 +78,10 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
             </div>
 
         </div>
-        <div class=\"connexion\">
-            <p>Bloc de connexion</p>
-        </div>
 
-    </div>
-</header>
+
+
+
 
 </html>";
         
@@ -113,8 +111,8 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
     <title>Title</title>
 </head>
 
-<header>
-    <div class=\"bandeau\">
+
+
         <img class=\"logo\" src=\"asset/1.jpg\">
 
         <div class=\"menu\">
@@ -158,12 +156,10 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
             </div>
 
         </div>
-        <div class=\"connexion\">
-            <p>Bloc de connexion</p>
-        </div>
 
-    </div>
-</header>
+
+
+
 
 </html>", "header/header.html", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/header/header.html");
     }
