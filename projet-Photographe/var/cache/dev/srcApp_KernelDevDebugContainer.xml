@@ -23,6 +23,7 @@
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
       <parameter key="LiipImagineBundle">Liip\ImagineBundle\LiipImagineBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -80,6 +81,10 @@
       <parameter key="LiipImagineBundle" type="collection">
         <parameter key="path">/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/liip/imagine-bundle</parameter>
         <parameter key="namespace">Liip\ImagineBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineFixturesBundle" type="collection">
+        <parameter key="path">/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/doctrine/doctrine-fixtures-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -328,7 +333,40 @@
     <parameter key="liip_imagine.driver_service">liip_imagine.gd</parameter>
     <parameter key="liip_imagine.cache.resolver.default">default</parameter>
     <parameter key="liip_imagine.default_image">null</parameter>
-    <parameter key="liip_imagine.filter_sets" type="collection"/>
+    <parameter key="liip_imagine.filter_sets" type="collection">
+      <parameter key="squared_thumbnail" type="collection">
+        <parameter key="jpeg_quality">85</parameter>
+        <parameter key="png_compression_level">8</parameter>
+        <parameter key="filters" type="collection">
+          <parameter key="auto_rotate" type="collection"/>
+          <parameter key="strip" type="collection"/>
+          <parameter key="thumbnail" type="collection">
+            <parameter key="size" type="collection">
+              <parameter>253</parameter>
+              <parameter>253</parameter>
+            </parameter>
+            <parameter key="mode">inbound</parameter>
+            <parameter key="allow_upscale">true</parameter>
+          </parameter>
+          <parameter key="background" type="collection">
+            <parameter key="size" type="collection">
+              <parameter>256</parameter>
+              <parameter>256</parameter>
+            </parameter>
+            <parameter key="position">center</parameter>
+            <parameter key="color">#fff</parameter>
+          </parameter>
+        </parameter>
+        <parameter key="quality">100</parameter>
+        <parameter key="png_compression_filter">null</parameter>
+        <parameter key="format">null</parameter>
+        <parameter key="animated">false</parameter>
+        <parameter key="cache">null</parameter>
+        <parameter key="data_loader">null</parameter>
+        <parameter key="default_image">null</parameter>
+        <parameter key="post_processors" type="collection"/>
+      </parameter>
+    </parameter>
     <parameter key="liip_imagine.binary.loader.default">default</parameter>
     <parameter key="liip_imagine.controller.filter_action">Liip\ImagineBundle\Controller\ImagineController::filterAction</parameter>
     <parameter key="liip_imagine.controller.filter_runtime_action">Liip\ImagineBundle\Controller\ImagineController::filterRuntimeAction</parameter>
@@ -522,6 +560,9 @@
       <call method="setContainer">
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\ProfessionelsController"/>
       </call>
+    </service>
+    <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
+      <tag name="doctrine.fixture.orm"/>
     </service>
     <service id="App\Repository\AdressRepository" class="App\Repository\AdressRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -4490,7 +4531,7 @@
     </service>
     <service id="liip_imagine.config.stack_collection" class="Liip\ImagineBundle\Config\StackCollection" public="true">
       <argument type="service" id="liip_imagine.config.stack_builder"/>
-      <argument type="collection"/>
+      <argument>%liip_imagine.filter_sets%</argument>
     </service>
     <service id="liip_imagine.filter.manager" class="Liip\ImagineBundle\Imagine\Filter\FilterManager" public="true">
       <argument type="service" id="liip_imagine.filter.configuration"/>
@@ -4604,7 +4645,7 @@
       </call>
     </service>
     <service id="liip_imagine.filter.configuration" class="Liip\ImagineBundle\Imagine\Filter\FilterConfiguration">
-      <argument type="collection"/>
+      <argument>%liip_imagine.filter_sets%</argument>
     </service>
     <service id="liip_imagine.service.filter" class="Liip\ImagineBundle\Service\FilterService">
       <argument type="service" id="liip_imagine.data.manager"/>
@@ -4803,6 +4844,24 @@
         <argument>liip:imagine:cache:resolve</argument>
       </call>
     </service>
+    <service id="doctrine.fixtures_load_command" class="Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand">
+      <tag name="console.command" command="doctrine:fixtures:load"/>
+      <argument type="service" id="doctrine.fixtures.loader"/>
+      <call method="setName">
+        <argument>doctrine:fixtures:load</argument>
+      </call>
+    </service>
+    <service id="doctrine.fixtures.loader" class="Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader" public="false">
+      <argument type="service" id="service_container"/>
+      <call method="addFixtures">
+        <argument type="collection">
+          <argument type="collection">
+            <argument key="fixture" type="service" id="App\DataFixtures\AppFixtures"/>
+            <argument key="groups" type="collection"/>
+          </argument>
+        </argument>
+      </call>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4845,6 +4904,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProfessionelsController" class="App\Controller\ProfessionelsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProfessionelsController" class="App\Controller\ProfessionelsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProfessionelsController" class="App\Controller\ProfessionelsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdressRepository" class="App\Repository\AdressRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdressRepository" class="App\Repository\AdressRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CommandeRepository" class="App\Repository\CommandeRepository" autowire="true" abstract="true"/>
@@ -5493,7 +5554,7 @@
       </argument>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id=".service_locator._Rat1Al"/>
+      <argument type="service" id=".service_locator.uV3l7EP"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5548,6 +5609,7 @@
         <argument key="server:log">web_server.command.server_log</argument>
         <argument key="liip:imagine:cache:remove">liip_imagine.command.remove_cache_command</argument>
         <argument key="liip:imagine:cache:resolve">liip_imagine.command.resolve_cache_command</argument>
+        <argument key="doctrine:fixtures:load">doctrine.fixtures_load_command</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -5567,7 +5629,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator._Rat1Al" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.uV3l7EP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service" id="console.command.about"/>
@@ -5599,6 +5661,7 @@
         <argument key="doctrine.database_drop_command" type="service" id="doctrine.database_drop_command"/>
         <argument key="doctrine.database_import_command" type="service" id="doctrine.database_import_command"/>
         <argument key="doctrine.ensure_production_settings_command" type="service" id="doctrine.ensure_production_settings_command"/>
+        <argument key="doctrine.fixtures_load_command" type="service" id="doctrine.fixtures_load_command"/>
         <argument key="doctrine.generate_entities_command" type="service" id="doctrine.generate_entities_command"/>
         <argument key="doctrine.mapping_convert_command" type="service" id="doctrine.mapping_convert_command"/>
         <argument key="doctrine.mapping_import_command" type="service" id="doctrine.mapping_import_command"/>
