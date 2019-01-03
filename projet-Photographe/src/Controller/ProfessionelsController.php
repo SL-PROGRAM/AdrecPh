@@ -14,6 +14,7 @@ class ProfessionelsController extends AbstractController
     {
         return $this->render('professionels/index.html.twig', [
             'controller_name' => 'ProfessionelsController',
+            'affichage' => 'bépeptaln,danctntNTLIÊNLTNTDi',
         ]);
     }
 }
