@@ -88,6 +88,6 @@ class __TwigTemplate_b44ed8f1c116a5974ad3a46e6a9d87595f37e50bb8cc21259e4b2e5a151
 {{ include('@Twig/Exception/traces.txt.twig', { exception: e }, with_context = false) }}
 
 {% endfor %}
-", "@Twig/Exception/exception.txt.twig", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/exception.txt.twig");
+", "@Twig/Exception/exception.txt.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/exception.txt.twig");
     }
 }

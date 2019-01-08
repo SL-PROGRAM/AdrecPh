@@ -301,6 +301,6 @@ class __TwigTemplate_e3b69db22c9e9d0dc345afa9dae1ca9fda288b044e88d49612d26883e2d
         </section>
     </div>
 {% endblock %}
-", "accueil/index.html.twig", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/templates/accueil/index.html.twig");
+", "accueil/index.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/accueil/index.html.twig");
     }
 }

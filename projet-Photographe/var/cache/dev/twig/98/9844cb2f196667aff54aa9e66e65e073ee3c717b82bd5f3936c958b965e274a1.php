@@ -90,6 +90,6 @@ class __TwigTemplate_b7eafd02c3e24ad295aac802b272dc3abdc031c97de9ffd4352cab1c15a
   {{ include('@Twig/Exception/trace.txt.twig', { trace: trace }, with_context = false) }}
 {% endfor %}
 {% endif %}
-", "@Twig/Exception/traces.txt.twig", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/traces.txt.twig");
+", "@Twig/Exception/traces.txt.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/traces.txt.twig");
     }
 }

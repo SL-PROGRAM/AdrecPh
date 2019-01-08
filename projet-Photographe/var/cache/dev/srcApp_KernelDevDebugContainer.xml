@@ -2185,14 +2185,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -3229,7 +3221,7 @@
     </service>
     <service id="security.encoder_factory.generic" class="Symfony\Component\Security\Core\Encoder\EncoderFactory" public="false">
       <argument type="collection">
-        <argument key="App\Entity\Usersez" type="collection">
+        <argument key="App\Entity\Users" type="collection">
           <argument key="class">Symfony\Component\Security\Core\Encoder\Argon2iPasswordEncoder</argument>
           <argument key="arguments" type="collection">
             <argument>null</argument>
@@ -3762,7 +3754,7 @@
       <tag name="console.command" command="security:encode-password"/>
       <argument type="service" id="security.encoder_factory.generic"/>
       <argument type="collection">
-        <argument>App\Entity\Usersez</argument>
+        <argument>App\Entity\Users</argument>
       </argument>
       <call method="setName">
         <argument>security:encode-password</argument>

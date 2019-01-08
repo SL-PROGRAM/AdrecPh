@@ -916,6 +916,6 @@ class __TwigTemplate_611a21222a76d18c4150149df0699fd5eb986f0ec30c5718ef1127a918c
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/translation.html.twig", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
+", "@WebProfiler/Collector/translation.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
     }
 }

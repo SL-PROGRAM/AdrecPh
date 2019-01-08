@@ -162,6 +162,6 @@ class __TwigTemplate_6b25cdef3e18e78fd2b715129cd29550d5f67434bc14a6d17deb10c38ae
         </tr>
     </tbody>
 </table>
-", "@Twig/Exception/traces_text.html.twig", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
+", "@Twig/Exception/traces_text.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
     }
 }
