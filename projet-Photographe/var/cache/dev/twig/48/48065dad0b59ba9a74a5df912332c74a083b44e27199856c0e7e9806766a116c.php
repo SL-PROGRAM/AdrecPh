@@ -45,13 +45,13 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
         // line 8
         echo "    </head>
     <body>
-    <header>
-        <div class=\"bandeau\">
         ";
-        // line 12
-        $this->loadTemplate("header/header.html", "base.html.twig", 12)->display($context);
-        // line 13
-        echo "        <div class=\"connexion\">
+        // line 10
+        $this->loadTemplate("header/header.html", "base.html.twig", 10)->display($context);
+        // line 11
+        echo "<<<<<<< HEAD
+=======
+        <div class=\"connexion\">
             ";
         // line 14
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SecurityController::login"));
@@ -59,13 +59,14 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
         </div>
         </div>
     </header>
+>>>>>>> origin/dev
         ";
-        // line 18
-        $this->displayBlock('body', $context, $blocks);
         // line 19
+        $this->displayBlock('body', $context, $blocks);
+        // line 20
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 20
+        // line 21
         echo "        <script src=\"asset/script.js\"></script>
     </body>
 </html>
@@ -113,7 +114,7 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
 
     }
 
-    // line 18
+    // line 19
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -130,7 +131,7 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
 
     }
 
-    // line 19
+    // line 20
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -159,7 +160,7 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
 
     public function getDebugInfo()
     {
-        return array (  134 => 19,  117 => 18,  100 => 7,  82 => 5,  69 => 20,  66 => 19,  64 => 18,  57 => 14,  54 => 13,  52 => 12,  46 => 8,  44 => 7,  39 => 5,  33 => 1,);
+        return array (  135 => 20,  118 => 19,  101 => 7,  83 => 5,  70 => 21,  67 => 20,  65 => 19,  57 => 14,  52 => 11,  50 => 10,  46 => 8,  44 => 7,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -173,19 +174,20 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-    <header>
-        <div class=\"bandeau\">
         {% include 'header/header.html' %}
+<<<<<<< HEAD
+=======
         <div class=\"connexion\">
             {{ render(controller('App\\\\Controller\\\\SecurityController::login')) }}
         </div>
         </div>
     </header>
+>>>>>>> origin/dev
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <script src=\"asset/script.js\"></script>
     </body>
 </html>
-", "base.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/base.html.twig");
+", "base.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/base.html.twig");
     }
 }
