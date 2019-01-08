@@ -32,6 +32,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'header' => array(array(), array('_controller' => 'App\\Controller\\HeaderController::index'), array(), array(array('text', '/header')), array(), array()),
         'identification' => array(array(), array('_controller' => 'App\\Controller\\IdentificationController::index'), array(), array(array('text', '/identification')), array(), array()),
         'inscription' => array(array(), array('_controller' => 'App\\Controller\\InscriptionController::newPost'), array(), array(array('text', '/inscription')), array(), array()),
+        'logged_in' => array(array(), array('_controller' => 'App\\Controller\\LoggedInController::index'), array(), array(array('text', '/logged/in')), array(), array()),
         'panier' => array(array(), array('_controller' => 'App\\Controller\\PanierController::index'), array(), array(array('text', '/panier')), array(), array()),
         'particuliers' => array(array(), array('_controller' => 'App\\Controller\\ParticuliersController::index'), array(), array(array('text', '/particuliers')), array(), array()),
         'professionels' => array(array(), array('_controller' => 'App\\Controller\\ProfessionelsController::index'), array(), array(array('text', '/professionels')), array(), array()),

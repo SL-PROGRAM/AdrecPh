@@ -10,8 +10,12 @@
     <header>
         <div class="bandeau">
         {% include 'header/header.html' %}
-        <div class="connexion">
+            <div class="connexion">
+                {% if is_granted('ROLE_USER') %}
+            {{ render(controller('App\\Controller\\LoggedInController::index')) }}
+            {% else %}
             {{ render(controller('App\\Controller\\SecurityController::login')) }}
+            {% endif %}
         </div>
         </div>
     </header>

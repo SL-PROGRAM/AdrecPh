@@ -62,6 +62,7 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
         Sign in
     </button>
 </form>
+
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -119,6 +120,7 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
         Sign in
     </button>
 </form>
+
 ", "security/login.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/security/login.html.twig");
     }
 }

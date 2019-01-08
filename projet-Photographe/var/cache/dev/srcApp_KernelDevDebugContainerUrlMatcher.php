@@ -27,6 +27,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/header' => array(array(array('_route' => 'header', '_controller' => 'App\\Controller\\HeaderController::index'), null, null, null, false, null)),
             '/identification' => array(array(array('_route' => 'identification', '_controller' => 'App\\Controller\\IdentificationController::index'), null, null, null, false, null)),
             '/inscription' => array(array(array('_route' => 'inscription', '_controller' => 'App\\Controller\\InscriptionController::newPost'), null, null, null, false, null)),
+            '/logged/in' => array(array(array('_route' => 'logged_in', '_controller' => 'App\\Controller\\LoggedInController::index'), null, null, null, false, null)),
             '/panier' => array(array(array('_route' => 'panier', '_controller' => 'App\\Controller\\PanierController::index'), null, null, null, false, null)),
             '/particuliers' => array(array(array('_route' => 'particuliers', '_controller' => 'App\\Controller\\ParticuliersController::index'), null, null, null, false, null)),
             '/professionels' => array(array(array('_route' => 'professionels', '_controller' => 'App\\Controller\\ProfessionelsController::index'), null, null, null, false, null)),
