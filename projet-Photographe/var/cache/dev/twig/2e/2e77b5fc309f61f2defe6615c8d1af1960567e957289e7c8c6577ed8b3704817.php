@@ -81,6 +81,6 @@ class __TwigTemplate_408d9a1de2977bc2ebe817c04305f70a7ba28e36f1d427fdc4ec37156e5
             </trace>
 {% endfor %}
         </traces>
-", "@Twig/Exception/traces.xml.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/traces.xml.twig");
+", "@Twig/Exception/traces.xml.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/traces.xml.twig");
     }
 }

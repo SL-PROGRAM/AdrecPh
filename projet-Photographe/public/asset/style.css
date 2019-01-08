@@ -173,6 +173,7 @@ header{
 
 .connexion{
     display: flex;
+    flex-direction: column;
     width: 20%;
     justify-content: space-around;
     background: gray;

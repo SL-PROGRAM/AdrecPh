@@ -465,6 +465,6 @@ class __TwigTemplate_d1fba002f7404067212f962bb9942673b731c4260e574c93f20fcb5e966
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }

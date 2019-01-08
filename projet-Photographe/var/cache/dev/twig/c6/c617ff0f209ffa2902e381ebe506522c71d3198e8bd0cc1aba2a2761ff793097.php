@@ -190,6 +190,6 @@ class __TwigTemplate_880f35d8c8b710a0555c4ddb3a1fb1a6b15a72da487b656cb3f0db73524
         })|raw }}
     </div>
 {% endif %}
-", "@Twig/Exception/trace.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
+", "@Twig/Exception/trace.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
     }
 }

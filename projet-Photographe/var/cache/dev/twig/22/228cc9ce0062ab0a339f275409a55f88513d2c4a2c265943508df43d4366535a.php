@@ -49,6 +49,6 @@ class __TwigTemplate_b1f3f609d2ece7a2d9275db24687e84d863c0bcd13ef91dfd5844e6056a
     public function getSourceContext()
     {
         return new Twig_Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', array('type' => isset(\$type) ? \$type : 'text')) ?> %
-", "@Framework/Form/percent_widget.html.php", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/framework-bundle/Resources/views/Form/percent_widget.html.php");
+", "@Framework/Form/percent_widget.html.php", "/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/framework-bundle/Resources/views/Form/percent_widget.html.php");
     }
 }

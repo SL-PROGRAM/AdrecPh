@@ -90,31 +90,19 @@ class __TwigTemplate_e3b69db22c9e9d0dc345afa9dae1ca9fda288b044e88d49612d26883e2d
             </div>
             <div class=\"presentation-global\">
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-pro\" src=\"";
-        // line 25
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Presentation.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-pro\" src=\"asset/img/Presentation.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-1-pro\">Présentation d'entreprise</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-pro\" src=\"";
-        // line 29
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Produit.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-pro\" src=\"asset/img/Produit.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-2-pro\">Présentation de produit</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-pro\" src=\"";
-        // line 33
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Immobilier.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-pro\" src=\"asset/img/Immobilier.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-3-pro\">Photo d'immobilier</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-pro\" src=\"";
-        // line 37
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Evenement.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-pro\" src=\"asset/img/Evenement.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-4-pro\">Couverture d'évenement</P> </a>
                 </div>
             </div>
@@ -140,46 +128,28 @@ class __TwigTemplate_e3b69db22c9e9d0dc345afa9dae1ca9fda288b044e88d49612d26883e2d
             </div>
             <div class=\"presentation-global\">
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-particulier\" src=\"";
-        // line 63
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Evenement.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-particulier\" src=\"asset/img/Evenement.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-1-particulier\">Evenement</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-particulier\" src=\"";
-        // line 67
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Workshop.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-particulier\" src=\"asset/img/Workshop.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-2-particulier\">Workshop</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-particulier\" src=\"";
-        // line 71
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Studio.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-particulier\" src=\"asset/img/Studio.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-3-particulier\">Studio</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-particulier\" src=\"";
-        // line 75
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Animaux.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-particulier\" src=\"asset/img/Animaux.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-4-particulier\">Animaux</P> </a>
                 </div>
 
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-5-presentation-particulier\" src=\"";
-        // line 80
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Presentation.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-5-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-5-particulier\">Charme</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-6-presentation-particulier\" src=\"";
-        // line 84
-        echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("asset/img/Lifestyle.jpg", "squared_thumbnail"), "html", null, true);
-        echo "\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-6-presentation-particulier\" src=\"asset/img/Lifestyle.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-6-particulier\">Lifestyle</P> </a>
                 </div>
             </div>
@@ -206,7 +176,7 @@ class __TwigTemplate_e3b69db22c9e9d0dc345afa9dae1ca9fda288b044e88d49612d26883e2d
 
     public function getDebugInfo()
     {
-        return array (  181 => 84,  174 => 80,  166 => 75,  159 => 71,  152 => 67,  145 => 63,  116 => 37,  109 => 33,  102 => 29,  95 => 25,  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
+        return array (  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -235,19 +205,19 @@ class __TwigTemplate_e3b69db22c9e9d0dc345afa9dae1ca9fda288b044e88d49612d26883e2d
             </div>
             <div class=\"presentation-global\">
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-pro\" src=\"{{ 'asset/img/Presentation.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-pro\" src=\"asset/img/Presentation.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-1-pro\">Présentation d'entreprise</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-pro\" src=\"{{ 'asset/img/Produit.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-pro\" src=\"asset/img/Produit.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-2-pro\">Présentation de produit</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-pro\" src=\"{{ 'asset/img/Immobilier.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-pro\" src=\"asset/img/Immobilier.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-3-pro\">Photo d'immobilier</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-pro\" src=\"{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-pro\" src=\"asset/img/Evenement.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-4-pro\">Couverture d'évenement</P> </a>
                 </div>
             </div>
@@ -273,34 +243,34 @@ class __TwigTemplate_e3b69db22c9e9d0dc345afa9dae1ca9fda288b044e88d49612d26883e2d
             </div>
             <div class=\"presentation-global\">
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-particulier\" src=\"{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-1-presentation-particulier\" src=\"asset/img/Evenement.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-1-particulier\">Evenement</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-particulier\" src=\"{{ 'asset/img/Workshop.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-2-presentation-particulier\" src=\"asset/img/Workshop.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-2-particulier\">Workshop</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-particulier\" src=\"{{ 'asset/img/Studio.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-3-presentation-particulier\" src=\"asset/img/Studio.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-3-particulier\">Studio</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-particulier\" src=\"{{ 'asset/img/Animaux.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-4-presentation-particulier\" src=\"asset/img/Animaux.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-4-particulier\">Animaux</P> </a>
                 </div>
 
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-5-presentation-particulier\" src=\"{{ 'asset/img/Presentation.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-5-presentation-particulier\" src=\"asset/img/Presentation.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-5-particulier\">Charme</P> </a>
                 </div>
                 <div class=\"presentation\">
-                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-6-presentation-particulier\" src=\"{{ 'asset/img/Lifestyle.jpg' | imagine_filter('squared_thumbnail') }}\">
+                    <a src=\"#\"><img class=\"photo-presentation\" id=\"BO-photo-6-presentation-particulier\" src=\"asset/img/Lifestyle.jpg\">
                         <P class=\"text-presentation\" id=\"BO-titre-photo-6-particulier\">Lifestyle</P> </a>
                 </div>
             </div>
         </section>
     </div>
 {% endblock %}
-", "accueil/index.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/accueil/index.html.twig");
+", "accueil/index.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/accueil/index.html.twig");
     }
 }

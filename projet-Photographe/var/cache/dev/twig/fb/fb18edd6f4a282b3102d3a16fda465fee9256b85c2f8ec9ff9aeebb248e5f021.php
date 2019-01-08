@@ -94,6 +94,6 @@ class __TwigTemplate_f8d6e27786974cd9996c7ea5492a86d9199226bae6a1bf28666abc045f1
     </exception>
 {% endfor %}
 </error>
-", "@Twig/Exception/exception.xml.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/exception.xml.twig");
+", "@Twig/Exception/exception.xml.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/exception.xml.twig");
     }
 }

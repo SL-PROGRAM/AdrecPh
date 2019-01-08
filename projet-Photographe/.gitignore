@@ -2,3 +2,7 @@
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+
+/.env
+
+/var/cache/

@@ -168,6 +168,6 @@ class __TwigTemplate_434833d7f5c421d82786bfd31c6f3acf51e84a9657189ea2e337c7ecb7f
 </div>
 
 {% endblock %}
-", "galerie/index.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/galerie/index.html.twig");
+", "galerie/index.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/galerie/index.html.twig");
     }
 }
