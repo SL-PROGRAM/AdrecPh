@@ -140,6 +140,6 @@ class __TwigTemplate_68b7441c2a7f0ee289603d8de13e290186e9137c41f25a28585de189dac
     </ul>
 </div>
 {% endblock %}
-", "footer/index.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/footer/index.html.twig");
+", "footer/index.html.twig", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/templates/footer/index.html.twig");
     }
 }

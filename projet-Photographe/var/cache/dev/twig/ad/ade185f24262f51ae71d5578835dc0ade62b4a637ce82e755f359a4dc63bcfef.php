@@ -65,6 +65,6 @@ class __TwigTemplate_15e57a4e30cc2b045b6aaeef8e76ee7750fd094556b2731f49404895e4c
         return new Twig_Source("<?xml version=\"1.0\" encoding=\"{{ _charset }}\" ?>
 
 <error code=\"{{ status_code }}\" message=\"{{ status_text }}\" />
-", "@Twig/Exception/error.xml.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/error.xml.twig");
+", "@Twig/Exception/error.xml.twig", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/vendor/symfony/twig-bundle/Resources/views/Exception/error.xml.twig");
     }
 }

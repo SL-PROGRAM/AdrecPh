@@ -1,8 +1,8 @@
 <?php
 
-use Psr\Log\LoggerInterface;
-use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
+use Psr\Log\LoggerInterface;
 
 /**
  * This class has been auto-generated
@@ -20,7 +20,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
-        'accueil' => array(array(), array('_controller' => 'App\\Controller\\AccueilController::index'), array(), array(array('text', '/')), array(), array()),
+        'accueil' => array(array(), array('_controller' => 'App\\Controller\\AccueilController::index'), array(), array(array('text', '/accueil')), array(), array()),
         'back_office_photo' => array(array(), array('_controller' => 'App\\Controller\\BackOfficePhotoController::index'), array(), array(array('text', '/back/office/photo')), array(), array()),
         'back_office_text' => array(array(), array('_controller' => 'App\\Controller\\BackOfficeTextController::index'), array(), array(array('text', '/back/office/text')), array(), array()),
         'commande' => array(array(), array('_controller' => 'App\\Controller\\CommandeController::index'), array(), array(array('text', '/commande')), array(), array()),
@@ -28,13 +28,13 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'footer' => array(array(), array('_controller' => 'App\\Controller\\FooterController::index'), array(), array(array('text', '/footer')), array(), array()),
         'galerie' => array(array(), array('_controller' => 'App\\Controller\\GalerieController::index'), array(), array(array('text', '/galerie')), array(), array()),
         'gestion_admin' => array(array(), array('_controller' => 'App\\Controller\\GestionAdminController::index'), array(), array(array('text', '/gestion/admin')), array(), array()),
-        'gestion_photographe' => array(array(), array('_controller' => 'App\\Controller\\GestionPhotographeController::new'), array(), array(array('text', '/gestionphotographe')), array(), array()),
+        'gestion_photographe' => array(array(), array('_controller' => 'App\\Controller\\GestionPhotographeController::index'), array(), array(array('text', '/gestion/photographe')), array(), array()),
         'header' => array(array(), array('_controller' => 'App\\Controller\\HeaderController::index'), array(), array(array('text', '/header')), array(), array()),
         'identification' => array(array(), array('_controller' => 'App\\Controller\\IdentificationController::index'), array(), array(array('text', '/identification')), array(), array()),
         'inscription' => array(array(), array('_controller' => 'App\\Controller\\InscriptionController::newPost'), array(), array(array('text', '/inscription')), array(), array()),
         'panier' => array(array(), array('_controller' => 'App\\Controller\\PanierController::index'), array(), array(array('text', '/panier')), array(), array()),
-        'particuliers' => array(array(), array('_controller' => 'App\\Controller\\ParticuliersController::new'), array(), array(array('text', '/particuliers')), array(), array()),
-        'professionels' => array(array(), array('_controller' => 'App\\Controller\\ProfessionelsController::new'), array(), array(array('text', '/professionels')), array(), array()),
+        'particuliers' => array(array(), array('_controller' => 'App\\Controller\\ParticuliersController::index'), array(), array(array('text', '/particuliers')), array(), array()),
+        'professionels' => array(array(), array('_controller' => 'App\\Controller\\ProfessionelsController::index'), array(), array(array('text', '/professionels')), array(), array()),
         'app_login' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::login'), array(), array(array('text', '/login')), array(), array()),
         'liip_imagine_filter_runtime' => array(array('filter', 'hash', 'path'), array('_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterRuntimeAction'), array('filter' => '[A-z0-9_-]*', 'path' => '.+'), array(array('variable', '/', '.+', 'path', true), array('variable', '/', '[^/]++', 'hash', true), array('text', '/rc'), array('variable', '/', '[A-z0-9_-]*', 'filter', true), array('text', '/media/cache/resolve')), array(), array()),
         'liip_imagine_filter' => array(array('filter', 'path'), array('_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterAction'), array('filter' => '[A-z0-9_-]*', 'path' => '.+'), array(array('variable', '/', '.+', 'path', true), array('variable', '/', '[A-z0-9_-]*', 'filter', true), array('text', '/media/cache/resolve')), array(), array()),

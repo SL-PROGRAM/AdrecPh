@@ -1,16 +1,5 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello {{ controller_name }}!{% endblock %}
-
-{% block body %}
-    <h1> <span class="dot">.</span> IDENTIFICATION <span class="dot">.</span></h1>
-    <div class="form-container">
-        <form class="form">
-            <div class="input">
-                <input type="text" placeholder="adresse mail" required>
-                <input type="password" placeholder="password" required>
-            </div>
-            <button class="button">Envoyer</button>
-        </form>
-    </div>
-{% endblock %}
+<form>
+    <input name="Login" placeholder="Identifiant" required>
+    <input type="password" name="Password" placeholder="Mot de passe" required>
+    <button>Connexion</button>
+</form>

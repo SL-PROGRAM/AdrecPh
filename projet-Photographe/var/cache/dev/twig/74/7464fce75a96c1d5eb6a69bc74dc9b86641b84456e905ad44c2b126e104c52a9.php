@@ -33,8 +33,8 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
     <title>Title</title>
 </head>
 
-<header>
-    <div class=\"bandeau\">
+
+
         <img class=\"logo\" src=\"asset/1.jpg\">
 
         <div class=\"menu\">
@@ -50,19 +50,19 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
 
                 <div class=\"titres\">
                     <div class=\"submenu\">
-                        <a href=\"/particuliers\">Evenement</a>
-                        <a href=\"/particuliers\">Workshop</a>
-                        <a href=\"/particuliers\">Studio</a>
-                        <a href=\"/particuliers\">Animaux</a>
-                        <a href=\"/particuliers\">Charme</a>
-                        <a href=\"/particuliers\">Lifestyle</a>
+                        <a>Evenement</a>
+                        <a>Workshop</a>
+                        <a>Studio</a>
+                        <a>Animaux</a>
+                        <a>Charme</a>
+                        <a>Lifestyle</a>
                     </div>
 
                     <div class=\"submenu\">
-                        <a href=\"/professionels\">Présentation d'entreprise</a>
-                        <a href=\"/professionels\">Présentation de produit</a>
-                        <a href=\"/professionels\">Photo d'immobilier</a>
-                        <a href=\"/professionels\">Couverture d'évenement</a>
+                        <a>Présentation d'entreprise</a>
+                        <a>Présentation de produit</a>
+                        <a>Photo d'immobilier</a>
+                        <a>Couverture d'évenement</a>
                     </div>
                     <div class=\"submenu\">
                         <a>Croute</a>
@@ -71,19 +71,17 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
                         <a>...</a>
                     </div>
                     <div class=\"submenu\">
-                        <a href=\"/contact\">Contact</a>
-                        <a href=\"/livreOr\">Livre d'Or</a>
+                        <a>Contact</a>
+                        <a>Livre d'Or</a>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class=\"connexion\">
-            <p>Bloc de connexion général</p>
-        </div>
 
-    </div>
-</header>
+
+
+
 
 </html>";
         
@@ -113,8 +111,8 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
     <title>Title</title>
 </head>
 
-<header>
-    <div class=\"bandeau\">
+
+
         <img class=\"logo\" src=\"asset/1.jpg\">
 
         <div class=\"menu\">
@@ -130,19 +128,19 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
 
                 <div class=\"titres\">
                     <div class=\"submenu\">
-                        <a href=\"/particuliers\">Evenement</a>
-                        <a href=\"/particuliers\">Workshop</a>
-                        <a href=\"/particuliers\">Studio</a>
-                        <a href=\"/particuliers\">Animaux</a>
-                        <a href=\"/particuliers\">Charme</a>
-                        <a href=\"/particuliers\">Lifestyle</a>
+                        <a>Evenement</a>
+                        <a>Workshop</a>
+                        <a>Studio</a>
+                        <a>Animaux</a>
+                        <a>Charme</a>
+                        <a>Lifestyle</a>
                     </div>
 
                     <div class=\"submenu\">
-                        <a href=\"/professionels\">Présentation d'entreprise</a>
-                        <a href=\"/professionels\">Présentation de produit</a>
-                        <a href=\"/professionels\">Photo d'immobilier</a>
-                        <a href=\"/professionels\">Couverture d'évenement</a>
+                        <a>Présentation d'entreprise</a>
+                        <a>Présentation de produit</a>
+                        <a>Photo d'immobilier</a>
+                        <a>Couverture d'évenement</a>
                     </div>
                     <div class=\"submenu\">
                         <a>Croute</a>
@@ -151,20 +149,18 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
                         <a>...</a>
                     </div>
                     <div class=\"submenu\">
-                        <a href=\"/contact\">Contact</a>
-                        <a href=\"/livreOr\">Livre d'Or</a>
+                        <a>Contact</a>
+                        <a>Livre d'Or</a>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class=\"connexion\">
-            <p>Bloc de connexion général</p>
-        </div>
 
-    </div>
-</header>
 
-</html>", "header/header.html", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/header/header.html");
+
+
+
+</html>", "header/header.html", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/templates/header/header.html");
     }
 }

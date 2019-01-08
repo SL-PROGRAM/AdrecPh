@@ -71,37 +71,29 @@ class __TwigTemplate_a59655947f118e67710ed6cd8a9377623bb6994b7eb6794a5db49541ff4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div>
-    <div>
+        echo "<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
 
-        <button> Proposition 1</button>
-        <button> Proposition 2</button>
-        <button> Proposition 3</button>
-        <button> Proposition 4</button>
+<div class=\"example-wrapper\">
+    <h1>Hello ";
+        // line 12
+        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new Twig_Error_Runtime('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
+        echo "! ✅</h1>
 
-    </div>
-    <div>
-        <form class=\"form\">
-            <div class=\"textarea\">
-                <textarea rows=\"10\" cols=\"50\" placeholder=\"Entrer votre texte\">";
-        // line 18
-        echo twig_escape_filter($this->env, (isset($context["affichage"]) || array_key_exists("affichage", $context) ? $context["affichage"] : (function () { throw new Twig_Error_Runtime('Variable "affichage" does not exist.', 18, $this->source); })()), "html", null, true);
-        echo "</textarea>
-            </div>
-            <div class=\"input\">
-                <input type=\"text\" placeholder=\"Prénom\" required>
-                <input type=\"text\" placeholder=\"Nom\" required>
-            </div>
-            <div class=\"input\">
-                <input type=\"text\" placeholder=\"Téléphone\" required>
-                <input type=\"text\" placeholder=\"E mail\" required>
-            </div>
-
-            <button class=\"button\">Envoyer</button>
-        </form>
-    </div>
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("src/Controller/ProfessionelsController.php", 0), "html", null, true);
+        echo "\">src/Controller/ProfessionelsController.php</a></code></li>
+        <li>Your template at <code><a href=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("templates/professionels/index.html.twig", 0), "html", null, true);
+        echo "\">templates/professionels/index.html.twig</a></code></li>
+    </ul>
 </div>
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -123,7 +115,7 @@ class __TwigTemplate_a59655947f118e67710ed6cd8a9377623bb6994b7eb6794a5db49541ff4
 
     public function getDebugInfo()
     {
-        return array (  88 => 18,  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
+        return array (  93 => 17,  89 => 16,  82 => 12,  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -133,35 +125,21 @@ class __TwigTemplate_a59655947f118e67710ed6cd8a9377623bb6994b7eb6794a5db49541ff4
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<div>
-    <div>
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
 
-        <button> Proposition 1</button>
-        <button> Proposition 2</button>
-        <button> Proposition 3</button>
-        <button> Proposition 4</button>
+<div class=\"example-wrapper\">
+    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    </div>
-    <div>
-        <form class=\"form\">
-            <div class=\"textarea\">
-                <textarea rows=\"10\" cols=\"50\" placeholder=\"Entrer votre texte\">{{ affichage }}</textarea>
-            </div>
-            <div class=\"input\">
-                <input type=\"text\" placeholder=\"Prénom\" required>
-                <input type=\"text\" placeholder=\"Nom\" required>
-            </div>
-            <div class=\"input\">
-                <input type=\"text\" placeholder=\"Téléphone\" required>
-                <input type=\"text\" placeholder=\"E mail\" required>
-            </div>
-
-            <button class=\"button\">Envoyer</button>
-        </form>
-    </div>
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href=\"{{ 'src/Controller/ProfessionelsController.php'|file_link(0) }}\">src/Controller/ProfessionelsController.php</a></code></li>
+        <li>Your template at <code><a href=\"{{ 'templates/professionels/index.html.twig'|file_link(0) }}\">templates/professionels/index.html.twig</a></code></li>
+    </ul>
 </div>
-
 {% endblock %}
-", "professionels/index.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/professionels/index.html.twig");
+", "professionels/index.html.twig", "/media/julien/Stockage/php/sqfdcsdv/projet-Photographe/templates/professionels/index.html.twig");
     }
 }

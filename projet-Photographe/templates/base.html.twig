@@ -7,7 +7,14 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+    <header>
+        <div class="bandeau">
         {% include 'header/header.html' %}
+        <div class="connexion">
+            {{ render(controller('App\\Controller\\SecurityController::login')) }}
+        </div>
+        </div>
+    </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <script src="asset/script.js"></script>
