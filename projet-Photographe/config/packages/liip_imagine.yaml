@@ -32,4 +32,4 @@ liip_imagine:
                 background:
                     size:     [256, 256]
                     position: center
-                    color:    '#fff'
+                    color:    '#000'

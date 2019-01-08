@@ -53,7 +53,6 @@ $instance->setRepositoryFactory(new \Doctrine\Bundle\DoctrineBundle\Repository\C
     'App\\Repository\\SiteTextRepository' => array('privates', 'App\\Repository\\SiteTextRepository', 'getSiteTextRepositoryService.php', true),
     'App\\Repository\\StreetTypeRepository' => array('privates', 'App\\Repository\\StreetTypeRepository', 'getStreetTypeRepositoryService.php', true),
     'App\\Repository\\UserRepository' => array('privates', 'App\\Repository\\UserRepository', 'getUserRepositoryService.php', true),
-    'App\\Repository\\UsersezRepository' => array('privates', 'App\\Repository\\UsersezRepository', 'getUsersezRepositoryService.php', true),
 ))));
 
 return $instance;

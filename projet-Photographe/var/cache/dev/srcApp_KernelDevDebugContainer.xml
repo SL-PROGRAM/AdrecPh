@@ -354,7 +354,7 @@
               <parameter>256</parameter>
             </parameter>
             <parameter key="position">center</parameter>
-            <parameter key="color">#fff</parameter>
+            <parameter key="color">#000</parameter>
           </parameter>
         </parameter>
         <parameter key="quality">100</parameter>
