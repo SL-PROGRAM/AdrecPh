@@ -3189,6 +3189,7 @@
     <service id="security.authentication.manager" class="Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager" public="false">
       <argument type="iterator">
         <argument type="service" id="security.authentication.provider.guard.main"/>
+        <argument type="service" id="security.authentication.provider.rememberme.main"/>
         <argument type="service" id="security.authentication.provider.anonymous.main"/>
       </argument>
       <argument>true</argument>
@@ -3666,6 +3667,7 @@
       <argument>null</argument>
       <argument type="collection">
         <argument>guard</argument>
+        <argument>remember_me</argument>
         <argument>anonymous</argument>
       </argument>
       <argument>null</argument>
@@ -3697,6 +3699,42 @@
         <argument type="service" id="App\Security\LoginFormAuthenticator"/>
       </argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <call method="setRememberMeServices">
+        <argument type="service" id="security.authentication.rememberme.services.simplehash.main"/>
+      </call>
+    </service>
+    <service id="security.authentication.provider.rememberme.main" class="Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider" public="false">
+      <argument type="service" id="security.user_checker"/>
+      <argument>%env(APP_SECRET)%</argument>
+      <argument>main</argument>
+    </service>
+    <service id="security.authentication.rememberme.services.simplehash.main" class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
+      <argument type="collection">
+        <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
+      </argument>
+      <argument>%env(APP_SECRET)%</argument>
+      <argument>main</argument>
+      <argument type="collection">
+        <argument key="lifetime">604800</argument>
+        <argument key="path">/</argument>
+        <argument key="name">REMEMBERME</argument>
+        <argument key="domain">null</argument>
+        <argument key="secure">null</argument>
+        <argument key="httponly">true</argument>
+        <argument key="samesite">lax</argument>
+        <argument key="always_remember_me">false</argument>
+        <argument key="remember_me_parameter">_remember_me</argument>
+      </argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.authentication.listener.rememberme.main" class="Symfony\Component\Security\Http\Firewall\RememberMeListener" public="false">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.authentication.rememberme.services.simplehash.main"/>
+      <argument type="service" id="security.authentication.manager"/>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+      <argument>true</argument>
+      <argument type="service" id="security.authentication.session_strategy"/>
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3723,6 +3761,7 @@
         <argument type="service" id="security.channel_listener"/>
         <argument type="service" id="security.context_listener.0"/>
         <argument type="service" id="security.authentication.listener.guard.main"/>
+        <argument type="service" id="security.authentication.listener.rememberme.main"/>
         <argument type="service" id="security.authentication.listener.anonymous.main"/>
         <argument type="service" id="security.access_listener"/>
       </argument>
