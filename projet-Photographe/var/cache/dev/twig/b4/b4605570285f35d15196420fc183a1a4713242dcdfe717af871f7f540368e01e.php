@@ -58,7 +58,7 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
     ";
         // line 27
         echo "
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+    <button class=\"btn btn-lg btn-primary\" type=\"submit\" formaction=\"/login\">
         Sign in
     </button>
 </form>
@@ -116,7 +116,7 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
         </div>
     #}
 
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+    <button class=\"btn btn-lg btn-primary\" type=\"submit\" formaction=\"/login\">
         Sign in
     </button>
 </form>

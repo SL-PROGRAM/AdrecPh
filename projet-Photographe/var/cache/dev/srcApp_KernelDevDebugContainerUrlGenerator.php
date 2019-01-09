@@ -20,7 +20,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
-        'accueil' => array(array(), array('_controller' => 'App\\Controller\\AccueilController::index'), array(), array(array('text', '/accueil')), array(), array()),
+        'accueil' => array(array(), array('_controller' => 'App\\Controller\\AccueilController::index'), array(), array(array('text', '/')), array(), array()),
         'back_office_photo' => array(array(), array('_controller' => 'App\\Controller\\BackOfficePhotoController::index'), array(), array(array('text', '/back/office/photo')), array(), array()),
         'back_office_text' => array(array(), array('_controller' => 'App\\Controller\\BackOfficeTextController::index'), array(), array(array('text', '/back/office/text')), array(), array()),
         'commande' => array(array(), array('_controller' => 'App\\Controller\\CommandeController::index'), array(), array(array('text', '/commande')), array(), array()),
@@ -37,6 +37,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'particuliers' => array(array(), array('_controller' => 'App\\Controller\\ParticuliersController::index'), array(), array(array('text', '/particuliers')), array(), array()),
         'professionels' => array(array(), array('_controller' => 'App\\Controller\\ProfessionelsController::index'), array(), array(array('text', '/professionels')), array(), array()),
         'app_login' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::login'), array(), array(array('text', '/login')), array(), array()),
+        'app_logout' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::logout'), array(), array(array('text', '/logout')), array(), array()),
         'liip_imagine_filter_runtime' => array(array('filter', 'hash', 'path'), array('_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterRuntimeAction'), array('filter' => '[A-z0-9_-]*', 'path' => '.+'), array(array('variable', '/', '.+', 'path', true), array('variable', '/', '[^/]++', 'hash', true), array('text', '/rc'), array('variable', '/', '[A-z0-9_-]*', 'filter', true), array('text', '/media/cache/resolve')), array(), array()),
         'liip_imagine_filter' => array(array('filter', 'path'), array('_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterAction'), array('filter' => '[A-z0-9_-]*', 'path' => '.+'), array(array('variable', '/', '.+', 'path', true), array('variable', '/', '[A-z0-9_-]*', 'filter', true), array('text', '/media/cache/resolve')), array(), array()),
         '_twig_error_test' => array(array('code', '_format'), array('_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code' => '\\d+'), array(array('variable', '.', '[^/]++', '_format', true), array('variable', '/', '\\d+', 'code', true), array('text', '/_error')), array(), array()),

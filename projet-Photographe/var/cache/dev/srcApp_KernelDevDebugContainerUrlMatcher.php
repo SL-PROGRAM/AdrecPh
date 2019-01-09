@@ -15,7 +15,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
     {
         $this->context = $context;
         $this->staticRoutes = array(
-            '/accueil' => array(array(array('_route' => 'accueil', '_controller' => 'App\\Controller\\AccueilController::index'), null, null, null, false, null)),
+            '/' => array(array(array('_route' => 'accueil', '_controller' => 'App\\Controller\\AccueilController::index'), null, null, null, false, null)),
             '/back/office/photo' => array(array(array('_route' => 'back_office_photo', '_controller' => 'App\\Controller\\BackOfficePhotoController::index'), null, null, null, false, null)),
             '/back/office/text' => array(array(array('_route' => 'back_office_text', '_controller' => 'App\\Controller\\BackOfficeTextController::index'), null, null, null, false, null)),
             '/commande' => array(array(array('_route' => 'commande', '_controller' => 'App\\Controller\\CommandeController::index'), null, null, null, false, null)),
@@ -32,6 +32,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/particuliers' => array(array(array('_route' => 'particuliers', '_controller' => 'App\\Controller\\ParticuliersController::index'), null, null, null, false, null)),
             '/professionels' => array(array(array('_route' => 'professionels', '_controller' => 'App\\Controller\\ProfessionelsController::index'), null, null, null, false, null)),
             '/login' => array(array(array('_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'), null, null, null, false, null)),
+            '/logout' => array(array(array('_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'), null, null, null, false, null)),
             '/_profiler' => array(array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null, true, null)),
             '/_profiler/search' => array(array(array('_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'), null, null, null, false, null)),
             '/_profiler/search_bar' => array(array(array('_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'), null, null, null, false, null)),
