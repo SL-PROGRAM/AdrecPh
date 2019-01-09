@@ -178,9 +178,10 @@ header{
     flex-direction: column;
     width: 20%;
     justify-content: space-around;
-    background: gray;
+    background: black;
     color : white;
     padding : 30px auto;
+
 }
 /*Fin Header*/
 
