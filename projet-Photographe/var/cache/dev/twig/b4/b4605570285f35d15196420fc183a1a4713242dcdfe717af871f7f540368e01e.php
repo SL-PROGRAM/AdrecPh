@@ -39,27 +39,25 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
         }
         // line 6
         echo "
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputEmail\" class=\"sr-only\"> Email</label>
+    <p>Connectez vous</p>
     <input type=\"email\" value=\"";
-        // line 9
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 9, $this->source); })()), "html", null, true);
+        // line 8
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 8, $this->source); })()), "html", null, true);
         echo "\" name=\"Email\" id=\"inputEmail\" class=\"form-control\" placeholder=\" Email\" required autofocus>
-    <label for=\"inputPassword\" class=\"sr-only\">Password</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"";
-        // line 14
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
     >
 
     ";
-        // line 27
+        // line 25
         echo "
     <button class=\"btn btn-lg btn-primary\" type=\"submit\" formaction=\"/login\">
-        Sign in
+       Connexion
     </button>
 </form>
 
@@ -84,7 +82,7 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
 
     public function getDebugInfo()
     {
-        return array (  60 => 27,  54 => 14,  46 => 9,  41 => 6,  35 => 4,  33 => 3,  29 => 1,);
+        return array (  58 => 25,  52 => 12,  45 => 8,  41 => 6,  35 => 4,  33 => 3,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -95,10 +93,8 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
         <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputEmail\" class=\"sr-only\"> Email</label>
+    <p>Connectez vous</p>
     <input type=\"email\" value=\"{{ last_username }}\" name=\"Email\" id=\"inputEmail\" class=\"form-control\" placeholder=\" Email\" required autofocus>
-    <label for=\"inputPassword\" class=\"sr-only\">Password</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>
 
     <input type=\"hidden\" name=\"_csrf_token\"
@@ -117,7 +113,7 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
     #}
 
     <button class=\"btn btn-lg btn-primary\" type=\"submit\" formaction=\"/login\">
-        Sign in
+       Connexion
     </button>
 </form>
 

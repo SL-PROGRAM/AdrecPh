@@ -4,3 +4,4 @@
 ###< liip/imagine-bundle ###
 /.env
 /var/
+.idea/

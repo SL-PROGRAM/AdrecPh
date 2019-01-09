@@ -34,8 +34,9 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
 </head>
 
 
-
-        <img class=\"logo\" src=\"asset/1.jpg\">
+        <a href=\"/\">
+            <img class=\"logo\" src=\"asset/1.jpg\">
+        </a>
 
         <div class=\"menu\">
             <img class=\"logo\" src=\"asset/1.jpg\">
@@ -50,28 +51,28 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
 
                 <div class=\"titres\">
                     <div class=\"submenu\">
-                        <a>Evenement</a>
-                        <a>Workshop</a>
-                        <a>Studio</a>
-                        <a>Animaux</a>
-                        <a>Charme</a>
-                        <a>Lifestyle</a>
+                        <a href=\"particuliers\">Evenement</a>
+                        <a href=\"particuliers\">Workshop</a>
+                        <a href=\"particuliers\">Studio</a>
+                        <a href=\"particuliers\">Animaux</a>
+                        <a href=\"particuliers\">Charme</a>
+                        <a href=\"particuliers\">Lifestyle</a>
                     </div>
 
                     <div class=\"submenu\">
-                        <a>Présentation d'entreprise</a>
-                        <a>Présentation de produit</a>
-                        <a>Photo d'immobilier</a>
-                        <a>Couverture d'évenement</a>
+                        <a href=\"professionels\">Présentation d'entreprise</a>
+                        <a href=\"professionels\">Présentation de produit</a>
+                        <a href=\"professionels\">Photo d'immobilier</a>
+                        <a href=\"professionels\">Couverture d'évenement</a>
                     </div>
                     <div class=\"submenu\">
-                        <a>Croute</a>
-                        <a>Bigre</a>
-                        <a>Isseo</a>
-                        <a>...</a>
+                        <a href=\"galerie\">Croute</a>
+                        <a href=\"galerie\">Bigre</a>
+                        <a href=\"galerie\">Isseo</a>
+                        <a href=\"galerie\">...</a>
                     </div>
                     <div class=\"submenu\">
-                        <a>Contact</a>
+                        <a href=\"contact\">Contact</a>
                         <a>Livre d'Or</a>
                     </div>
                 </div>
@@ -112,8 +113,9 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
 </head>
 
 
-
-        <img class=\"logo\" src=\"asset/1.jpg\">
+        <a href=\"/\">
+            <img class=\"logo\" src=\"asset/1.jpg\">
+        </a>
 
         <div class=\"menu\">
             <img class=\"logo\" src=\"asset/1.jpg\">
@@ -128,28 +130,28 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
 
                 <div class=\"titres\">
                     <div class=\"submenu\">
-                        <a>Evenement</a>
-                        <a>Workshop</a>
-                        <a>Studio</a>
-                        <a>Animaux</a>
-                        <a>Charme</a>
-                        <a>Lifestyle</a>
+                        <a href=\"particuliers\">Evenement</a>
+                        <a href=\"particuliers\">Workshop</a>
+                        <a href=\"particuliers\">Studio</a>
+                        <a href=\"particuliers\">Animaux</a>
+                        <a href=\"particuliers\">Charme</a>
+                        <a href=\"particuliers\">Lifestyle</a>
                     </div>
 
                     <div class=\"submenu\">
-                        <a>Présentation d'entreprise</a>
-                        <a>Présentation de produit</a>
-                        <a>Photo d'immobilier</a>
-                        <a>Couverture d'évenement</a>
+                        <a href=\"professionels\">Présentation d'entreprise</a>
+                        <a href=\"professionels\">Présentation de produit</a>
+                        <a href=\"professionels\">Photo d'immobilier</a>
+                        <a href=\"professionels\">Couverture d'évenement</a>
                     </div>
                     <div class=\"submenu\">
-                        <a>Croute</a>
-                        <a>Bigre</a>
-                        <a>Isseo</a>
-                        <a>...</a>
+                        <a href=\"galerie\">Croute</a>
+                        <a href=\"galerie\">Bigre</a>
+                        <a href=\"galerie\">Isseo</a>
+                        <a href=\"galerie\">...</a>
                     </div>
                     <div class=\"submenu\">
-                        <a>Contact</a>
+                        <a href=\"contact\">Contact</a>
                         <a>Livre d'Or</a>
                     </div>
                 </div>

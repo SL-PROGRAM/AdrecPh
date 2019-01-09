@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\User;
 
 class GalerieController extends AbstractController
 {
@@ -12,8 +13,9 @@ class GalerieController extends AbstractController
      */
     public function index()
     {
+        $user = $this->getUser()->getPrenom();
         return $this->render('galerie/index.html.twig', [
-            'controller_name' => 'GalerieController',
+            'user' => $user,
         ]);
     }
 }
