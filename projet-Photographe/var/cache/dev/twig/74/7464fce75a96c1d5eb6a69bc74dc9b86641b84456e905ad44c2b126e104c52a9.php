@@ -33,9 +33,10 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
     <title>Title</title>
 </head>
 
-<header>
-    <div class=\"bandeau\">
-        <img class=\"logo\" src=\"asset/1.jpg\">
+
+        <a href=\"/\">
+            <img class=\"logo\" src=\"asset/1.jpg\">
+        </a>
 
         <div class=\"menu\">
             <img class=\"logo\" src=\"asset/1.jpg\">
@@ -50,40 +51,38 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
 
                 <div class=\"titres\">
                     <div class=\"submenu\">
-                        <a href=\"/particuliers\">Evenement</a>
-                        <a href=\"/particuliers\">Workshop</a>
-                        <a href=\"/particuliers\">Studio</a>
-                        <a href=\"/particuliers\">Animaux</a>
-                        <a href=\"/particuliers\">Charme</a>
-                        <a href=\"/particuliers\">Lifestyle</a>
+                        <a href=\"particuliers\">Evenement</a>
+                        <a href=\"particuliers\">Workshop</a>
+                        <a href=\"particuliers\">Studio</a>
+                        <a href=\"particuliers\">Animaux</a>
+                        <a href=\"particuliers\">Charme</a>
+                        <a href=\"particuliers\">Lifestyle</a>
                     </div>
 
                     <div class=\"submenu\">
-                        <a href=\"/professionels\">Présentation d'entreprise</a>
-                        <a href=\"/professionels\">Présentation de produit</a>
-                        <a href=\"/professionels\">Photo d'immobilier</a>
-                        <a href=\"/professionels\">Couverture d'évenement</a>
+                        <a href=\"professionels\">Présentation d'entreprise</a>
+                        <a href=\"professionels\">Présentation de produit</a>
+                        <a href=\"professionels\">Photo d'immobilier</a>
+                        <a href=\"professionels\">Couverture d'évenement</a>
                     </div>
                     <div class=\"submenu\">
-                        <a>Croute</a>
-                        <a>Bigre</a>
-                        <a>Isseo</a>
-                        <a>...</a>
+                        <a href=\"galerie\">Croute</a>
+                        <a href=\"galerie\">Bigre</a>
+                        <a href=\"galerie\">Isseo</a>
+                        <a href=\"galerie\">...</a>
                     </div>
                     <div class=\"submenu\">
-                        <a href=\"/contact\">Contact</a>
-                        <a href=\"/livreOr\">Livre d'Or</a>
+                        <a href=\"contact\">Contact</a>
+                        <a>Livre d'Or</a>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class=\"connexion\">
-            <p>Bloc de connexion général</p>
-        </div>
 
-    </div>
-</header>
+
+
+
 
 </html>";
         
@@ -113,9 +112,10 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
     <title>Title</title>
 </head>
 
-<header>
-    <div class=\"bandeau\">
-        <img class=\"logo\" src=\"asset/1.jpg\">
+
+        <a href=\"/\">
+            <img class=\"logo\" src=\"asset/1.jpg\">
+        </a>
 
         <div class=\"menu\">
             <img class=\"logo\" src=\"asset/1.jpg\">
@@ -130,41 +130,39 @@ class __TwigTemplate_806f76c287bbcb38ee5ddd01f3400cca395ed32b7bb96eb7bb18796460c
 
                 <div class=\"titres\">
                     <div class=\"submenu\">
-                        <a href=\"/particuliers\">Evenement</a>
-                        <a href=\"/particuliers\">Workshop</a>
-                        <a href=\"/particuliers\">Studio</a>
-                        <a href=\"/particuliers\">Animaux</a>
-                        <a href=\"/particuliers\">Charme</a>
-                        <a href=\"/particuliers\">Lifestyle</a>
+                        <a href=\"particuliers\">Evenement</a>
+                        <a href=\"particuliers\">Workshop</a>
+                        <a href=\"particuliers\">Studio</a>
+                        <a href=\"particuliers\">Animaux</a>
+                        <a href=\"particuliers\">Charme</a>
+                        <a href=\"particuliers\">Lifestyle</a>
                     </div>
 
                     <div class=\"submenu\">
-                        <a href=\"/professionels\">Présentation d'entreprise</a>
-                        <a href=\"/professionels\">Présentation de produit</a>
-                        <a href=\"/professionels\">Photo d'immobilier</a>
-                        <a href=\"/professionels\">Couverture d'évenement</a>
+                        <a href=\"professionels\">Présentation d'entreprise</a>
+                        <a href=\"professionels\">Présentation de produit</a>
+                        <a href=\"professionels\">Photo d'immobilier</a>
+                        <a href=\"professionels\">Couverture d'évenement</a>
                     </div>
                     <div class=\"submenu\">
-                        <a>Croute</a>
-                        <a>Bigre</a>
-                        <a>Isseo</a>
-                        <a>...</a>
+                        <a href=\"galerie\">Croute</a>
+                        <a href=\"galerie\">Bigre</a>
+                        <a href=\"galerie\">Isseo</a>
+                        <a href=\"galerie\">...</a>
                     </div>
                     <div class=\"submenu\">
-                        <a href=\"/contact\">Contact</a>
-                        <a href=\"/livreOr\">Livre d'Or</a>
+                        <a href=\"contact\">Contact</a>
+                        <a>Livre d'Or</a>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class=\"connexion\">
-            <p>Bloc de connexion général</p>
-        </div>
 
-    </div>
-</header>
 
-</html>", "header/header.html", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/header/header.html");
+
+
+
+</html>", "header/header.html", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/header/header.html");
     }
 }

@@ -51,8 +51,8 @@ class __TwigTemplate_434833d7f5c421d82786bfd31c6f3acf51e84a9657189ea2e337c7ecb7f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello ";
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new Twig_Error_Runtime('Variable "controller_name" does not exist.', 3, $this->source); })()), "html", null, true);
+        echo "Bonjour ";
+        echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 3, $this->source); })())), "html", null, true);
         echo "!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -140,7 +140,7 @@ class __TwigTemplate_434833d7f5c421d82786bfd31c6f3acf51e84a9657189ea2e337c7ecb7f
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Bonjour {{ user | capitalize }}!{% endblock %}
 
 {% block head %}
     <meta charset=\"UTF-8\">
@@ -168,6 +168,6 @@ class __TwigTemplate_434833d7f5c421d82786bfd31c6f3acf51e84a9657189ea2e337c7ecb7f
 </div>
 
 {% endblock %}
-", "galerie/index.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/galerie/index.html.twig");
+", "galerie/index.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/galerie/index.html.twig");
     }
 }

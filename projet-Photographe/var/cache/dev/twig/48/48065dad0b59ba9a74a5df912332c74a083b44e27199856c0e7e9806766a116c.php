@@ -45,28 +45,39 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
         // line 8
         echo "    </head>
     <body>
+    <header>
+        <div class=\"bandeau\">
         ";
-        // line 10
-        $this->loadTemplate("header/header.html", "base.html.twig", 10)->display($context);
-        // line 11
-        echo "<<<<<<< HEAD
-=======
-        <div class=\"connexion\">
-            ";
+        // line 12
+        $this->loadTemplate("header/header.html", "base.html.twig", 12)->display($context);
+        // line 13
+        echo "            <div class=\"connexion\">
+                ";
         // line 14
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SecurityController::login"));
-        echo "
-        </div>
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 15
+            echo "            ";
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\LoggedInController::index"));
+            echo "
+            ";
+        } else {
+            // line 17
+            echo "            ";
+            echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\SecurityController::login"));
+            echo "
+            ";
+        }
+        // line 19
+        echo "        </div>
         </div>
     </header>
->>>>>>> origin/dev
         ";
-        // line 19
+        // line 22
         $this->displayBlock('body', $context, $blocks);
-        // line 20
+        // line 23
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 21
+        // line 24
         echo "        <script src=\"asset/script.js\"></script>
     </body>
 </html>
@@ -114,7 +125,7 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
 
     }
 
-    // line 19
+    // line 22
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -131,7 +142,7 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
 
     }
 
-    // line 20
+    // line 23
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -160,7 +171,7 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
 
     public function getDebugInfo()
     {
-        return array (  135 => 20,  118 => 19,  101 => 7,  83 => 5,  70 => 21,  67 => 20,  65 => 19,  57 => 14,  52 => 11,  50 => 10,  46 => 8,  44 => 7,  39 => 5,  33 => 1,);
+        return array (  146 => 23,  129 => 22,  112 => 7,  94 => 5,  81 => 24,  78 => 23,  76 => 22,  71 => 19,  65 => 17,  59 => 15,  57 => 14,  54 => 13,  52 => 12,  46 => 8,  44 => 7,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -174,20 +185,23 @@ class __TwigTemplate_6b35fe055c35cf1dddb96dca63291011c7037166608d81ced857b84810d
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+    <header>
+        <div class=\"bandeau\">
         {% include 'header/header.html' %}
-<<<<<<< HEAD
-=======
-        <div class=\"connexion\">
+            <div class=\"connexion\">
+                {% if is_granted('ROLE_USER') %}
+            {{ render(controller('App\\\\Controller\\\\LoggedInController::index')) }}
+            {% else %}
             {{ render(controller('App\\\\Controller\\\\SecurityController::login')) }}
+            {% endif %}
         </div>
         </div>
     </header>
->>>>>>> origin/dev
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <script src=\"asset/script.js\"></script>
     </body>
 </html>
-", "base.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/base.html.twig");
+", "base.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/base.html.twig");
     }
 }

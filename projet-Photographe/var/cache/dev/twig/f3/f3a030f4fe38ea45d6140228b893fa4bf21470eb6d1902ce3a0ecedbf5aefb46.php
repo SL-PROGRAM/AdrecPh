@@ -49,6 +49,6 @@ class __TwigTemplate_0c085396710697cdbab45394bf5ec4f643a1e2d1aba9ebd3cb3576afb2d
     public function getSourceContext()
     {
         return new Twig_Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', array('type' => isset(\$type) ? \$type : 'email')) ?>
-", "@Framework/Form/email_widget.html.php", "/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/framework-bundle/Resources/views/Form/email_widget.html.php");
+", "@Framework/Form/email_widget.html.php", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/framework-bundle/Resources/views/Form/email_widget.html.php");
     }
 }

@@ -11,9 +11,10 @@ class __TwigTemplate_9bdfa8bd4e402757ba6a726fbcd7bacafde154a35617dcf15bdabc0ee06
 
         $this->source = $this->getSourceContext();
 
-        // line 2
-        $this->parent = $this->loadTemplate("base.html.twig", "particuliers/index.html.twig", 2);
+        // line 1
+        $this->parent = $this->loadTemplate("base.html.twig", "particuliers/index.html.twig", 1);
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -40,6 +41,26 @@ class __TwigTemplate_9bdfa8bd4e402757ba6a726fbcd7bacafde154a35617dcf15bdabc0ee06
 
     }
 
+    // line 3
+    public function block_title($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+
+        echo "Hello ";
+        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new Twig_Error_Runtime('Variable "controller_name" does not exist.', 3, $this->source); })()), "html", null, true);
+        echo "!";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     // line 5
     public function block_body($context, array $blocks = array())
     {
@@ -50,34 +71,29 @@ class __TwigTemplate_9bdfa8bd4e402757ba6a726fbcd7bacafde154a35617dcf15bdabc0ee06
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div>
-        <div>
+        echo "<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
 
-            <button> Proposition 1</button>
-            <button> Proposition 2</button>
-            <button> Proposition 3</button>
-            <button> Proposition 4</button>
+<div class=\"example-wrapper\">
+    <h1>Hello ";
+        // line 12
+        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new Twig_Error_Runtime('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
+        echo "! ✅</h1>
 
-        </div>
-        <div>
-
-
-                ";
-        // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 18, $this->source); })()), 'form_start', array("attr" => array("novalidate" => "novalidate")));
-        echo "
-                ";
-        // line 19
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 19, $this->source); })()), 'widget');
-        echo "
-                ";
-        // line 20
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 20, $this->source); })()), 'form_end');
-        echo "
-
-        </div>
-    </div>
-
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("src/Controller/ParticuliersController.php", 0), "html", null, true);
+        echo "\">src/Controller/ParticuliersController.php</a></code></li>
+        <li>Your template at <code><a href=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("templates/particuliers/index.html.twig", 0), "html", null, true);
+        echo "\">templates/particuliers/index.html.twig</a></code></li>
+    </ul>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -99,37 +115,31 @@ class __TwigTemplate_9bdfa8bd4e402757ba6a726fbcd7bacafde154a35617dcf15bdabc0ee06
 
     public function getDebugInfo()
     {
-        return array (  75 => 20,  71 => 19,  67 => 18,  53 => 6,  44 => 5,  15 => 2,);
+        return array (  93 => 17,  89 => 16,  82 => 12,  74 => 6,  65 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("
-{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'base.html.twig' %}
 
+{% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-    <div>
-        <div>
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
 
-            <button> Proposition 1</button>
-            <button> Proposition 2</button>
-            <button> Proposition 3</button>
-            <button> Proposition 4</button>
+<div class=\"example-wrapper\">
+    <h1>Hello {{ controller_name }}! ✅</h1>
 
-        </div>
-        <div>
-
-
-                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-                {{ form_widget(form) }}
-                {{ form_end(form) }}
-
-        </div>
-    </div>
-
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href=\"{{ 'src/Controller/ParticuliersController.php'|file_link(0) }}\">src/Controller/ParticuliersController.php</a></code></li>
+        <li>Your template at <code><a href=\"{{ 'templates/particuliers/index.html.twig'|file_link(0) }}\">templates/particuliers/index.html.twig</a></code></li>
+    </ul>
+</div>
 {% endblock %}
-
-", "particuliers/index.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/particuliers/index.html.twig");
+", "particuliers/index.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/particuliers/index.html.twig");
     }
 }

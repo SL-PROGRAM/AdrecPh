@@ -83,6 +83,6 @@ class __TwigTemplate_e266823ff2bb150d39945287f41462fd2c5c0613da7e02ad2e07416a837
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }

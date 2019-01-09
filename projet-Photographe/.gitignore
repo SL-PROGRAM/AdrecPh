@@ -2,7 +2,14 @@
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
-
-/.env
-
-/var/cache/
+.env
+var/
+.idea/
+../.idea/
+composer.lock
+phpunit.xml
+.php_cs.cache
+composer.phar
+package.tar
+/packages.json
+/.phpunit

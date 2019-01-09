@@ -162,6 +162,8 @@ header{
     display: block;
     font-size: small;
     justify-content: center;
+    text-decoration: none;
+    color : white;
 }
 
 .aa{
@@ -178,6 +180,7 @@ header{
     justify-content: space-around;
     background: gray;
     color : white;
+    padding : 30px auto;
 }
 /*Fin Header*/
 

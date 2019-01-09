@@ -39,39 +39,28 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
         }
         // line 6
         echo "
-
-
+    <p>Connectez vous</p>
     <input type=\"email\" value=\"";
-        // line 9
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 9, $this->source); })()), "html", null, true);
+        // line 8
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 8, $this->source); })()), "html", null, true);
         echo "\" name=\"Email\" id=\"inputEmail\" class=\"form-control\" placeholder=\" Email\" required autofocus>
-
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>
-
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"";
-        // line 15
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
     >
 
     ";
-        // line 22
-        echo "        <div class=\"checkbox mb-3\">
-            <label>
-                <input type=\"checkbox\" name=\"_remember_me\"> Se souvenir de moi
-            </label>
-        </div>
-
-
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Connexion
+        // line 25
+        echo "
+    <button class=\"btn btn-lg btn-primary\" type=\"submit\" formaction=\"/login\">
+       Connexion
     </button>
-    <a>Mot de passe oublié ?</a>
-    <a>Pas encore inscrit ?</a>
-
 </form>
+
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -93,7 +82,7 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
 
     public function getDebugInfo()
     {
-        return array (  61 => 22,  55 => 15,  46 => 9,  41 => 6,  35 => 4,  33 => 3,  29 => 1,);
+        return array (  58 => 25,  52 => 12,  45 => 8,  41 => 6,  35 => 4,  33 => 3,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -104,12 +93,9 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
         <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-
-
+    <p>Connectez vous</p>
     <input type=\"email\" value=\"{{ last_username }}\" name=\"Email\" id=\"inputEmail\" class=\"form-control\" placeholder=\" Email\" required autofocus>
-
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" placeholder=\"Password\" required>
-
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"{{ csrf_token('authenticate') }}\"
@@ -118,21 +104,19 @@ class __TwigTemplate_fa8f9f30f0bee317ba21b358a70a7f93ce3a95ed3ec348b7eb6721277f4
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
-    #}
+
         <div class=\"checkbox mb-3\">
             <label>
-                <input type=\"checkbox\" name=\"_remember_me\"> Se souvenir de moi
+                <input type=\"checkbox\" name=\"_remember_me\"> Remember me
             </label>
         </div>
+    #}
 
-
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Connexion
+    <button class=\"btn btn-lg btn-primary\" type=\"submit\" formaction=\"/login\">
+       Connexion
     </button>
-    <a>Mot de passe oublié ?</a>
-    <a>Pas encore inscrit ?</a>
-
 </form>
-", "security/login.html.twig", "/home/sl/Symfony/AdrecPh/projet-Photographe/templates/security/login.html.twig");
+
+", "security/login.html.twig", "/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/security/login.html.twig");
     }
 }
