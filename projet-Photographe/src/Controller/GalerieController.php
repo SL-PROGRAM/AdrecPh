@@ -13,9 +13,16 @@ class GalerieController extends AbstractController
      */
     public function index()
     {
-        $user = $this->getUser()->getPrenom();
+        $user = $this->getUser();
+        if($user == null){
+            $username = "invité";
+        }else{
+            $username = $this->getUser()->getPrenom();
+
+        }
+
         return $this->render('galerie/index.html.twig', [
-            'user' => $user,
+            'user' => $username,
         ]);
     }
 }

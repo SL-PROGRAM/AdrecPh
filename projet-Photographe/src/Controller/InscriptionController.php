@@ -70,7 +70,7 @@ class InscriptionController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($User);
             $entityManager->flush();
-            return $this->redirectToRoute('/');
+            return $this->redirectToRoute('accueil');
         }
         return $this->render('inscription/index.html.twig', [
             'form' => $form->createView(),
