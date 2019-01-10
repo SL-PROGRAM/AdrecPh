@@ -14,7 +14,8 @@
                 {% if is_granted('ROLE_USER') %}
             {{ render(controller('App\\Controller\\LoggedInController::index')) }}
             {% else %}
-            {{ render(controller('App\\Controller\\SecurityController::login')) }}
+                {{ render(controller("FOSUserBundle:Security:login")) }}
+                {#{{ render(controller('App\\Controller\\SecurityController::login')) }}#}
             {% endif %}
         </div>
         </div>

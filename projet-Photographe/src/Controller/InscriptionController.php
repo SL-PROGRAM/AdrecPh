@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Entity\User;
+use App\Form;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -12,7 +13,9 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Validator\Constraints\DateTime;
-
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider;
 use Symfony\Component\Security\Core\User\UserChecker;
 use Symfony\Component\Security\Core\User\InMemoryUserProvider;
@@ -30,7 +33,7 @@ class InscriptionController extends AbstractController
     {
         // just setup a fresh $task object (remove the dummy data)
         $User = new User();
-        $form = $this->createFormBuilder($User)
+        /*$form = $this->createFormBuilder($User)
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
             ->add('tel', TelType::class)
@@ -39,7 +42,9 @@ class InscriptionController extends AbstractController
             ->add('save', SubmitType::class, array('label' => 'Create User'))
             ->getForm();
 
-        $User->setRoles(['ROLE_USER']);
+*/
+        $form= $this->createForm(Form\ParticulierForm::class, $User);
+        $User->addRole('ROLE_USER');
 
         $User->setDateInscription(new \DateTime('now'));
 
@@ -76,4 +81,5 @@ class InscriptionController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
 }
