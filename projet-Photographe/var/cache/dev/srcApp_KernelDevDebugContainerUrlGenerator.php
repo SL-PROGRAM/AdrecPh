@@ -34,7 +34,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'inscription' => array(array(), array('_controller' => 'App\\Controller\\InscriptionController::newPost'), array(), array(array('text', '/inscription')), array(), array()),
         'logged_in' => array(array(), array('_controller' => 'App\\Controller\\LoggedInController::index'), array(), array(array('text', '/logged/in')), array(), array()),
         'panier' => array(array(), array('_controller' => 'App\\Controller\\PanierController::index'), array(), array(array('text', '/panier')), array(), array()),
-        'particuliers' => array(array(), array('_controller' => 'App\\Controller\\ParticuliersController::index'), array(), array(array('text', '/particuliers')), array(), array()),
+        'particuliers' => array(array(), array('_controller' => 'App\\Controller\\ParticuliersController::contactAction'), array(), array(array('text', '/particuliers')), array(), array()),
         'professionels' => array(array(), array('_controller' => 'App\\Controller\\ProfessionelsController::index'), array(), array(array('text', '/professionels')), array(), array()),
         'app_login' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::login'), array(), array(array('text', '/login')), array(), array()),
         'app_logout' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::logout'), array(), array(array('text', '/logout')), array(), array()),

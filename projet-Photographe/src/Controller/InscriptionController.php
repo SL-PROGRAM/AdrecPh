@@ -2,13 +2,7 @@
 namespace App\Controller;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Validator\Constraints\DateTime;
@@ -19,6 +13,8 @@ use Symfony\Component\Security\Core\User\InMemoryUserProvider;
 use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 
 use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
+use App\Form;
+
 
 
 class InscriptionController extends AbstractController
@@ -29,18 +25,12 @@ class InscriptionController extends AbstractController
     public function newPost(Request $request)
     {
         // just setup a fresh $task object (remove the dummy data)
+
         $User = new User();
-        $form = $this->createFormBuilder($User)
-            ->add('nom', TextType::class)
-            ->add('prenom', TextType::class)
-            ->add('tel', TelType::class)
-            ->add('email', EmailType::class)
-            ->add('Password', PasswordType::class)
-            ->add('save', SubmitType::class, array('label' => 'Create User'))
-            ->getForm();
+        $form = $this->createForm(Form\ParticulierType::class, $User);
+
 
         $User->setRoles(['ROLE_USER']);
-
         $User->setDateInscription(new \DateTime('now'));
 
 
@@ -70,7 +60,7 @@ class InscriptionController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($User);
             $entityManager->flush();
-            return $this->redirectToRoute('/');
+            return $this->redirectToRoute('accueil');
         }
         return $this->render('inscription/index.html.twig', [
             'form' => $form->createView(),
