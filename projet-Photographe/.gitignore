@@ -3,6 +3,7 @@
 /public/media/cache/
 ###< liip/imagine-bundle ###
 /var/
+.env
 var/*
 .idea/
 ../.idea/
