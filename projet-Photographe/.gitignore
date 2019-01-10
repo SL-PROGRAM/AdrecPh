@@ -3,11 +3,11 @@
 /public/media/cache/
 ###< liip/imagine-bundle ###
 /var/
-.env
-var/*
+/.env
+/var/
 .idea/
 ../.idea/
-vendor/
+/vendor/
 composer.lock
 phpunit.xml
 .php_cs.cache
