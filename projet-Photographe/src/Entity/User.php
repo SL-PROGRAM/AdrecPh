@@ -6,55 +6,41 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Table(name="fos_user")
  */
-class User implements UserInterface
+class User extends BaseUser
 {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    protected $id;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=45, nullable=true)
      */
-    private $Nom;
+    protected $Nom;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=45, nullable=true)
      */
-    private $Prenom;
+    protected $Prenom;
 
     /**
      * @ORM\Column(type="string", length=10, nullable=true)
      */
-    private $Tel;
-
-    /**
-     * @ORM\Column(type="string", length=45, unique=true)
-     */
-    private $Email;
-
-    /**
-     * @var string The hashed password
-     * @ORM\Column(type="string")
-     */
-    private $Password;
+    protected $Tel;
 
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="datetime", nullable=true, options={"default" : "CURRENT_TIMESTAMP"})
      */
-    private $roles = [];
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $Date_inscription;
+    protected $Date_inscription;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Adress", mappedBy="User", orphanRemoval=true)
@@ -64,20 +50,21 @@ class User implements UserInterface
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\LivreDOr", mappedBy="User")
      */
-    private $livreDOrs;
+    protected $livreDOrs;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Galery", inversedBy="users")
      */
-    private $Galery;
+    protected $Galery;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Commande", mappedBy="User")
      */
-    private $commandes;
+    protected $commandes;
 
     public function __construct()
     {
+        parent::__construct();
         $this->adresses = new ArrayCollection();
         $this->livreDOrs = new ArrayCollection();
         $this->commandes = new ArrayCollection();
@@ -120,34 +107,6 @@ class User implements UserInterface
     public function setTel(?string $Tel): self
     {
         $this->Tel = $Tel;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->Email;
-    }
-
-    public function setEmail(string $Email): self
-    {
-        $this->Email = $Email;
-
-        return $this;
-    }
-
-
-    /**
-     * @see UserInterface
-     */
-    public function getPassword(): ?string
-    {
-        return $this->Password;
-    }
-
-    public function setPassword(string $Password): self
-    {
-        $this->Password = $Password;
 
         return $this;
     }
@@ -274,45 +233,6 @@ class User implements UserInterface
      *
      * @see UserInterface
      */
-    public function getUsername(): string
-    {
-        return (string) $this->Email;
-    }
 
-    /**
-     * @see UserInterface
-     */
-    public function getRoles(): array
-    {
-        $roles[]= $this->roles;
-        // guarantee every user at least has ROLE_USER
-       // $roles[] = 'ROLE_USER';
-
-        return array_unique($roles);
-    }
-
-    public function setRoles(array $roles): self
-    {
-        $this->roles = $roles;
-
-        return $this;
-    }
-
-    /**
-     * @see UserInterface
-     */
-    public function getSalt()
-    {
-        // not needed when using the "bcrypt" algorithm in security.yaml
-    }
-
-    /**
-     * @see UserInterface
-     */
-    public function eraseCredentials()
-    {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
-    }
 
 }

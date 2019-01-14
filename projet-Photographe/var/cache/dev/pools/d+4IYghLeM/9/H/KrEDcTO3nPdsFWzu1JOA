@@ -10,6 +10,14 @@
                 'type' => [
                     'datetime',
                 ],
+                'nullable' => [
+                    true,
+                ],
+                'options' => [
+                    [
+                        'default' => 'CURRENT_TIMESTAMP',
+                    ],
+                ],
             ],
         ],
         [
