@@ -126,7 +126,7 @@ class User extends BaseUser
     /**
      * @return Collection|Adress[]
      */
-    public function getAdresses(): Collection
+    public function getAdress(): Collection
     {
         return $this->adresses;
     }

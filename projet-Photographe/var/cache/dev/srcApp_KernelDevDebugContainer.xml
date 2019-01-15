@@ -410,7 +410,7 @@
       <parameter key="%env(resolve:USER_ADDRESS)%">%env(resolve:SENDER_NAME)%</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
-    <parameter key="fos_user.registration.form.type">FOS\UserBundle\Form\Type\RegistrationFormType</parameter>
+    <parameter key="fos_user.registration.form.type">App\Form\RegistrationType</parameter>
     <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
     <parameter key="fos_user.registration.form.validation_groups" type="collection">
       <parameter>Registration</parameter>
@@ -779,6 +779,7 @@
         <argument>Liip\ImagineBundle\Form\Type</argument>
         <argument>FOS\UserBundle\Form\Type</argument>
         <argument>App\Form</argument>
+        <argument>AppBundle\Form</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -790,7 +791,10 @@
         <argument>FOS\UserBundle\Form\Type\RegistrationFormType</argument>
         <argument>FOS\UserBundle\Form\Type\ChangePasswordFormType</argument>
         <argument>FOS\UserBundle\Form\Type\ResettingFormType</argument>
+        <argument>App\Form\AdressType</argument>
         <argument>App\Form\ParticulierForm</argument>
+        <argument>App\Form\RegistrationType</argument>
+        <argument>AppBundle\Form\RegistrationType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -985,7 +989,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.rTEEcM9"/>
+      <argument type="service" id=".service_locator.TE9iB.N"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4067,6 +4071,10 @@
         <argument>!LiipImagine</argument>
       </call>
       <call method="addPath">
+        <argument>/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/bundles/FOSUserBundle</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
         <argument>/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
         <argument>FOSUser</argument>
       </call>
@@ -4253,6 +4261,10 @@
       <call method="addPath">
         <argument>/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/liip/imagine-bundle/Resources/views</argument>
         <argument>!LiipImagine</argument>
+      </call>
+      <call method="addPath">
+        <argument>/media/julien/Stockage/php/AdrecPh/projet-Photographe/templates/bundles/FOSUserBundle</argument>
+        <argument>FOSUser</argument>
       </call>
       <call method="addPath">
         <argument>/media/julien/Stockage/php/AdrecPh/projet-Photographe/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
@@ -5175,7 +5187,7 @@
     <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
       <argument>fos_user_registration_form</argument>
-      <argument>FOS\UserBundle\Form\Type\RegistrationFormType</argument>
+      <argument>App\Form\RegistrationType</argument>
       <argument>%fos_user.registration.form.validation_groups%</argument>
     </service>
     <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
@@ -5240,7 +5252,9 @@
       <argument>/media/julien/Stockage/php/AdrecPh/projet-Photographe/var/log/dev.log</argument>
     </service>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AdressType" class="App\Form\AdressType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ParticulierForm" class="App\Form\ParticulierForm" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdressRepository" class="App\Repository\AdressRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CommandeRepository" class="App\Repository\CommandeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\FormatRepository" class="App\Repository\FormatRepository" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5276,6 +5290,9 @@
     <service id=".abstract.instanceof.App\Controller\ParticuliersController" class="App\Controller\ParticuliersController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProfessionelsController" class="App\Controller\ProfessionelsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="app.form.registration" class="AppBundle\Form\RegistrationType" autowire="true" autoconfigure="true">
+      <tag name="form.type" alias="app_user_registration"/>
+    </service>
     <service id=".service_locator.EbLunuf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5346,10 +5363,13 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.rTEEcM9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.TE9iB.N" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="AppBundle\Form\RegistrationType" type="service" id="app.form.registration"/>
+        <argument key="App\Form\AdressType" type="service" id="App\Form\AdressType"/>
         <argument key="App\Form\ParticulierForm" type="service" id="App\Form\ParticulierForm"/>
+        <argument key="App\Form\RegistrationType" type="service" id="App\Form\RegistrationType"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ProfileFormType" type="service" id="fos_user.profile.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\RegistrationFormType" type="service" id="fos_user.registration.form.type"/>
@@ -5809,8 +5829,16 @@
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AdressType" class="App\Form\AdressType" autowire="true" abstract="true"/>
+    <service id="App\Form\AdressType" class="App\Form\AdressType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ParticulierForm" class="App\Form\ParticulierForm" autowire="true" abstract="true"/>
     <service id="App\Form\ParticulierForm" class="App\Form\ParticulierForm" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" abstract="true"/>
+    <service id="App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdressRepository" class="App\Repository\AdressRepository" autowire="true" abstract="true"/>
