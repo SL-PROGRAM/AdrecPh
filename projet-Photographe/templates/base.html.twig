@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link href="asset/style.css" rel="stylesheet">
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-    <header>
-        <div class="bandeau">
-        {% include 'header/header.html' %}
-            <div class="connexion">
-                {% if is_granted('ROLE_USER') %}
-            {{ render(controller('App\\Controller\\LoggedInController::index')) }}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link href="asset/style.css" rel="stylesheet">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<header>
+    <div class="bandeau">
+        {% include 'header/index.html.twig' %}
+        <div class="connexion">
+            {% if is_granted('ROLE_USER') %}
+                {{ render(controller('App\\Controller\\LoggedInController::index')) }}
             {% else %}
-                {{ render(controller("FOSUserBundle:Security:login")) }}
+
+
+
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+
+
+                    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                    <input type="text" id="username" name="_username" required="required" autocomplete="username" />
+
+                    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+
+                    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+
+                </form>
+
+
+
                 {#{{ render(controller('App\\Controller\\SecurityController::login')) }}#}
             {% endif %}
         </div>
-        </div>
-    </header>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-        <script src="asset/script.js"></script>
-    </body>
+    </div>
+</header>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+<script src="asset/script.js"></script>
+</body>
 </html>

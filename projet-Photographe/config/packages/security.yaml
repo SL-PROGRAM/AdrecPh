@@ -21,15 +21,15 @@ security:
       security: false
     main:
       logout:
-        path:   app_logout
+        path:  /logout
       anonymous: true
-      #guard:
-       # authenticators:
-        #  - App\Security\LoginFormAuthenticator
+        #guard:
+        # authenticators:
+      #  - App\Security\LoginFormAuthenticator
 
       form_login:
-       provider: fos_userbundle
-       csrf_token_generator: security.csrf.token_manager
+        provider: fos_userbundle
+        csrf_token_generator: security.csrf.token_manager
 
       # activate different ways to authenticate
 
@@ -42,8 +42,8 @@ security:
   # Easy way to control access for large sections of your site
   # Note: Only the *first* access control that matches will be used
   access_control:
-  - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-  - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-  - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-  - { path: ^/admin/, role: ROLE_ADMIN }
+    - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/admin/, role: ROLE_ADMIN }
 

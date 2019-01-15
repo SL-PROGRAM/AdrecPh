@@ -5,6 +5,9 @@ fos_user:
   from_email:
     address: '%env(resolve:USER_ADDRESS)%'
     sender_name: '%env(resolve:SENDER_NAME)%'
+  registration:
+    form:
+      type: App\Form\RegistrationType
 framework:
   templating:
     engines: ['twig', 'php']
