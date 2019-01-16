@@ -123,6 +123,8 @@
     <parameter key="templating.engines" type="collection">
       <parameter>twig</parameter>
       <parameter>php</parameter>
+      <parameter>twig</parameter>
+      <parameter>php</parameter>
     </parameter>
     <parameter key="templating.helper.form.resources" type="collection">
       <parameter>FrameworkBundle:Form</parameter>
@@ -793,6 +795,7 @@
         <argument>FOS\UserBundle\Form\Type\ResettingFormType</argument>
         <argument>App\Form\AdressType</argument>
         <argument>App\Form\ParticulierForm</argument>
+        <argument>App\Form\ParticulierType</argument>
         <argument>App\Form\RegistrationType</argument>
         <argument>AppBundle\Form\RegistrationType</argument>
       </argument>
@@ -989,7 +992,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.TE9iB.N"/>
+      <argument type="service" id=".service_locator.x1LtptB"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1102,6 +1105,12 @@
     <service id="templating.engine.delegating" class="Symfony\Bundle\FrameworkBundle\Templating\DelegatingEngine" public="false">
       <argument type="service" id="service_container"/>
       <argument type="collection"/>
+      <call method="addEngine">
+        <argument type="service" id="templating.engine.twig"/>
+      </call>
+      <call method="addEngine">
+        <argument type="service" id="templating.engine.php"/>
+      </call>
       <call method="addEngine">
         <argument type="service" id="templating.engine.twig"/>
       </call>
@@ -3115,7 +3124,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.BVE.UfM"/>
+      <argument type="service" id=".service_locator.3Bs31se"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5252,8 +5261,12 @@
       <argument>/media/julien/Stockage/php/AdrecPh/projet-Photographe/var/log/dev.log</argument>
     </service>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="App\EventListener\PhotoUploadListener" class="App\EventListener\PhotoUploadListener" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\Service\FileUploader"/>
+    </service>
     <service id=".abstract.instanceof.App\Form\AdressType" class="App\Form\AdressType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ParticulierForm" class="App\Form\ParticulierForm" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ParticulierType" class="App\Form\ParticulierType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdressRepository" class="App\Repository\AdressRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CommandeRepository" class="App\Repository\CommandeRepository" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5265,13 +5278,13 @@
     <service id=".abstract.instanceof.App\Repository\PhotoRepository" class="App\Repository\PhotoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SitePhotoRepository" class="App\Repository\SitePhotoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SiteTextRepository" class="App\Repository\SiteTextRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\StreetTypeRepository" class="App\Repository\StreetTypeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="App\Security\LoginFormAuthenticator" class="App\Security\LoginFormAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="router.default"/>
       <argument type="service" id="security.csrf.token_manager"/>
     </service>
+    <service id="App\Service\FileUploader" class="App\Service\FileUploader" autowire="true" autoconfigure="true"/>
     <service id=".abstract.instanceof.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BackOfficePhotoController" class="App\Controller\BackOfficePhotoController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BackOfficeTextController" class="App\Controller\BackOfficeTextController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5289,21 +5302,27 @@
     <service id=".abstract.instanceof.App\Controller\PanierController" class="App\Controller\PanierController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ParticuliersController" class="App\Controller\ParticuliersController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProfessionelsController" class="App\Controller\ProfessionelsController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.user_checker"/>
+      <argument type="service" id="security.authentication.session_strategy"/>
+      <argument type="service" id="request_stack"/>
+    </service>
     <service id="app.form.registration" class="AppBundle\Form\RegistrationType" autowire="true" autoconfigure="true">
       <tag name="form.type" alias="app_user_registration"/>
     </service>
-    <service id=".service_locator.EbLunuf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.q2taRtD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
+        <argument key="user" type="service" id=".errored..service_locator.q2taRtD.FOS\UserBundle\Model\UserInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.Y2Z12on" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator._Wyuv41" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.EbLunuf"/>
-        <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\SecurityController::logInUser" type="service" id=".service_locator.q2taRtD"/>
+        <argument key="App\Controller\SecurityController:logInUser" type="service" id=".service_locator.q2taRtD"/>
       </argument>
     </service>
     <service id=".service_locator.yQVjGlt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5363,12 +5382,13 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.TE9iB.N" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.x1LtptB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Form\RegistrationType" type="service" id="app.form.registration"/>
         <argument key="App\Form\AdressType" type="service" id="App\Form\AdressType"/>
         <argument key="App\Form\ParticulierForm" type="service" id="App\Form\ParticulierForm"/>
+        <argument key="App\Form\ParticulierType" type="service" id="App\Form\ParticulierType"/>
         <argument key="App\Form\RegistrationType" type="service" id="App\Form\RegistrationType"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ProfileFormType" type="service" id="fos_user.profile.form.type"/>
@@ -5387,7 +5407,7 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.BVE.UfM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.3Bs31se" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdressRepository" type="service" id="App\Repository\AdressRepository"/>
@@ -5400,7 +5420,6 @@
         <argument key="App\Repository\PhotoRepository" type="service" id="App\Repository\PhotoRepository"/>
         <argument key="App\Repository\SitePhotoRepository" type="service" id="App\Repository\SitePhotoRepository"/>
         <argument key="App\Repository\SiteTextRepository" type="service" id="App\Repository\SiteTextRepository"/>
-        <argument key="App\Repository\StreetTypeRepository" type="service" id="App\Repository\StreetTypeRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -5837,6 +5856,10 @@
     <service id="App\Form\ParticulierForm" class="App\Form\ParticulierForm" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ParticulierType" class="App\Form\ParticulierType" autowire="true" abstract="true"/>
+    <service id="App\Form\ParticulierType" class="App\Form\ParticulierType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" abstract="true"/>
     <service id="App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -5888,11 +5911,6 @@
     </service>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SiteTextRepository" class="App\Repository\SiteTextRepository" autowire="true" abstract="true"/>
     <service id="App\Repository\SiteTextRepository" class="App\Repository\SiteTextRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StreetTypeRepository" class="App\Repository\StreetTypeRepository" autowire="true" abstract="true"/>
-    <service id="App\Repository\StreetTypeRepository" class="App\Repository\StreetTypeRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -6052,15 +6070,6 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\ProfessionelsController"/>
-      </call>
-    </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
-    <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\SecurityController"/>
       </call>
     </service>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
@@ -6550,12 +6559,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.KTVqfp6" method="withContext"/>
     </service>
-    <service id=".service_locator.KTVqfp6.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
-      <argument>App\Controller\SecurityController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.KTVqfp6" method="withContext"/>
-    </service>
     <service id="debug.validator.inner" class="Symfony\Component\Validator\Validator\ValidatorInterface" public="false">
       <factory service="validator.builder" method="getValidator"/>
     </service>
@@ -6594,10 +6597,11 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.Y2Z12on"/>
+      <argument type="service" id=".service_locator._Wyuv41"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
+    <service id=".errored..service_locator.q2taRtD.FOS\UserBundle\Model\UserInterface" class="FOS\UserBundle\Model\UserInterface"/>
     <service id=".service_locator.HKoUR8q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6969,7 +6973,7 @@
     <service id="fos_user.session" alias="session" public="false"/>
     <service id="Psr\Container\ContainerInterface" alias="service_container" public="false"/>
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Y2Z12on"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator._Wyuv41"/>
     <service id="twig.loader" alias="twig.loader.filesystem"/>
     <service id=".service_locator.STprecN" alias="templating.engine.php.helpers_locator" public="false"/>
     <service id="validator" alias="debug.validator" public="true"/>

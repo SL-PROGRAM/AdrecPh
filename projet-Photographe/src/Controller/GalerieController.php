@@ -17,7 +17,7 @@ class GalerieController extends AbstractController
         if($user == null){
             $username = "invité";
         }else{
-            $username = $this->getUser()->getPrenom();
+            $username = $this->getUser()->getUserName();
 
         }
 

@@ -21,20 +21,9 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     */
-    protected $Nom;
 
-    /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     */
-    protected $Prenom;
 
-    /**
-     * @ORM\Column(type="string", length=10, nullable=true)
-     */
-    protected $Tel;
+
 
 
     /**
@@ -75,41 +64,9 @@ class User extends BaseUser
         return $this->id;
     }
 
-    public function getNom(): ?string
-    {
-        return $this->Nom;
-    }
 
-    public function setNom(string $Nom): self
-    {
-        $this->Nom = $Nom;
 
-        return $this;
-    }
 
-    public function getPrenom(): ?string
-    {
-        return $this->Prenom;
-    }
-
-    public function setPrenom(string $Prenom): self
-    {
-        $this->Prenom = $Prenom;
-
-        return $this;
-    }
-
-    public function getTel(): ?string
-    {
-        return $this->Tel;
-    }
-
-    public function setTel(?string $Tel): self
-    {
-        $this->Tel = $Tel;
-
-        return $this;
-    }
 
     public function getDateInscription(): ?\DateTimeInterface
     {

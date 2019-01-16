@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <link href="asset/style.css" rel="stylesheet">
+    <link href="/asset/style.css" rel="stylesheet">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
@@ -31,7 +31,10 @@
                     <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
 
                     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                   <div>
+                       <a href="/register" style="text-decoration: none; color: white">Pas encore inscrit ?</a>
 
+                   </div>
                 </form>
 
 
@@ -43,6 +46,6 @@
 </header>
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
-<script src="asset/script.js"></script>
+<script src="/asset/script.js"></script>
 </body>
 </html>
