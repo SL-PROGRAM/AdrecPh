@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AdressRepository")
@@ -62,6 +64,10 @@ class Adress
      * @ORM\JoinColumn(nullable=false)
      */
     private $User;
+
+    public function __toString() {
+        return $this->getNom();
+    }
 
     public function getId(): ?int
     {

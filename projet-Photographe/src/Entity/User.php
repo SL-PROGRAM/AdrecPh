@@ -83,7 +83,7 @@ class User extends BaseUser
     /**
      * @return Collection|Adress[]
      */
-    public function getAdress(): Collection
+    public function getAdresses(): Collection
     {
         return $this->adresses;
     }
