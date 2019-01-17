@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% include 'base.html.twig' %}
 
 {% block general %}
 <!DOCTYPE html>
@@ -14,6 +14,7 @@
 
         {% block head_stylesheets %}
             <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app.css') }}">
+            <link rel="stylesheet" href="{{ asset('asset/style.css') }}">
 
             <style>
                 :root { --color-primary: {{ easyadmin_config('design.brand_color') }}; }

@@ -3,7 +3,12 @@ easy_admin:
         # List the entity class name you want to manage
         User:
             class: App\Entity\User
-
+            form:
+                fields:
+                    - 'username'
+                    - 'email'
+                    - 'adresses'
+                    - 'Galery'
         Adress:
             class: App\Entity\Adress
             form :
@@ -39,3 +44,7 @@ easy_admin:
 
         SiteText:
             class: App\Entity\SiteText
+
+    design:
+        templates:
+            layout: 'bundles/admin/layout.html.twig'
