@@ -444,6 +444,14 @@
       <parameter key="entities" type="collection">
         <parameter key="User" type="collection">
           <parameter key="class">App\Entity\User</parameter>
+          <parameter key="form" type="collection">
+            <parameter key="fields" type="collection">
+              <parameter>username</parameter>
+              <parameter>email</parameter>
+              <parameter>adresses</parameter>
+              <parameter>Galery</parameter>
+            </parameter>
+          </parameter>
           <parameter key="name">User</parameter>
         </parameter>
         <parameter key="Adress" type="collection">
@@ -475,16 +483,10 @@
           <parameter key="name">SiteText</parameter>
         </parameter>
       </parameter>
-      <parameter key="site_name">EasyAdmin</parameter>
-      <parameter key="formats" type="collection">
-        <parameter key="date">Y-m-d</parameter>
-        <parameter key="time">H:i:s</parameter>
-        <parameter key="datetime">F j, Y H:i</parameter>
-        <parameter key="dateinterval">%y Year(s) %m Month(s) %d Day(s)</parameter>
-      </parameter>
-      <parameter key="disabled_actions" type="collection"/>
-      <parameter key="translation_domain">messages</parameter>
       <parameter key="design" type="collection">
+        <parameter key="templates" type="collection">
+          <parameter key="layout">bundles/admin/layout.html.twig</parameter>
+        </parameter>
         <parameter key="brand_color">hsl(230, 55%, 60%)</parameter>
         <parameter key="form_theme" type="collection">
           <parameter>@EasyAdmin/form/bootstrap_4.html.twig</parameter>
@@ -499,6 +501,15 @@
         </parameter>
         <parameter key="menu" type="collection"/>
       </parameter>
+      <parameter key="site_name">EasyAdmin</parameter>
+      <parameter key="formats" type="collection">
+        <parameter key="date">Y-m-d</parameter>
+        <parameter key="time">H:i:s</parameter>
+        <parameter key="datetime">F j, Y H:i</parameter>
+        <parameter key="dateinterval">%y Year(s) %m Month(s) %d Day(s)</parameter>
+      </parameter>
+      <parameter key="disabled_actions" type="collection"/>
+      <parameter key="translation_domain">messages</parameter>
       <parameter key="list" type="collection">
         <parameter key="actions" type="collection"/>
         <parameter key="max_results">15</parameter>
@@ -2447,14 +2458,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
