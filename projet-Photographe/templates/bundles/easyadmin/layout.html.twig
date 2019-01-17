@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+{% block general %}
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')|first|default('en') }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noimageindex, notranslate, nocache" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta name="generator" content="EasyAdmin" />
+
+        <title>{% block page_title %}{{ block('content_title')|striptags|raw }}{% endblock %}</title>
+
+        {% block head_stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app.css') }}">
+
+            <style>
+                :root { --color-primary: {{ easyadmin_config('design.brand_color') }}; }
+            </style>
+        {% endblock %}
+
+        {% for css_asset in easyadmin_config('design.assets.css') %}
+            <link rel="stylesheet" href="{{ asset(css_asset) }}">
+        {% endfor %}
+
+        {% block head_favicon %}
+            {% set favicon = easyadmin_config('design.assets.favicon') %}
+            <link rel="icon" type="{{ favicon.mime_type }}" href="{{ asset(favicon.path) }}" />
+        {% endblock %}
+
+        {% block head_javascript %}
+            <script src="{{ asset('bundles/easyadmin/app.js') }}"></script>
+        {% endblock head_javascript %}
+
+        {% if easyadmin_config('design.rtl') %}
+            <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app-rtl.css') }}">
+        {% endif %}
+    </head>
+
+    {% block body %}
+    <body id="{% block body_id %}{% endblock %}" class="easyadmin {% block body_class %}{% endblock %}">
+        <div class="wrapper">
+        {% block wrapper %}
+            <aside class="main-sidebar">
+            {% block sidebar %}
+                <header class="main-header">
+                    {% block header %}
+                        <nav class="navbar" role="navigation">
+                            <div id="header-logo">
+                                {% block header_logo %}
+                                    <a class="logo {{ easyadmin_config('site_name')|length > 14 ? 'logo-long' }}" title="{{ easyadmin_config('site_name')|striptags }}" href="{{ path('easyadmin') }}">
+                                        {{ easyadmin_config('site_name')|raw }}
+                                    </a>
+                                {% endblock header_logo %}
+                            </div>
+                        </nav>
+                    {% endblock header %}
+                </header>
+
+                <section class="sidebar">
+                    {% block main_menu_wrapper %}
+                        {{ include([
+                            _entity_config is defined ? _entity_config.templates.menu,
+                            easyadmin_config('design.templates.menu'),
+                            '@EasyAdmin/default/menu.html.twig'
+                        ]) }}
+                    {% endblock main_menu_wrapper %}
+                </section>
+
+            {% endblock sidebar %}
+            </aside>
+
+            <div class="content-wrapper">
+                {% set _logout_path = easyadmin_logout_path() %}
+                {% set _user_has_logout = _logout_path is not empty %}
+                {% set _user_is_impersonated = is_granted('ROLE_PREVIOUS_ADMIN') %}
+                {% set _user_menu_content %}
+                    <div class="popover-content-section user-details {{ _user_has_logout or _user_is_impersonated ? 'user-has-actions' }}">
+                        <p class="small text-muted mb-0">{{ 'user.logged_in_as'|trans(domain = 'EasyAdminBundle') }}</p>
+                        <p class="user-name">
+                            {% if app.user|default(false) == false %}
+                                {{ 'user.anonymous'|trans(domain = 'EasyAdminBundle') }}
+                            {% else %}
+                                {{ app.user.username|default('user.unnamed'|trans(domain = 'EasyAdminBundle')) }}
+                            {% endif %}
+                        </p>
+                    </div>
+
+                    {% block user_menu %}
+                        {% if _user_has_logout or _user_is_impersonated %}
+                            <div class="popover-content-section user-menu">
+                                {% if _user_has_logout %}
+                                    <a class="user-action user-action-logout" href="{{ _logout_path }}">{{ 'user.signout'|trans(domain = 'EasyAdminBundle') }}</a>
+                                {% endif %}
+                                {% if _user_is_impersonated %}
+                                    <a class="user-action user-action-exit-impersonation" href="?_switch_user=_exit">{{ 'user.exit_impersonation'|trans(domain = 'EasyAdminBundle') }}</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endblock user_menu %}
+                {% endset %}
+
+                <div class="content-top navbar-custom-menu">
+                    <div class="user {{ _user_is_impersonated ? 'user-is-impersonated' }}" data-toggle="popover" data-placement="bottom" data-content="{{ _user_menu_content|e('html_attr') }}" data-html="true">
+                        <i class="fa {{ app.user is not null ? 'fa-user-circle' : 'fa-user-times' }} user-icon"></i>
+                        {{ app.user is not null ? app.user.username }}
+                    </div>
+                </div>
+
+                {% block flash_messages %}
+                    {{ include(_entity_config is defined ? _entity_config.templates.flash_messages : '@EasyAdmin/default/flash_messages.html.twig') }}
+                {% endblock flash_messages %}
+
+                {% block content %}
+                    <div class="content">
+                        {% if block('content_header')|trim is not empty %}
+                        {% set _has_content_help = _entity_config is defined and _entity_config[app.request.query.get('action')]['help']|default(false) %}
+                        <section class="content-header {{ _has_content_help ? 'has-content-help' }}">
+                            {% block content_header %}
+                                <div class="content-header-title">
+                                    <h1 class="title">{% block content_title %}{% endblock %}</h1>
+
+                                    {% block content_help %}
+                                        {% if _entity_config is defined and _entity_config[app.request.query.get('action')]['help']|default(false) %}
+                                            <div class="content-header-help">
+                                                {{ _entity_config[app.request.query.get('action')]['help']|trans(domain = _entity_config.translation_domain)|raw }}
+                                            </div>
+                                        {% endif %}
+                                    {% endblock content_help %}
+                                </div>
+
+                                {% if block('global_actions')|trim is not empty %}
+                                    <div class="global-actions">{% block global_actions %}{% endblock %}</div>
+                                {% endif %}
+
+
+                            {% endblock content_header %}
+                        </section>
+                        {% endif %}
+
+                        <section id="main" class="content-body">
+                            {% block main %}{% endblock %}
+                        </section>
+
+                        {% if block('content_footer')|trim is not empty %}
+                            <section class="content-footer">
+                                {% block content_footer %}{% endblock %}
+                            </section>
+                        {% endif %}
+                    </div>
+                {% endblock content %}
+            </div>
+        {% endblock wrapper %}
+        </div>
+
+        {% block body_javascript %}{% endblock body_javascript %}
+
+        {% for js_asset in easyadmin_config('design.assets.js') %}
+            <script src="{{ asset(js_asset) }}"></script>
+        {% endfor %}
+
+    <p>ok !!</p>
+    </body>
+    {% endblock body %}
+</html>
+{% endblock general %}

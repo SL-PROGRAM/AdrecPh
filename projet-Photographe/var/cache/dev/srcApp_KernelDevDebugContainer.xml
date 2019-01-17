@@ -454,6 +454,26 @@
           <parameter key="class">App\Entity\Galery</parameter>
           <parameter key="name">Galery</parameter>
         </parameter>
+        <parameter key="Photo" type="collection">
+          <parameter key="class">App\Entity\Photo</parameter>
+          <parameter key="name">Photo</parameter>
+        </parameter>
+        <parameter key="LivreDOr" type="collection">
+          <parameter key="class">App\Entity\LivreDOr</parameter>
+          <parameter key="name">LivreDOr</parameter>
+        </parameter>
+        <parameter key="Commande" type="collection">
+          <parameter key="class">App\Entity\Commande</parameter>
+          <parameter key="name">Commande</parameter>
+        </parameter>
+        <parameter key="SitePhoto" type="collection">
+          <parameter key="class">App\Entity\SitePhoto</parameter>
+          <parameter key="name">SitePhoto</parameter>
+        </parameter>
+        <parameter key="SiteText" type="collection">
+          <parameter key="class">App\Entity\SiteText</parameter>
+          <parameter key="name">SiteText</parameter>
+        </parameter>
       </parameter>
       <parameter key="site_name">EasyAdmin</parameter>
       <parameter key="formats" type="collection">

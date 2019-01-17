@@ -3,6 +3,9 @@
 </div>
 <div class="submenu">
     <a href="galerie" >Ma galerie</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="admin">Panneau d'administration</a>
+    {% endif %}
 </div>
 
 <form action="/logout">
