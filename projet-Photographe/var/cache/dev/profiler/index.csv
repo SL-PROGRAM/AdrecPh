@@ -121,3 +121,10 @@ e61394,127.0.0.1,GET,http://127.0.0.1:8000/admin/?action=new&entity=LivreDOr&men
 52d5c1,127.0.0.1,GET,http://127.0.0.1:8000/admin/?action=new&entity=Commande&menuIndex=5&page=1&referer=%252Fadmin%252F%253Fentity%253DCommande%2526action%253Dlist%2526menuIndex%253D5%2526submenuIndex%253D-1%2526sortField%253Did%2526sortDirection%253DDESC%2526page%253D1&sortDirection=DESC&sortField=id&submenuIndex=-1,1547738357,,200
 bc79c4,127.0.0.1,GET,http://127.0.0.1:8000/admin/?action=list&entity=SitePhoto&menuIndex=6&submenuIndex=-1,1547738368,,200
 686d08,127.0.0.1,GET,http://127.0.0.1:8000/admin/?action=list&entity=SiteText&menuIndex=7&submenuIndex=-1,1547738369,,200
+83ffff,127.0.0.1,GET,http://127.0.0.1:8000/,1547798916,,200
+32b06d,127.0.0.1,POST,http://127.0.0.1:8000/login_check,1547798924,,302
+e1f99f,127.0.0.1,GET,http://127.0.0.1:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255CLoggedInController%253A%253Aindex,1547798924,0d4352,200
+0d4352,127.0.0.1,GET,http://127.0.0.1:8000/,1547798924,,200
+97ec52,127.0.0.1,GET,http://127.0.0.1:8000/admin,1547798931,,301
+432cf5,127.0.0.1,GET,http://127.0.0.1:8000/admin/,1547798931,,302
+09cc40,127.0.0.1,GET,http://127.0.0.1:8000/admin/?action=list&entity=User,1547798931,,200
