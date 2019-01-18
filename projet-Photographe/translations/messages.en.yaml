@@ -25,4 +25,10 @@ menu :
 form:
   adress:
     firstName: "First name"
-
+    lastName: "Last name"
+    number: "Adress number"
+    adress_1: "your adress"
+    adress_2: "adress part 2"
+    cp: "Zip Code"
+    city: "City"
+    tel: "Phone"
