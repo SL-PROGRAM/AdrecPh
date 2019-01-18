@@ -393,3 +393,9 @@ b532f6,127.0.0.1,GET,http://127.0.0.1:8000/fr/asset/img/Fond-de-presentation.jpg
 76fff3,127.0.0.1,GET,http://127.0.0.1:8000/fr/asset/img/Fond-de-presentation.jpg,1547803066,,404
 9633d2,127.0.0.1,GET,http://127.0.0.1:8000/fr/asset/img/Presentation.jpg,1547803066,bd171c,200
 bd171c,127.0.0.1,GET,http://127.0.0.1:8000/fr/asset/img/Presentation.jpg,1547803066,,404
+1d783f,127.0.0.1,GET,http://127.0.0.1:8000/,1547803309,,404
+14b0e5,127.0.0.1,GET,http://127.0.0.1:8000/fr/,1547803318,,200
+db5dcc,127.0.0.1,GET,http://127.0.0.1:8000/fr/asset/img/Fond-de-presentation.jpg,1547803318,d3c9f5,200
+d3c9f5,127.0.0.1,GET,http://127.0.0.1:8000/fr/asset/img/Fond-de-presentation.jpg,1547803318,,404
+c9413a,127.0.0.1,GET,http://127.0.0.1:8000/fr/asset/img/Presentation.jpg,1547803318,8eb80e,200
+8eb80e,127.0.0.1,GET,http://127.0.0.1:8000/fr/asset/img/Presentation.jpg,1547803318,,404
