@@ -22,5 +22,7 @@ menu :
     name3: "Portraits"
     name4: "others"
 
-
+form:
+  adress:
+    firstName: "First name"
 

@@ -21,6 +21,19 @@ menu :
         name2: "Paysages"
         name3: "Portraits"
         name4: "Autres"
+form:
+    adress:
+        firstName: "Prénom"
+        lastName: "Nom"
+        number: "Numéro de rue"
+        adress_1: "Votre adresse"
+        adress_2: "Suite de l'adresse"
+        cp: "Code postal"
+        city: "Ville"
+        tel: "Téléphone"
+
+
+
 
 
 
