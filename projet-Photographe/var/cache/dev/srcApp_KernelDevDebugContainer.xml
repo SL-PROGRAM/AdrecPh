@@ -1565,6 +1565,7 @@
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml</argument>
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.en.xlf</argument>
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/easycorp/easyadmin-bundle/src/Resources/translations/messages.en.xlf</argument>
+            <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/translations/messages.en.yaml</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
@@ -1613,6 +1614,7 @@
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fr.yml</argument>
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.fr.xlf</argument>
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/easycorp/easyadmin-bundle/src/Resources/translations/messages.fr.xlf</argument>
+            <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/translations/messages.fr.yaml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
@@ -1888,6 +1890,7 @@
       <call method="setFallbackLocales">
         <argument type="collection">
           <argument>en</argument>
+          <argument>fr</argument>
           <argument>en</argument>
         </argument>
       </call>
