@@ -2595,6 +2595,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>oneup_uploader.post_persist</argument>
+        <argument type="collection">
+          <argument type="service" id="app.upload_listener"/>
+          <argument>onUpload</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service" id="response_listener"/>
@@ -6076,6 +6084,9 @@
       <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/var/log/dev.log</argument>
     </service>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="App\EventListener\UploadListener" class="App\EventListener\UploadListener" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id=".abstract.instanceof.App\Form\AdressType" class="App\Form\AdressType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ParticulierForm" class="App\Form\ParticulierForm" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ParticulierType" class="App\Form\ParticulierType" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6096,7 +6107,6 @@
       <argument type="service" id="router.default"/>
       <argument type="service" id="security.csrf.token_manager"/>
     </service>
-    <service id="App\Service\FileUploader" class="App\Service\FileUploader" autowire="true" autoconfigure="true"/>
     <service id=".abstract.instanceof.App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BackOfficePhotoController" class="App\Controller\BackOfficePhotoController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BackOfficeTextController" class="App\Controller\BackOfficeTextController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6123,6 +6133,10 @@
     </service>
     <service id="app.form.registration" class="AppBundle\Form\RegistrationType" autowire="true" autoconfigure="true">
       <tag name="form.type" alias="app_user_registration"/>
+    </service>
+    <service id="app.upload_listener" class="App\EventListener\UploadListener" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_listener" event="oneup_uploader.post_persist" method="onUpload"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id=".service_locator.q2taRtD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
