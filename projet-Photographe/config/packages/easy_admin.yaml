@@ -1,7 +1,7 @@
 easy_admin:
     entities:
         # List the entity class name you want to manage
-        User:
+        Utilisateurs:
             class: App\Entity\User
             form:
                 fields:
@@ -9,6 +9,8 @@ easy_admin:
                     - 'email'
                     - 'adresses'
                     - 'Galery'
+                    - 'roles'
+
         Adress:
             class: App\Entity\Adress
 
@@ -29,6 +31,9 @@ easy_admin:
 
         SiteText:
             class: App\Entity\SiteText
+
+        Organigramme:
+            class:  App\Entity\Organigrame
 
     design:
         templates:

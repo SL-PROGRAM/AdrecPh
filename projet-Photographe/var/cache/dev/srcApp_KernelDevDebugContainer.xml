@@ -442,7 +442,7 @@
     </parameter>
     <parameter key="easyadmin.config" type="collection">
       <parameter key="entities" type="collection">
-        <parameter key="User" type="collection">
+        <parameter key="Utilisateurs" type="collection">
           <parameter key="class">App\Entity\User</parameter>
           <parameter key="form" type="collection">
             <parameter key="fields" type="collection">
@@ -450,9 +450,10 @@
               <parameter>email</parameter>
               <parameter>adresses</parameter>
               <parameter>Galery</parameter>
+              <parameter>roles</parameter>
             </parameter>
           </parameter>
-          <parameter key="name">User</parameter>
+          <parameter key="name">Utilisateurs</parameter>
         </parameter>
         <parameter key="Adress" type="collection">
           <parameter key="class">App\Entity\Adress</parameter>
@@ -481,6 +482,10 @@
         <parameter key="SiteText" type="collection">
           <parameter key="class">App\Entity\SiteText</parameter>
           <parameter key="name">SiteText</parameter>
+        </parameter>
+        <parameter key="Organigramme" type="collection">
+          <parameter key="class">App\Entity\Organigrame</parameter>
+          <parameter key="name">Organigramme</parameter>
         </parameter>
       </parameter>
       <parameter key="design" type="collection">
