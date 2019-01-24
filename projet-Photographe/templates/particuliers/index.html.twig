@@ -1,23 +1,29 @@
 
-{% block script %}
-
-<script type="text/javascript" src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-<script src="./../../public/asset/js/dropzone.js"></script>
-
-{% endblock %}
-
 {% extends 'base.html.twig' %}
 
 
 {% block body %}
+    <script src="/asset/js/dropzone.js"></script>
+    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 
 
-    <form action="{{ oneup_uploader_endpoint('gallery') }}" class="dropzone" style="width:200px; height:200px; border:4px dashed black">
-        <div class="fallback">
-            <input name="file" type="file" multiple />
-        </div>
-    </form>
+    <p>
+        This is the most minimal example of Dropzone. The upload in this example
+        doesn't work, because there is no actual server to handle the file upload.
+    </p>
 
+
+    <!-- Change /upload-target to your upload address -->
+    <form action="/upload-target" class="dropzone"></form>
+
+
+
+    {#<script type="text/javascript" src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>#}
+    {#<script src="/asset/js/drozone.js"></script>#}
+    {#<form action="/file-upload"#}
+          {#class="dropzone"#}
+          {#id="my-awesome-dropzone"#}
+            {#style="margin-top: 400px; width: 200px; height: 200px"></form>#}
 
 
 {% endblock %}

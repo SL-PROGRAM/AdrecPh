@@ -17,6 +17,10 @@ use App\Service\FileUploader;
 
 class PhotoUploadListener
 {
+    /**
+     * @Route("/upload-target", name="upload-target")
+     */
+
     private $uploader;
 
     public function __construct(FileUploader $uploader)

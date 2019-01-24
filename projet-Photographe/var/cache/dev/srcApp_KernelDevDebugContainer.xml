@@ -599,7 +599,7 @@
     <parameter key="oneup_uploader.config.gallery" type="collection">
       <parameter key="frontend">dropzone</parameter>
       <parameter key="storage" type="collection">
-        <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/../data/uploads/</parameter>
+        <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/uploads/</parameter>
         <parameter key="service">null</parameter>
         <parameter key="type">filesystem</parameter>
         <parameter key="filesystem">null</parameter>
@@ -631,7 +631,7 @@
         <parameter key="gallery" type="collection">
           <parameter key="frontend">dropzone</parameter>
           <parameter key="storage" type="collection">
-            <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/../data/uploads/</parameter>
+            <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/uploads/</parameter>
             <parameter key="service">null</parameter>
             <parameter key="type">filesystem</parameter>
             <parameter key="filesystem">null</parameter>
@@ -5910,7 +5910,7 @@
       <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/var/cache/dev/uploader/chunks</argument>
     </service>
     <service id="oneup_uploader.storage.gallery" class="Oneup\UploaderBundle\Uploader\Storage\FilesystemStorage">
-      <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/src/../data/uploads</argument>
+      <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/src/uploads</argument>
     </service>
     <service id="oneup_uploader.controller.gallery" class="Oneup\UploaderBundle\Controller\DropzoneController" public="true">
       <tag name="oneup_uploader.routable" type="gallery"/>
@@ -5921,7 +5921,7 @@
       <argument type="collection">
         <argument key="frontend">dropzone</argument>
         <argument key="storage" type="collection">
-          <argument key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/../data/uploads</argument>
+          <argument key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/uploads</argument>
           <argument key="service">null</argument>
           <argument key="type">filesystem</argument>
           <argument key="filesystem">null</argument>
