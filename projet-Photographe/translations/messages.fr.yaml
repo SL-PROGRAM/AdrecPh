@@ -31,6 +31,10 @@ form:
         cp: "Code postal"
         city: "Ville"
         tel: "Téléphone"
+base:
+    header:
+        lien:
+            signIn: "Pas encore inscrit ?"
 
 
 

@@ -66,6 +66,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'fos_user_resetting_check_email' => array(array(), array('_controller' => 'fos_user.resetting.controller:checkEmailAction'), array(), array(array('text', '/resetting/check-email')), array(), array()),
         'fos_user_resetting_reset' => array(array('token'), array('_controller' => 'fos_user.resetting.controller:resetAction'), array(), array(array('variable', '/', '[^/]++', 'token', true), array('text', '/resetting/reset')), array(), array()),
         'fos_user_change_password' => array(array(), array('_controller' => 'fos_user.change_password.controller:changePasswordAction'), array(), array(array('text', '/profile/change-password')), array(), array()),
+        '_uploader_upload_gallery' => array(array(), array('_controller' => 'oneup_uploader.controller.gallery::upload', '_format' => 'json'), array(), array(array('text', '/_uploader/gallery/upload')), array(), array()),
     );
         }
     }

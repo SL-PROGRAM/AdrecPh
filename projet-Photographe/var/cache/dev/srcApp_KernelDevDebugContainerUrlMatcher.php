@@ -26,6 +26,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/resetting/send-email' => array(array(array('_route' => 'fos_user_resetting_send_email', '_controller' => 'fos_user.resetting.controller:sendEmailAction'), null, array('POST' => 0), null, false, false, null)),
             '/resetting/check-email' => array(array(array('_route' => 'fos_user_resetting_check_email', '_controller' => 'fos_user.resetting.controller:checkEmailAction'), null, array('GET' => 0), null, false, false, null)),
             '/profile/change-password' => array(array(array('_route' => 'fos_user_change_password', '_controller' => 'fos_user.change_password.controller:changePasswordAction'), null, array('GET' => 0, 'POST' => 1), null, false, false, null)),
+            '/_uploader/gallery/upload' => array(array(array('_route' => '_uploader_upload_gallery', '_controller' => 'oneup_uploader.controller.gallery::upload', '_format' => 'json'), null, array('POST' => 0, 'PUT' => 1, 'PATCH' => 2), null, false, false, null)),
         );
         $this->regexpList = array(
             0 => '{^(?'

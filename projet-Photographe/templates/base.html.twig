@@ -21,25 +21,27 @@
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 
 
-                    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
-                    <input type="text" id="username" name="_username" required="required" autocomplete="username" />
+                    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label><br>
+                    <input type="text" id="username" name="_username" required="required" autocomplete="username" /><br>
 
-                    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
-                    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+                    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label><br>
+                    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" /><br>
 
-                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                    <div>
+                        <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                        <a href="/register" style="text-decoration: none; color: white">{{ 'base.header.lien.signIn' | trans }}</a>
+                    </div>
 
-                    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
                    <div>
-                       <a href="/register" style="text-decoration: none; color: white">Pas encore inscrit ?</a>
+                       <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                       <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+
 
                    </div>
                 </form>
 
 
 
-                {#{{ render(controller('App\\Controller\\SecurityController::login')) }}#}
             {% endif %}
         </div>
     </div>

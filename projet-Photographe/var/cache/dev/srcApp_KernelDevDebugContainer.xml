@@ -26,6 +26,7 @@
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="EasyAdminBundle">EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle</parameter>
+      <parameter key="OneupUploaderBundle">Oneup\UploaderBundle\OneupUploaderBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -95,6 +96,10 @@
       <parameter key="EasyAdminBundle" type="collection">
         <parameter key="path">/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/easycorp/easyadmin-bundle/src</parameter>
         <parameter key="namespace">EasyCorp\Bundle\EasyAdminBundle</parameter>
+      </parameter>
+      <parameter key="OneupUploaderBundle" type="collection">
+        <parameter key="path">/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/oneup/uploader-bundle</parameter>
+        <parameter key="namespace">Oneup\UploaderBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -548,6 +553,147 @@
         <parameter key="actions" type="collection"/>
         <parameter key="max_results">10</parameter>
       </parameter>
+    </parameter>
+    <parameter key="oneup_uploader.chunks.manager.class">Oneup\UploaderBundle\Uploader\Chunk\ChunkManager</parameter>
+    <parameter key="oneup_uploader.chunks_storage.gaufrette.class">Oneup\UploaderBundle\Uploader\Chunk\Storage\GaufretteStorage</parameter>
+    <parameter key="oneup_uploader.chunks_storage.flysystem.class">Oneup\UploaderBundle\Uploader\Chunk\Storage\FlysystemStorage</parameter>
+    <parameter key="oneup_uploader.chunks_storage.filesystem.class">Oneup\UploaderBundle\Uploader\Chunk\Storage\FilesystemStorage</parameter>
+    <parameter key="oneup_uploader.namer.urlsafename.class">Oneup\UploaderBundle\Uploader\Naming\UrlSafeNamer</parameter>
+    <parameter key="oneup_uploader.namer.uniqid.class">Oneup\UploaderBundle\Uploader\Naming\UniqidNamer</parameter>
+    <parameter key="oneup_uploader.routing.loader.class">Oneup\UploaderBundle\Routing\RouteLoader</parameter>
+    <parameter key="oneup_uploader.storage.gaufrette.class">Oneup\UploaderBundle\Uploader\Storage\GaufretteStorage</parameter>
+    <parameter key="oneup_uploader.storage.flysystem.class">Oneup\UploaderBundle\Uploader\Storage\FlysystemStorage</parameter>
+    <parameter key="oneup_uploader.storage.filesystem.class">Oneup\UploaderBundle\Uploader\Storage\FilesystemStorage</parameter>
+    <parameter key="oneup_uploader.orphanage.class">Oneup\UploaderBundle\Uploader\Storage\FilesystemOrphanageStorage</parameter>
+    <parameter key="oneup_uploader.orphanage.manager.class">Oneup\UploaderBundle\Uploader\Orphanage\OrphanageManager</parameter>
+    <parameter key="oneup_uploader.controller.fineuploader.class">Oneup\UploaderBundle\Controller\FineUploaderController</parameter>
+    <parameter key="oneup_uploader.controller.blueimp.class">Oneup\UploaderBundle\Controller\BlueimpController</parameter>
+    <parameter key="oneup_uploader.controller.uploadify.class">Oneup\UploaderBundle\Controller\UploadifyController</parameter>
+    <parameter key="oneup_uploader.controller.yui3.class">Oneup\UploaderBundle\Controller\YUI3Controller</parameter>
+    <parameter key="oneup_uploader.controller.fancyupload.class">Oneup\UploaderBundle\Controller\FancyUploadController</parameter>
+    <parameter key="oneup_uploader.controller.mooupload.class">Oneup\UploaderBundle\Controller\MooUploadController</parameter>
+    <parameter key="oneup_uploader.controller.plupload.class">Oneup\UploaderBundle\Controller\PluploadController</parameter>
+    <parameter key="oneup_uploader.controller.dropzone.class">Oneup\UploaderBundle\Controller\DropzoneController</parameter>
+    <parameter key="oneup_uploader.command.clear_chunks.class">Oneup\UploaderBundle\Command\ClearChunkCommand</parameter>
+    <parameter key="oneup_uploader.command.clear_orphans.class">Oneup\UploaderBundle\Command\ClearOrphansCommand</parameter>
+    <parameter key="oneup_uploader.error_handler.noop.class">Oneup\UploaderBundle\Uploader\ErrorHandler\NoopErrorHandler</parameter>
+    <parameter key="oneup_uploader.error_handler.blueimp.class">Oneup\UploaderBundle\Uploader\ErrorHandler\BlueimpErrorHandler</parameter>
+    <parameter key="oneup_uploader.error_handler.plupload.class">Oneup\UploaderBundle\Uploader\ErrorHandler\PluploadErrorHandler</parameter>
+    <parameter key="oneup_uploader.error_handler.dropzone.class">Oneup\UploaderBundle\Uploader\ErrorHandler\DropzoneErrorHandler</parameter>
+    <parameter key="oneup_uploader.chunks" type="collection">
+      <parameter key="maxage">604800</parameter>
+      <parameter key="storage" type="collection">
+        <parameter key="type">filesystem</parameter>
+        <parameter key="filesystem">null</parameter>
+        <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/var/cache/dev/uploader/chunks</parameter>
+        <parameter key="stream_wrapper">null</parameter>
+        <parameter key="sync_buffer_size">100K</parameter>
+        <parameter key="prefix">chunks</parameter>
+      </parameter>
+      <parameter key="load_distribution">true</parameter>
+    </parameter>
+    <parameter key="oneup_uploader.orphanage" type="collection">
+      <parameter key="maxage">604800</parameter>
+      <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/var/cache/dev/uploader/orphanage</parameter>
+    </parameter>
+    <parameter key="oneup_uploader.config.gallery" type="collection">
+      <parameter key="frontend">dropzone</parameter>
+      <parameter key="storage" type="collection">
+        <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/../data/uploads/</parameter>
+        <parameter key="service">null</parameter>
+        <parameter key="type">filesystem</parameter>
+        <parameter key="filesystem">null</parameter>
+        <parameter key="stream_wrapper">null</parameter>
+        <parameter key="sync_buffer_size">100K</parameter>
+      </parameter>
+      <parameter key="custom_frontend" type="collection">
+        <parameter key="name">null</parameter>
+        <parameter key="class">null</parameter>
+      </parameter>
+      <parameter key="route_prefix"></parameter>
+      <parameter key="endpoints" type="collection">
+        <parameter key="upload">null</parameter>
+        <parameter key="progress">null</parameter>
+        <parameter key="cancel">null</parameter>
+      </parameter>
+      <parameter key="allowed_mimetypes" type="collection"/>
+      <parameter key="disallowed_mimetypes" type="collection"/>
+      <parameter key="error_handler">null</parameter>
+      <parameter key="max_size">9223372036854775807</parameter>
+      <parameter key="use_orphanage">false</parameter>
+      <parameter key="enable_progress">false</parameter>
+      <parameter key="enable_cancelation">false</parameter>
+      <parameter key="namer">oneup_uploader.namer.uniqid</parameter>
+      <parameter key="root_folder">false</parameter>
+    </parameter>
+    <parameter key="oneup_uploader.config" type="collection">
+      <parameter key="mappings" type="collection">
+        <parameter key="gallery" type="collection">
+          <parameter key="frontend">dropzone</parameter>
+          <parameter key="storage" type="collection">
+            <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/../data/uploads/</parameter>
+            <parameter key="service">null</parameter>
+            <parameter key="type">filesystem</parameter>
+            <parameter key="filesystem">null</parameter>
+            <parameter key="stream_wrapper">null</parameter>
+            <parameter key="sync_buffer_size">100K</parameter>
+          </parameter>
+          <parameter key="custom_frontend" type="collection">
+            <parameter key="name">null</parameter>
+            <parameter key="class">null</parameter>
+          </parameter>
+          <parameter key="route_prefix"></parameter>
+          <parameter key="endpoints" type="collection">
+            <parameter key="upload">null</parameter>
+            <parameter key="progress">null</parameter>
+            <parameter key="cancel">null</parameter>
+          </parameter>
+          <parameter key="allowed_mimetypes" type="collection"/>
+          <parameter key="disallowed_mimetypes" type="collection"/>
+          <parameter key="error_handler">null</parameter>
+          <parameter key="max_size">9223372036854775807</parameter>
+          <parameter key="use_orphanage">false</parameter>
+          <parameter key="enable_progress">false</parameter>
+          <parameter key="enable_cancelation">false</parameter>
+          <parameter key="namer">oneup_uploader.namer.uniqid</parameter>
+          <parameter key="root_folder">false</parameter>
+        </parameter>
+      </parameter>
+      <parameter key="chunks" type="collection">
+        <parameter key="maxage">604800</parameter>
+        <parameter key="storage" type="collection">
+          <parameter key="type">filesystem</parameter>
+          <parameter key="filesystem">null</parameter>
+          <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/var/cache/dev/uploader/chunks</parameter>
+          <parameter key="stream_wrapper">null</parameter>
+          <parameter key="sync_buffer_size">100K</parameter>
+          <parameter key="prefix">chunks</parameter>
+        </parameter>
+        <parameter key="load_distribution">true</parameter>
+      </parameter>
+      <parameter key="orphanage" type="collection">
+        <parameter key="maxage">604800</parameter>
+        <parameter key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/var/cache/dev/uploader/orphanage</parameter>
+      </parameter>
+      <parameter key="twig">true</parameter>
+    </parameter>
+    <parameter key="oneup_uploader.controllers" type="collection">
+      <parameter key="gallery" type="collection">
+        <parameter>oneup_uploader.controller.gallery</parameter>
+        <parameter type="collection">
+          <parameter key="enable_progress">false</parameter>
+          <parameter key="enable_cancelation">false</parameter>
+          <parameter key="route_prefix"></parameter>
+          <parameter key="endpoints" type="collection">
+            <parameter key="upload">null</parameter>
+            <parameter key="progress">null</parameter>
+            <parameter key="cancel">null</parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+    </parameter>
+    <parameter key="oneup_uploader.maxsize" type="collection">
+      <parameter key="gallery">2097152</parameter>
     </parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
@@ -1288,6 +1434,7 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="liip_imagine.templating.filter_helper" type="service" id="liip_imagine.templating.filter_helper"/>
+        <argument key="oneup_uploader.templating.uploader_helper" type="service" id="oneup_uploader.templating.uploader_helper"/>
         <argument key="templating.helper.actions" type="service" id="templating.helper.actions"/>
         <argument key="templating.helper.assets" type="service" id="templating.helper.assets"/>
         <argument key="templating.helper.code" type="service" id="templating.helper.code"/>
@@ -1378,6 +1525,7 @@
           <argument key="logout_url">templating.helper.logout_url</argument>
           <argument key="security">templating.helper.security</argument>
           <argument key="imagine">liip_imagine.templating.filter_helper</argument>
+          <argument key="oneup_uploader">oneup_uploader.templating.uploader_helper</argument>
         </argument>
       </call>
     </service>
@@ -1565,6 +1713,7 @@
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml</argument>
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/easycorp/easyadmin-bundle/src/Resources/translations/EasyAdminBundle.en.xlf</argument>
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/easycorp/easyadmin-bundle/src/Resources/translations/messages.en.xlf</argument>
+            <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/vendor/oneup/uploader-bundle/Resources/translations/OneupUploaderBundle.en.yml</argument>
             <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/translations/messages.en.yaml</argument>
           </argument>
           <argument key="es" type="collection">
@@ -2342,6 +2491,30 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>oneup_uploader.validation</argument>
+        <argument type="collection">
+          <argument type="service" id="oneup_uploader.validation_listener.max_size"/>
+          <argument>onValidate</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>oneup_uploader.validation</argument>
+        <argument type="collection">
+          <argument type="service" id="oneup_uploader.validation_listener.allowed_mimetype"/>
+          <argument>onValidate</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>oneup_uploader.validation</argument>
+        <argument type="collection">
+          <argument type="service" id="oneup_uploader.validation_listener.disallowed_mimetype"/>
+          <argument>onValidate</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service" id="response_listener"/>
@@ -2868,6 +3041,9 @@
       </call>
       <call method="addLoader">
         <argument type="service" id="routing.loader.service"/>
+      </call>
+      <call method="addLoader">
+        <argument type="service" id="oneup_uploader.routing.loader"/>
       </call>
       <call method="addLoader">
         <argument type="service" id="routing.loader.annotation"/>
@@ -4183,6 +4359,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="easyadmin.twig.extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="oneup_uploader.twig.extension.uploader"/>
       </call>
       <call method="addGlobal">
         <argument>app</argument>
@@ -5671,6 +5850,106 @@
       <tag name="form.type_guesser"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="oneup_uploader.chunk_manager" class="Oneup\UploaderBundle\Uploader\Chunk\ChunkManager" public="true">
+      <argument>%oneup_uploader.chunks%</argument>
+      <argument type="service" id="oneup_uploader.chunks_storage"/>
+    </service>
+    <service id="oneup_uploader.orphanage_manager" class="Oneup\UploaderBundle\Uploader\Orphanage\OrphanageManager" public="true">
+      <argument type="service" id="service_container"/>
+      <argument>%oneup_uploader.orphanage%</argument>
+    </service>
+    <service id="oneup_uploader.namer.uniqid" class="Oneup\UploaderBundle\Uploader\Naming\UniqidNamer" public="true"/>
+    <service id="oneup_uploader.namer.urlsafe" class="Oneup\UploaderBundle\Uploader\Naming\UrlSafeNamer"/>
+    <service id="oneup_uploader.routing.loader" class="Oneup\UploaderBundle\Routing\RouteLoader" public="true">
+      <tag name="routing.loader"/>
+      <argument>%oneup_uploader.controllers%</argument>
+    </service>
+    <service id="oneup_uploader.command.clear_chunks" class="Oneup\UploaderBundle\Command\ClearChunkCommand">
+      <tag name="console.command" command="oneup:uploader:clear-chunks"/>
+      <call method="setName">
+        <argument>oneup:uploader:clear-chunks</argument>
+      </call>
+    </service>
+    <service id="oneup_uploader.command.clear_orphans" class="Oneup\UploaderBundle\Command\ClearOrphansCommand">
+      <tag name="console.command" command="oneup:uploader:clear-orphans"/>
+      <call method="setName">
+        <argument>oneup:uploader:clear-orphans</argument>
+      </call>
+    </service>
+    <service id="oneup_uploader.templating.uploader_helper" class="Oneup\UploaderBundle\Templating\Helper\UploaderHelper" public="true">
+      <tag name="templating.helper" alias="oneup_uploader"/>
+      <argument type="service" id="router.default"/>
+      <argument>%oneup_uploader.maxsize%</argument>
+    </service>
+    <service id="oneup_uploader.validation_listener.max_size" class="Oneup\UploaderBundle\EventListener\MaxSizeValidationListener">
+      <tag name="kernel.event_listener" event="oneup_uploader.validation" method="onValidate"/>
+    </service>
+    <service id="oneup_uploader.validation_listener.allowed_mimetype" class="Oneup\UploaderBundle\EventListener\AllowedMimetypeAndExtensionValidationListener">
+      <tag name="kernel.event_listener" event="oneup_uploader.validation" method="onValidate"/>
+    </service>
+    <service id="oneup_uploader.validation_listener.disallowed_mimetype" class="Oneup\UploaderBundle\EventListener\DisallowedMimetypeValidationListener">
+      <tag name="kernel.event_listener" event="oneup_uploader.validation" method="onValidate"/>
+    </service>
+    <service id="oneup_uploader.error_handler.noop" class="Oneup\UploaderBundle\Uploader\ErrorHandler\NoopErrorHandler" public="false"/>
+    <service id="oneup_uploader.error_handler.fineuploader" class="Oneup\UploaderBundle\Uploader\ErrorHandler\NoopErrorHandler" public="false"/>
+    <service id="oneup_uploader.error_handler.blueimp" class="Oneup\UploaderBundle\Uploader\ErrorHandler\BlueimpErrorHandler" public="false">
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="oneup_uploader.error_handler.uploadify" class="Oneup\UploaderBundle\Uploader\ErrorHandler\NoopErrorHandler" public="false"/>
+    <service id="oneup_uploader.error_handler.yui3" class="Oneup\UploaderBundle\Uploader\ErrorHandler\NoopErrorHandler" public="false"/>
+    <service id="oneup_uploader.error_handler.fancyupload" class="Oneup\UploaderBundle\Uploader\ErrorHandler\NoopErrorHandler" public="false"/>
+    <service id="oneup_uploader.error_handler.mooupload" class="Oneup\UploaderBundle\Uploader\ErrorHandler\NoopErrorHandler" public="false"/>
+    <service id="oneup_uploader.error_handler.dropzone" class="Oneup\UploaderBundle\Uploader\ErrorHandler\DropzoneErrorHandler" public="false"/>
+    <service id="oneup_uploader.error_handler.plupload" class="Oneup\UploaderBundle\Uploader\ErrorHandler\PluploadErrorHandler" public="false"/>
+    <service id="oneup_uploader.error_handler.custom" class="Oneup\UploaderBundle\Uploader\ErrorHandler\NoopErrorHandler" public="false"/>
+    <service id="oneup_uploader.twig.extension.uploader" class="Oneup\UploaderBundle\Twig\Extension\UploaderExtension" public="true">
+      <tag name="twig.extension"/>
+      <argument type="service" id="oneup_uploader.templating.uploader_helper"/>
+    </service>
+    <service id="oneup_uploader.chunks_storage" class="Oneup\UploaderBundle\Uploader\Chunk\Storage\FilesystemStorage">
+      <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/var/cache/dev/uploader/chunks</argument>
+    </service>
+    <service id="oneup_uploader.storage.gallery" class="Oneup\UploaderBundle\Uploader\Storage\FilesystemStorage">
+      <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/src/../data/uploads</argument>
+    </service>
+    <service id="oneup_uploader.controller.gallery" class="Oneup\UploaderBundle\Controller\DropzoneController" public="true">
+      <tag name="oneup_uploader.routable" type="gallery"/>
+      <tag name="oneup_uploader.controller"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="oneup_uploader.storage.gallery"/>
+      <argument type="service" id="oneup_uploader.error_handler.dropzone"/>
+      <argument type="collection">
+        <argument key="frontend">dropzone</argument>
+        <argument key="storage" type="collection">
+          <argument key="directory">/home/sl/Symfony/AdrecPh/projet-Photographe/src/../data/uploads</argument>
+          <argument key="service">null</argument>
+          <argument key="type">filesystem</argument>
+          <argument key="filesystem">null</argument>
+          <argument key="stream_wrapper">null</argument>
+          <argument key="sync_buffer_size">100K</argument>
+        </argument>
+        <argument key="custom_frontend" type="collection">
+          <argument key="name">null</argument>
+          <argument key="class">null</argument>
+        </argument>
+        <argument key="route_prefix"></argument>
+        <argument key="endpoints" type="collection">
+          <argument key="upload">null</argument>
+          <argument key="progress">null</argument>
+          <argument key="cancel">null</argument>
+        </argument>
+        <argument key="allowed_mimetypes" type="collection"/>
+        <argument key="disallowed_mimetypes" type="collection"/>
+        <argument key="error_handler">null</argument>
+        <argument key="max_size">9223372036854775807</argument>
+        <argument key="use_orphanage">false</argument>
+        <argument key="enable_progress">false</argument>
+        <argument key="enable_cancelation">false</argument>
+        <argument key="namer">oneup_uploader.namer.uniqid</argument>
+        <argument key="root_folder">false</argument>
+      </argument>
+      <argument>gallery</argument>
+    </service>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/home/sl/Symfony/AdrecPh/projet-Photographe/var/log/dev.log</argument>
@@ -7065,7 +7344,7 @@
       </argument>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id=".service_locator.qjEBbql"/>
+      <argument type="service" id=".service_locator.9_koimF"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -7127,6 +7406,8 @@
         <argument key="fos:user:deactivate">fos_user.command.deactivate_user</argument>
         <argument key="fos:user:demote">fos_user.command.demote_user</argument>
         <argument key="fos:user:promote">fos_user.command.promote_user</argument>
+        <argument key="oneup:uploader:clear-chunks">oneup_uploader.command.clear_chunks</argument>
+        <argument key="oneup:uploader:clear-orphans">oneup_uploader.command.clear_orphans</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -7147,7 +7428,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.qjEBbql" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.9_koimF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service" id="console.command.about"/>
@@ -7216,6 +7497,8 @@
         <argument key="maker.auto_command.make_user" type="service" id="maker.auto_command.make_user"/>
         <argument key="maker.auto_command.make_validator" type="service" id="maker.auto_command.make_validator"/>
         <argument key="maker.auto_command.make_voter" type="service" id="maker.auto_command.make_voter"/>
+        <argument key="oneup_uploader.command.clear_chunks" type="service" id="oneup_uploader.command.clear_chunks"/>
+        <argument key="oneup_uploader.command.clear_orphans" type="service" id="oneup_uploader.command.clear_orphans"/>
         <argument key="security.command.user_password_encoder" type="service" id="security.command.user_password_encoder"/>
         <argument key="swiftmailer.command.debug" type="service" id="swiftmailer.command.debug"/>
         <argument key="swiftmailer.command.new_email" type="service" id="swiftmailer.command.new_email"/>
@@ -7430,7 +7713,7 @@
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container" public="false"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator._Wyuv41"/>
     <service id="twig.loader" alias="twig.loader.filesystem"/>
-    <service id=".service_locator.STprecN" alias="templating.engine.php.helpers_locator" public="false"/>
+    <service id=".service_locator._Ae2cWa" alias="templating.engine.php.helpers_locator" public="false"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default" public="false"/>
     <service id="translator" alias="translator.data_collector" public="true"/>
