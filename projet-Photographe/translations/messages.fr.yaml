@@ -1,0 +1,45 @@
+menu :
+    home:
+        particulier : "Particulier"
+        professionnel : "Professionnel"
+        galery : "Galeries"
+        contact : "Contact"
+    particulier:
+        event : "Evenement"
+        workshop : "Workshop"
+        animal : "Animal"
+        studio : "Studio"
+        playmate : "Charme"
+        lifestyle : "Life Style"
+    professionnal:
+        product : "Présentation de produit"
+        entreprise : "Présentation d'entreprise"
+        immobilier : "Photo immobiliaire"
+        event : "Couverture d'evenement"
+    galery:
+        name1: "Animaux"
+        name2: "Paysages"
+        name3: "Portraits"
+        name4: "Autres"
+form:
+    adress:
+        firstName: "Prénom"
+        lastName: "Nom"
+        number: "Numéro de rue"
+        adress_1: "Votre adresse"
+        adress_2: "Suite de l'adresse"
+        cp: "Code postal"
+        city: "Ville"
+        tel: "Téléphone"
+base:
+    header:
+        lien:
+            signIn: "Pas encore inscrit ?"
+
+
+
+
+
+
+
+

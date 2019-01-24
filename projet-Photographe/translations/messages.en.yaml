@@ -1,0 +1,41 @@
+menu :
+  home:
+    particulier : "Private Person"
+    professionnel : "Professional"
+    galery : "Galery"
+    contact : "Contact"
+  particulier:
+    event : "Event"
+    workshop : "Workshop"
+    animal : "Animals"
+    studio : "Studio"
+    playmate : "Play Mate"
+    lifestyle : "Life Style"
+  professionnal:
+    product : "Pack Shot"
+    entreprise : "Entreprise Presentation"
+    immobilier : "House picture"
+    event : "Event Photography"
+  galery:
+    name1: "Animals"
+    name2: "landscapes"
+    name3: "Portraits"
+    name4: "others"
+
+form:
+  adress:
+    firstName: "First name"
+    lastName: "Last name"
+    number: "Adress number"
+    adress_1: "your adress"
+    adress_2: "adress part 2"
+    cp: "Zip Code"
+    city: "City"
+    tel: "Phone"
+
+base:
+  header:
+      lien:
+        signIn: "Sign in !"
+
+

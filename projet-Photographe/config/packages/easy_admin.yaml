@@ -13,6 +13,17 @@ easy_admin:
 
         Adress:
             class: App\Entity\Adress
+            form :
+                fields :
+                    - 'Nom'
+                    - 'Prenom'
+                    - 'Tel'
+                    - 'Number'
+                    - 'adress_1'
+                    - 'adress_2'
+                    - 'CP'
+                    - 'City'
+                    - 'User'
 
         Galery:
             class: App\Entity\Galery
@@ -25,6 +36,10 @@ easy_admin:
 
         Commande:
             class: App\Entity\Commande
+            form:
+                fields:
+                    - 'Statut'
+                    - 'User'
 
         SitePhoto:
             class: App\Entity\SitePhoto
