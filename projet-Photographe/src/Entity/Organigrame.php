@@ -38,6 +38,10 @@ class Organigrame
      */
     private $siteTexts;
 
+    public function __toString() {
+        return $this->getPageLabel();
+    }
+
     public function __construct()
     {
         $this->sitePhotos = new ArrayCollection();
