@@ -1,18 +1,18 @@
 menu :
   home:
-    particulier : "Particular"
+    particulier : "Private Person"
     professionnel : "Professional"
     galery : "Galery"
     contact : "Contact"
   particulier:
-    event : "Evenement"
+    event : "Event"
     workshop : "Workshop"
-    animal : "Animal"
+    animal : "Animals"
     studio : "Studio"
     playmate : "Play Mate"
     lifestyle : "Life Style"
   professionnal:
-    product : "Product Presentation"
+    product : "Pack Shot"
     entreprise : "Entreprise Presentation"
     immobilier : "House picture"
     event : "Event Photography"
