@@ -19,6 +19,7 @@ class PhotoUploadListener
 {
     /**
      * @Route("/upload-target", name="upload-target")
+     * @Method("POST")
      */
 
     private $uploader;

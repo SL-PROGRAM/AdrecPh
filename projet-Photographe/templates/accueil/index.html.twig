@@ -15,20 +15,20 @@
                 <h2 id="BO-text-presentation-pro"> {{ pro.text }}</div>
             <div class="presentation-global">
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ 'asset/img/Presentation.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-1-pro">Présentation d'entreprise</P> </a>
+                    <a href="professionnel"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ entreprise.photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ entreprise.titre }} </P> </a>
                 </div>
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-2-presentation-pro" src="{{ 'asset/img/Produit.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-2-pro">Présentation de produit</P> </a>
+                    <a href="professionnel"><img class="photo-presentation" id="BO-photo-2-presentation-pro" src="{{ produit.photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-2-pro"> {{ produit.titre }} </P> </a>
                 </div>
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-3-presentation-pro" src="{{ 'asset/img/Immobilier.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-3-pro">Photo d'immobilier</P> </a>
+                    <a href="professionnel"><img class="photo-presentation" id="BO-photo-3-presentation-pro" src="{{ immobilier.photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-3-pro"> {{ immobilier.titre }} </P> </a>
                 </div>
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-4-pro">Couverture d'évenement</P> </a>
+                    <a href="professionnel"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ evenementpro.photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-4-pro"> {{ evenementpro.titre }} </P> </a>
                 </div>
             </div>
             <div class="presentation-global">
@@ -50,29 +50,29 @@
                 <h2 id="BO-text-presentation-particulier"> {{ part.text }} </div>
             <div class="presentation-global">
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-1-presentation-particulier" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-1-particulier">Evenement</P> </a>
+                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-1-presentation-particulier" src="{{ evenement.photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-1-particulier"> {{ evenement.titre }} </P> </a>
                 </div>
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-2-presentation-particulier" src="{{ 'asset/img/Workshop.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-2-particulier">Workshop</P> </a>
+                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-2-presentation-particulier" src="{{ workshop.photo  | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-2-particulier">{{ workshop.titre }}</P> </a>
                 </div>
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-3-presentation-particulier" src="{{ 'asset/img/Studio.jpg' | imagine_filter('squared_thumbnail') }}">
+                    <a src="particuliers"><img class="photo-presentation" id="BO-photo-3-presentation-particulier" src="{{ studio.photo | imagine_filter('squared_thumbnail') }}">
                         <P class="text-presentation" id="BO-titre-photo-3-particulier">Studio</P> </a>
                 </div>
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-4-presentation-particulier" src="{{ 'asset/img/Animaux.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-4-particulier">Animaux</P> </a>
+                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-4-presentation-particulier" src="{{ animaux.photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-4-particulier"> {{ animaux.titre }} </P> </a>
                 </div>
 
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-5-presentation-particulier" src="{{ 'asset/img/Presentation.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-5-particulier">Charme</P> </a>
+                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-5-presentation-particulier" src="{{ charme.photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-5-particulier"> {{ charme.titre }} </P> </a>
                 </div>
                 <div class="presentation">
-                    <a src="#"><img class="photo-presentation" id="BO-photo-6-presentation-particulier" src="{{ 'asset/img/Lifestyle.jpg' | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-6-particulier">Lifestyle</P> </a>
+                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-6-presentation-particulier" src="{{ lifestyle.photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-6-particulier"> {{ lifestyle.titre }} </P> </a>
                 </div>
             </div>
         </section>

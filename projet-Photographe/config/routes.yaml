@@ -9,11 +9,10 @@ oneup_uploader:
   resource: .
   type: uploader
 
-controllers:
-  resource: '../src/Controller/'
-  type: annotation
-  prefix: /{_locale}
-  requirements:
-    _locale: '%app.locales%'
+homepage:
+  path: /
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
   defaults:
-    _locale: '%locale%'
+    path: /fr
+    permanent: true
+

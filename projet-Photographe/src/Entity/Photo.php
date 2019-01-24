@@ -39,6 +39,9 @@ class Photo
      */
     private $sitePhotos;
 
+    public function __toString() {
+        return $this->getPath();
+    }
     public function __construct()
     {
         $this->lienPhotoImages = new ArrayCollection();

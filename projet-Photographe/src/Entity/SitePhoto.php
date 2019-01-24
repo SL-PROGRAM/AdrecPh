@@ -18,11 +18,6 @@ class SitePhoto
 
 
     /**
-     * @ORM\Column(type="string", length=45)
-     */
-    private $path;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Photo", inversedBy="sitePhotos")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -48,18 +43,6 @@ class SitePhoto
         return $this->id;
     }
 
-
-    public function getPath(): ?string
-    {
-        return $this->path;
-    }
-
-    public function setPath(string $path): self
-    {
-        $this->path = $path;
-
-        return $this;
-    }
 
     public function getPhoto(): ?Photo
     {
