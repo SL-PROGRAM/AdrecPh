@@ -5,6 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\Exception\UploadException;
+
+
 
 
 class ParticuliersController extends AbstractController
@@ -17,9 +20,10 @@ class ParticuliersController extends AbstractController
     public function contactAction(Request $request)
     {
 
-
         return $this->render('particuliers/index.html.twig', [
 
         ]);
     }
+
+
 }

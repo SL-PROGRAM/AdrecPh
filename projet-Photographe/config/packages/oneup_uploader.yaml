@@ -3,5 +3,4 @@ oneup_uploader:
     gallery:
       frontend: dropzone
       storage:
-        directory: "%kernel.root_dir%/../data/uploads/"
-#
+        directory: "%kernel.root_dir%/uploads/"
