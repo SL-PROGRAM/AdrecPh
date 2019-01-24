@@ -16,10 +16,6 @@ class SitePhoto
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=45)
-     */
-    private $Site_path;
 
     /**
      * @ORM\Column(type="string", length=45)
@@ -38,22 +34,20 @@ class SitePhoto
      */
     private $organigrame;
 
+    /**
+     * @ORM\Column(type="string", length=150)
+     */
+    private $Titre;
+
+    public function __toString() {
+        return $this->getTitre();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getSitePath(): ?string
-    {
-        return $this->Site_path;
-    }
-
-    public function setSitePath(string $Site_path): self
-    {
-        $this->Site_path = $Site_path;
-
-        return $this;
-    }
 
     public function getPath(): ?string
     {
@@ -87,6 +81,18 @@ class SitePhoto
     public function setOrganigrame(?Organigrame $organigrame): self
     {
         $this->organigrame = $organigrame;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->Titre;
+    }
+
+    public function setTitre(string $Titre): self
+    {
+        $this->Titre = $Titre;
 
         return $this;
     }

@@ -5,21 +5,14 @@
 {% block body %}
     <div class="presentation-photographe">
         <img id="BO-photo-presentation-accueil" src="/asset/img/Fond-de-presentation.jpg" alt = "Photo du photographe">
-        <p class="text-presentation-photographe"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p class="text-presentation-photographe">{{ presentation.text }}</p>
     </div>
 
     <div class="container">
         <section class="section-presentation pro">
             <div>
-                <h1> ESPACE PROFESSIONNEL</h1>
-                <h2 id="BO-text-presentation-pro"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h2>
-            </div>
+                <h1> {{ pro.titre | upper }}</h1>
+                <h2 id="BO-text-presentation-pro"> {{ pro.text }}</div>
             <div class="presentation-global">
                 <div class="presentation">
                     <a src="#"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ 'asset/img/Presentation.jpg' | imagine_filter('squared_thumbnail') }}">
@@ -53,11 +46,8 @@
         </section>
         <section class="section-presentation particulier">
             <div>
-                <h1> ESPACE  PARTICULIER</h1>
-                <h2 id="BO-text-presentation-particulier"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h2>
-            </div>
+                <h1> {{ part.titre | upper }} </h1>
+                <h2 id="BO-text-presentation-particulier"> {{ part.text }} </div>
             <div class="presentation-global">
                 <div class="presentation">
                     <a src="#"><img class="photo-presentation" id="BO-photo-1-presentation-particulier" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">
