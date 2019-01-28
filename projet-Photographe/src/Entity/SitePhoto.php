@@ -38,6 +38,7 @@ class SitePhoto
         return $this->getTitre();
     }
 
+
     public function getId(): ?int
     {
         return $this->id;

@@ -31,6 +31,7 @@ easy_admin:
         Photo:
             class: App\Entity\Photo
 
+
         LivreDOr:
             class: App\Entity\LivreDOr
 
@@ -43,6 +44,21 @@ easy_admin:
 
         SitePhoto:
             class: App\Entity\SitePhoto
+            list:
+                fields:
+                    - { property: 'Titre', type: 'string'}
+                    - { property: 'Photo', type: 'image', base_path: '/' }
+                    - { property: 'Organigrame', type: 'string'}
+
+            form:
+                show:
+                    fields:
+                        - { property: 'Photo', type: 'image', base_path: '/' }
+#            form:
+#                fields:
+#                    - 'Titre'
+#                    - 'Organigrame'
+#                    - 'Photo'
 
         SiteText:
             class: App\Entity\SiteText
