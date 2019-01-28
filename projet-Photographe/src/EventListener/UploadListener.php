@@ -9,8 +9,12 @@
 namespace App\EventListener;
 
 
+use App\Entity\Galery;
+use App\Entity\Photo;
 use Doctrine\Common\Persistence\ObjectManager;
 use Oneup\UploaderBundle\Event\PostPersistEvent;
+
+
 
 class UploadListener
 {
@@ -27,7 +31,16 @@ class UploadListener
     public function onUpload(PostPersistEvent $event)
     {
         $request = $event->getRequest();
-        $gallery = $request->get('gallery');
+        $gal = $request->get('gallery');
+        $gallery = $this->om->getRepository(Galery::class);
+        $gale = $gallery->findOneBy(['Name' => 'SitePhoto']);
+        $file = $event->getFile();
+//        $path = $file->getPath();
+        $photo = new Photo();
+        $photo->setPath('upload/bob.jpg');
+        $photo->setGalery($gale);
+        $this->om->persist($photo);
+        $this->om->flush();
 
         //if everything went fine
         $response = $event->getResponse();
