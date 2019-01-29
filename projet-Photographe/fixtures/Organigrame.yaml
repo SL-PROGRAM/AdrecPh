@@ -1,0 +1,5 @@
+App\Entity\Organigrame:
+  organigrames:
+    page_label: '<sentence()>'
+    site_path: '<url()>'
+

@@ -1,0 +1,5 @@
+app\Entity\Galery :
+  galeries:
+    Name: '<sentence()>'
+    Statut: '<randomDigitNotNull()>'
+

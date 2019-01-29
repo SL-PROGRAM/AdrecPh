@@ -1,0 +1,3 @@
+App\Entity\Format:
+  formats:
+    format: '<randomDigit()>'

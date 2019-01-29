@@ -1,0 +1,8 @@
+App\Entity\Photo:
+  photos:
+    path: '<imageUrl()>'
+    galery: '<@galeries*>'
+
+
+
+
