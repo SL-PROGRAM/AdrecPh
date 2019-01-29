@@ -35,25 +35,35 @@ class UploadListener
         $gallery = $this->om->getRepository(Galery::class);
         $gale = $gallery->findOneBy(['Name' => 'SitePhoto']);
         $file = $event->getFile();
-
         dump($gal);
         dump($file);
         dump($file->getFilename());
+
+
         $path = $file->getPath();
         dump($path);
         $photo = (new Photo())
-            ->setPath('/uploads/'.$file->getFilename())
-            ->setGalery($gale)
+                ->setPath('/uploads/'.$file->getFilename())
+                ->setGalery($gale)
         ;
+
+
         $this->om->persist($photo);
         $this->om->flush();
+
+
+
+
+
+
+
+
 
 
         //if everything went fine
         $response = $event->getResponse();
         $response['success'] = true;
         return $response;
-
 
 
     }
