@@ -1,0 +1,11 @@
+App\Entity\Adress:
+  adresses:
+    Nom: '<lastName()>'
+    Prenom: '<firstName()>'
+    Tel: '<phoneNumber()>'
+    Number: '<buildingNumber()>'
+    adress_1: '<streetName()>'
+    adress_2: '<20% streetName()>'
+    CP: '<postcode()>'
+    City: '<city()>'
+    User: '<@uses*>'

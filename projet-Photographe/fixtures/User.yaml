@@ -1,0 +1,9 @@
+App\Entity\User:
+  users{0..10}:
+    Date_inscription: '<DateTime()>'
+    Galery: '<@galeries*>'
+    username: '<name()>'
+    email: '<email()>'
+    password: '<password()>'
+
+

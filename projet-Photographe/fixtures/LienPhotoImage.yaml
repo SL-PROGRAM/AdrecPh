@@ -1,0 +1,7 @@
+App\Entity\LienPhotoImage:
+  lienphotoimages:
+    commande: '<@commandes*>'
+    photo: '<@photos*>'
+    format: '<@formats*>'
+
+
