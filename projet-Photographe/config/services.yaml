@@ -40,7 +40,7 @@ services:
             - { name: kernel.event_listener, event: oneup_uploader.post_persist, method: onUpload }
 
     app.perso_namer:
-        class: App\Controller\OneUpUploader\Naming\PersoNamer
-        public : true
+        class: App\Controller\OneUpUploader\Naming\PersoNaming
+        public: true
 
 

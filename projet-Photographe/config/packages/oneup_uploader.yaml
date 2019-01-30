@@ -17,7 +17,7 @@ oneup_uploader:
   mappings:             # Required
     gallery:
       frontend:             dropzone
-      namer:   app.perso_namer
+      namer:                app.perso_namer
       storage:
         directory: "%kernel.root_dir%/../public/uploads/"
 
