@@ -1,18 +1,64 @@
 
 {% extends 'base.html.twig' %}
-
+{% dump %}
 
 {% block body %}
     <script src="/asset/js/dropzone.js"></script>
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 
+    {#{% form_theme form '/admin/form/switch_btn_layout.html.twig' %}#}
 
+    {#{{ form_start(form) }}#}
 
+    {#{{ form_errors(form) }}#}
 
+    {#<div class="form-row">#}
+
+        {#<div class="col-md-6">#}
+            {#{{ form_row(form.name) }}#}
+            {#{{ form_row(form.categories) }}#}
+            {#{{ form_row(form.status) }}#}
+        {#</div>#}
+
+        {#<div class="col-md-6 dropzone" id="postDropzone">#}
+            {#{{ form_row(form.pictureFiles, {'attr': {'class': 'dropzone'}} ) }}#}
+
+            {#<div class="dropzone-previews" style="border: 1px solid red"></div>#}
+        {#</div>#}
+    {#</div>#}
+
+    {#<div class="form-group">#}
+        {#{{ form_row(form.content) }}#}
+    {#</div>#}
+
+    {#<div class="form-group">#}
+        {#{{ form_row(form.status) }}#}
+    {#</div>#}
+
+    {#{{ form_rest(form) }}#}
+
+    {#<button class="btn btn-success btn-lg btn-block" id="postSubmit">#}
+        {#{{ button_label|default('Save') }}#}
+    {#</button>#}
+
+    {#{{ form_end(form) }}#}
+
+    <div>
+        <p>Pour créer une nouvelle galerie : </p>
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            {{ form_widget(form) }}
+        <button formaction="particuliers" type="submit">Valider</button>
+        {{ form_end(form) }}
+    </div>
 
     <!-- Change /upload-target to your upload address -->
-    <form action="{{ oneup_uploader_endpoint('gallery') }}" class="dropzone">
-    </form>
+    <div>
+
+        <form action="{{ oneup_uploader_endpoint('gallery') }}" class="dropzone">
+        </form>
+
+    </div>
+
 
 
 

@@ -15,6 +15,7 @@ class PersoNaming implements NamerInterface
 {
     public function name(FileInterface $file)
     {
+
         return 'grumpycat.jpg';
     }
 }
