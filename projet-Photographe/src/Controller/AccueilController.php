@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Organigrame;
 use App\Entity\SitePhoto;
 use App\Entity\SiteText;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -37,14 +38,11 @@ class AccueilController extends AbstractController
 
 
 
-
-
-
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController', 'presentation' => $presentation,
             'pro' => $pro, 'part' => $part, 'entreprise' => $entreprise, 'produit' => $produit, 'immobilier' => $immobilier,
             'evenementpro' => $evenementpro, 'evenement' => $evenement, 'workshop' => $workshop, 'studio' => $studio,
-            'animaux' => $animaux , 'charme' => $charme, 'lifestyle' => $lifestyle
+            'animaux' => $animaux , 'charme' => $charme, 'lifestyle' => $lifestyle,
         ]);
     }
 }
