@@ -1,5 +1,5 @@
 App\Entity\Organigrame:
-  organigrames:
-    page_label: '<sentence()>'
-    site_path: '<url()>'
+  organigrames{0..20}:
+    page_label: '<word()>'
+    site_path: '<imageUrl()>'
 
