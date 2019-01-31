@@ -17,23 +17,23 @@ class AccueilController extends AbstractController
 
         $text = $this->getDoctrine()->getRepository(SiteText::class);
 
-        $presentation = $text->findOneBy(['Titre' => 'Presentation']);
-        $pro = $text->findOneBy(['Titre' => 'Espace Professionnel']);
-        $part = $text->findOneBy(['Titre' => 'Espace Particulier']);
+        $presentation = $text->findOneBy(['id' => '1']);
+        $pro = $text->findOneBy(['id' => '2']);
+        $part = $text->findOneBy(['id' => '3']);
 
 
         $photo = $this->getDoctrine()->getRepository(SitePhoto::class);
 
-        $entreprise = $photo->findOneBy(['Titre' => 'Entreprise']);
-        $produit = $photo->findOneBy(['Titre' => 'Packshot']);
-        $immobilier = $photo->findOneBy(['Titre' => 'Immobilier']);
-        $evenementpro = $photo->findOneBy(['Titre' => 'Couverture Evenementielle']);
-        $evenement = $photo->findOneBy(['Titre' => 'Evenement']);
-        $workshop = $photo->findOneBy(['Titre' => 'Workshop']);
-        $studio = $photo->findOneBy(['Titre' => 'Studio']);
-        $animaux = $photo->findOneBy(['Titre' => 'Animaux']);
-        $charme = $photo->findOneBy(['Titre' => 'Charme']);
-        $lifestyle = $photo->findOneBy(['Titre' => 'Lifestyle']);
+        $entreprise = $photo->findOneBy(['id' => '3']);
+        $produit = $photo->findOneBy(['id' => '4']);
+        $immobilier = $photo->findOneBy(['id' => '5']);
+        $evenementpro = $photo->findOneBy(['id' => '6']);
+        $evenement = $photo->findOneBy(['id' => '7']);
+        $workshop = $photo->findOneBy(['id' => '8']);
+        $studio = $photo->findOneBy(['id' => '9']);
+        $animaux = $photo->findOneBy(['id' => '10']);
+        $charme = $photo->findOneBy(['id' => '11']);
+        $lifestyle = $photo->findOneBy(['id' => '12']);
 
 
 
