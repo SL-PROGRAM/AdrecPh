@@ -3,33 +3,32 @@
 {% block title %}Benoit Mansanarez Photographie{% endblock %}
 
 {% block body %}
+    <div class="container">
     <div class="presentation-photographe">
         <img id="BO-photo-presentation-accueil" src="/asset/img/Fond-de-presentation.jpg" alt = "Photo du photographe">
-        <p class="text-presentation-photographe">{{ presentation.text }}</p>
+        <p class="text-presentation-photographe">{{ Text.0.text }}</p>
     </div>
 
-    <div class="container">
+                {% dump %}
+
+
         <section class="section-presentation pro">
             <div>
-                <h1> {{ pro.titre | upper }}</h1>
-                <h2 id="BO-text-presentation-pro"> {{ pro.text }}</div>
+                <h1> {{ Text.1.titre | upper }}</h1>
+                <h2 id="BO-text-presentation-pro"> {{ Text.1.text }}</div>
             <div class="presentation-global">
                 <div class="presentation">
-                    <a href="professionnel"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ entreprise.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ entreprise.titre }} </P> </a>
+
                 </div>
+                {% for item in Photo %}
+                    {% if item.0.hook in [1,2,3,4,5,6,7,8,9,10] %}
                 <div class="presentation">
-                    <a href="professionnel"><img class="photo-presentation" id="BO-photo-2-presentation-pro" src="{{ produit.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-2-pro"> {{ produit.titre }} </P> </a>
+                    <a href="professionels"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.Photo | imagine_filter('squared_thumbnail') }}">
+                        <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ item.0.titre }} </P> </a>
                 </div>
-                <div class="presentation">
-                    <a href="professionnel"><img class="photo-presentation" id="BO-photo-3-presentation-pro" src="{{ immobilier.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-3-pro"> {{ immobilier.titre }} </P> </a>
-                </div>
-                <div class="presentation">
-                    <a href="professionnel"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ evenementpro.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-4-pro"> {{ evenementpro.titre }} </P> </a>
-                </div>
+                    {% endif %}
+                {% endfor %}
+
             </div>
             <div class="presentation-global">
 
@@ -44,36 +43,23 @@
                 <img class="logo-client" src="/asset/img/Presentation.jpg">
             </div>
         </section>
+
         <section class="section-presentation particulier">
-
-                <h1> {{ part.titre | upper }} </h1>
-                <h2 id="BO-text-presentation-particulier"> {{ part.text }} </h2>
+                <div>
+                <h1> {{ Text.2.titre | upper }} </h1>
+                <h2 id="BO-text-presentation-particulier"> {{ Text.2.text }} </h2>
+                </div>
             <div class="presentation-global">
-                <div class="presentation">
-                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-1-presentation-particulier" src="{{ evenement.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-1-particulier"> {{ evenement.titre }} </P> </a>
-                </div>
-                <div class="presentation">
-                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-2-presentation-particulier" src="{{ workshop.photo  | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-2-particulier">{{ workshop.titre }}</P> </a>
-                </div>
-                <div class="presentation">
-                    <a src="particuliers"><img class="photo-presentation" id="BO-photo-3-presentation-particulier" src="{{ studio.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-3-particulier">Studio</P> </a>
-                </div>
-                <div class="presentation">
-                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-4-presentation-particulier" src="{{ animaux.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-4-particulier"> {{ animaux.titre }} </P> </a>
-                </div>
+                <div class="presentation"></div>
+                    {% for item in Photo %}
+                        {% if item.0.hook in [11,12,13,14,15,16,17,18,19,20] %}
+                            <div class="presentation">
+                                <a href="particuliers"><img class="photo-presentation" id="BO-photo-1-presentation-particulier" src="{{ item.0.Photo | imagine_filter('squared_thumbnail') }}">
+                                    <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ item.0.titre }} </P> </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
 
-                <div class="presentation">
-                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-5-presentation-particulier" src="{{ charme.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-5-particulier"> {{ charme.titre }} </P> </a>
-                </div>
-                <div class="presentation">
-                    <a href="particuliers"><img class="photo-presentation" id="BO-photo-6-presentation-particulier" src="{{ lifestyle.photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-6-particulier"> {{ lifestyle.titre }} </P> </a>
-                </div>
             </div>
         </section>
     </div>

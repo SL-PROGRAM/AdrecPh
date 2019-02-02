@@ -3,9 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SitePhotoRepository")
+
  */
 class SitePhoto
 {
@@ -33,6 +36,11 @@ class SitePhoto
      * @ORM\Column(type="string", length=150)
      */
     private $Titre;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $hook;
 
     public function __toString() {
         return $this->getTitre();
@@ -77,6 +85,18 @@ class SitePhoto
     public function setTitre(string $Titre): self
     {
         $this->Titre = $Titre;
+
+        return $this;
+    }
+
+    public function getHook(): ?int
+    {
+        return $this->hook;
+    }
+
+    public function setHook(?int $hook): self
+    {
+        $this->hook = $hook;
 
         return $this;
     }

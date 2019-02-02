@@ -54,12 +54,14 @@ easy_admin:
                     - { property: 'Titre', type: 'string'}
                     - { property: 'Photo', type: 'image', base_path: '/' }
                     - { property: 'Organigrame', type: 'string'}
+                    - 'hook'
+#                    - { property: 'photo', template : 'admin/form.html.twig'}
 
-            form:
-                fields:
-                    - { property: 'Titre'}
-                    - { property: 'photo', type_options: { block_name: 'get_image' }}
-                    - { property: 'Organigrame'}
+#            form:
+#                fields:
+#                    - { property: 'Titre', type_options: { block_name: 'custom_title' } }
+#                    - { property: 'photo', template : 'admin/form.html.twig'}
+#                    - { property: 'Organigrame'}
 
 
 #                        show:
@@ -82,4 +84,4 @@ easy_admin:
             layout: 'bundles/admin/layout.html.twig'
         form_theme:
             - '@EasyAdmin/form/bootstrap_4.html.twig'
-            - 'admin/form.html.twig'
+

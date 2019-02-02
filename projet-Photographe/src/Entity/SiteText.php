@@ -33,6 +33,11 @@ class SiteText
      */
     private $Titre;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $hook;
+
 
     public function __toString() {
         return $this->getTitre();
@@ -76,6 +81,18 @@ class SiteText
     public function setTitre(string $Titre): self
     {
         $this->Titre = $Titre;
+
+        return $this;
+    }
+
+    public function getHook(): ?int
+    {
+        return $this->hook;
+    }
+
+    public function setHook(?int $hook): self
+    {
+        $this->hook = $hook;
 
         return $this;
     }

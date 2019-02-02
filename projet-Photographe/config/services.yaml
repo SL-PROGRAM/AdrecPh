@@ -43,4 +43,8 @@ services:
         class: App\Controller\OneUpUploader\Naming\PersoNaming
         public: true
 
+    app.easy_admin_subscriber:
+        class: App\EventListener\EasyAdminListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default, priority : 100 }
 
