@@ -43,4 +43,3 @@ services:
         class: App\Controller\OneUpUploader\Naming\PersoNaming
         public: true
 
-
