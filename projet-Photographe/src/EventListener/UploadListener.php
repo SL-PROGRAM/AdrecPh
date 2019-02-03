@@ -45,8 +45,13 @@ class UploadListener
                 $adress = $value;
             }
         }
+        if (is_int( substr($adress, -2, 1))){
+            $id = substr($adress, -2, 2);
+        }
 
-        $id = substr($adress, -2, 2);
+        else{
+                $id = substr($adress, -1, 1);
+            }
 
         $num_galerie = $gallery->findOneBy(['id' => $id]);
         $file = $event->getFile();
