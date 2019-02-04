@@ -8,6 +8,7 @@
 
 namespace App\EventListener;
 
+use App\Entity\SiteText;
 use Doctrine\ORM\Events;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Mapping\PreUpdate;
@@ -52,26 +53,56 @@ class EasyAdminListener implements EventSubscriber
     public function index(LifecycleEventArgs $args)
     {
         $sitePhoto = $this->om->getRepository(SitePhoto::class);
+        $siteText = $this->om->getRepository(SiteText::class);
         $entity = $args->getObject();
-        $hook = $sitePhoto->findBy(['hook' => $entity->getHook()]);
-        foreach ($hook as $hooked){
-            if ($entity instanceof SitePhoto) {
-                if($entity->getHook() == null ){
-
-                }
-                else if (null !== $hooked && $entity->getId() !== $hooked->getId()) {
-                    $hooked->setHook(null);
-                    $this->om->persist($hooked);
-//                $this->om->merge($entity);
-                    $this->om->flush();
-                    dump($hooked);
-                    dump($entity);
-                    return $hooked;
-                }
-
-
-            }
+        if (!($entity instanceof SitePhoto) && !($entity instanceof SiteText)) {
+            return ;
         }
 
-    }
+
+        if ($entity instanceof SitePhoto)
+        {
+            $hook = $sitePhoto->findBy(['hook' => $entity->getHook()]);
+            foreach ($hook as $hooked){
+                if ($entity instanceof SitePhoto) {
+                    if($entity->getHook() == null ){
+
+                    }
+                    else if (null !== $hooked && $entity->getId() !== $hooked->getId()) {
+                        $hooked->setHook(null);
+                        $this->om->persist($hooked);
+                        $this->om->flush();
+                        dump($hooked);
+                        dump($entity);
+                        return $hooked;
+                    }
+
+
+                }
+            }
+        }elseif ($entity instanceof SiteText)
+        {
+            $hook = $siteText->findBy(['hook' => $entity->getHook()]);
+            foreach ($hook as $hooked){
+                if ($entity instanceof SiteText) {
+                    if($entity->getHook() == null ){
+
+                    }
+                    else if (null !== $hooked && $entity->getId() !== $hooked->getId()) {
+                        $hooked->setHook(null);
+                        $this->om->persist($hooked);
+                        $this->om->flush();
+                        dump($hooked);
+                        dump($entity);
+                        return $hooked;
+                    }
+
+
+                }
+            }
+
+        }
+        }
+
+
 }
