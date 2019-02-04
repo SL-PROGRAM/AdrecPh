@@ -6,7 +6,11 @@
     <div class="container">
     <div class="presentation-photographe">
         <img id="BO-photo-presentation-accueil" src="/asset/img/Fond-de-presentation.jpg" alt = "Photo du photographe">
-        <p class="text-presentation-photographe">{{ Text.0.text }}</p>
+        {% for item in Text %}
+            {% if item.hook == 1 %}
+        <p class="text-presentation-photographe">{{ item.text }}</p>
+            {% endif %}
+        {% endfor %}
     </div>
 
                 {% dump %}
@@ -14,8 +18,12 @@
 
         <section class="section-presentation pro">
             <div>
-                <h1> {{ Text.1.titre | upper }}</h1>
-                <h2 id="BO-text-presentation-pro"> {{ Text.1.text }}</div>
+                {% for item in Text %}
+                    {% if item.hook == 2 %}
+                        <h1> {{ item.titre | upper }}</h1>
+                        <h2 id="BO-text-presentation-pro"> {{ item.text }}</div>
+                    {% endif %}
+                {% endfor %}
             <div class="presentation-global">
                 <div class="presentation">
 
@@ -46,8 +54,12 @@
 
         <section class="section-presentation particulier">
                 <div>
-                <h1> {{ Text.2.titre | upper }} </h1>
-                <h2 id="BO-text-presentation-particulier"> {{ Text.2.text }} </h2>
+                    {% for item in Text %}
+                      {% if item.hook == 3 %}
+                        <h1> {{ item.titre | upper }}</h1>
+                        <h2 id="BO-text-presentation-pro"> {{ item.text }}</h2>
+                       {% endif %}
+                    {% endfor %}
                 </div>
             <div class="presentation-global">
                 <div class="presentation"></div>
