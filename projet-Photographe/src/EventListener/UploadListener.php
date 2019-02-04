@@ -32,7 +32,7 @@ class UploadListener
     {
         $adress = null;
         $request = $event->getRequest();
-        $num_galerie = $request->get('gallery');
+//        $num_galerie = $request->get('gallery');
         $gallery = $this->om->getRepository(Galery::class);
 
 
@@ -45,12 +45,17 @@ class UploadListener
                 $adress = $value;
             }
         }
-        if (is_int( substr($adress, -2, 1))){
-            $id = substr($adress, -2, 2);
+
+
+
+        $controle = (substr($adress, -2, 1));
+
+        if ($controle === '-'){
+            $id = substr($adress, -1, 1);
         }
 
         else{
-                $id = substr($adress, -1, 1);
+                $id = substr($adress, -2, 2);
             }
 
         $num_galerie = $gallery->findOneBy(['id' => $id]);

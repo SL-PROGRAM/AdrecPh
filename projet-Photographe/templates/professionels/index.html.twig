@@ -9,19 +9,19 @@
         <h2 id="BO-text-presentation-pro"> {{ pro.text }}</div>
     <div class="presentation-global">
         <div class="presentation">
-            <a href="professionnel"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ entreprise.photo | imagine_filter('squared_thumbnail') }}">
+            <a href="professionels/presentation_entreprise"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ entreprise.photo | imagine_filter('squared_thumbnail') }}">
                 <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ entreprise.titre }} </P> </a>
         </div>
         <div class="presentation">
-            <a href="professionnel"><img class="photo-presentation" id="BO-photo-2-presentation-pro" src="{{ produit.photo | imagine_filter('squared_thumbnail') }}">
+            <a href="professionels/presentation_produit"><img class="photo-presentation" id="BO-photo-2-presentation-pro" src="{{ produit.photo | imagine_filter('squared_thumbnail') }}">
                 <P class="text-presentation" id="BO-titre-photo-2-pro"> {{ produit.titre }} </P> </a>
         </div>
         <div class="presentation">
-            <a href="professionnel"><img class="photo-presentation" id="BO-photo-3-presentation-pro" src="{{ immobilier.photo | imagine_filter('squared_thumbnail') }}">
+            <a href="professionels/immobilier"><img class="photo-presentation" id="BO-photo-3-presentation-pro" src="{{ immobilier.photo | imagine_filter('squared_thumbnail') }}">
                 <P class="text-presentation" id="BO-titre-photo-3-pro"> {{ immobilier.titre }} </P> </a>
         </div>
         <div class="presentation">
-            <a href="professionnel"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ evenementpro.photo | imagine_filter('squared_thumbnail') }}">
+            <a href="professionels/evenement"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ evenementpro.photo | imagine_filter('squared_thumbnail') }}">
                 <P class="text-presentation" id="BO-titre-photo-4-pro"> {{ evenementpro.titre }} </P> </a>
         </div>
     </div>
@@ -38,15 +38,5 @@
         <img class="logo-client" src="/asset/img/Presentation.jpg">
     </div>
 </section>
-
-{#<h1> ESPACE PROFESSIONNEL</h1>#}
-{#<h2> Evevements</h2>#}
-{#<a src="#"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">#}
-{#<a src="#"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">#}
-{#<a src="#"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">#}
-{#<a src="#"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">#}
-{#<a src="#"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">#}
-{#<a src="#"><img class="photo-presentation" id="BO-photo-4-presentation-pro" src="{{ 'asset/img/Evenement.jpg' | imagine_filter('squared_thumbnail') }}">#}
-
 
 {% endblock %}
