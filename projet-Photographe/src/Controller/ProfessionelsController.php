@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Organigrame;
 use App\Entity\SitePhoto;
 use App\Entity\SiteText;
+use App\Entity\Photo;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,88 +17,60 @@ class ProfessionelsController extends AbstractController
      */
     public function index()
     {
-
-
+        $organigrame = $this->getDoctrine()->getRepository(Organigrame::class);
+        $sitePhoto = $this->getDoctrine()->getRepository(SitePhoto::class);
+        $photo = $this->getDoctrine()->getRepository(Photo::class);
         $text = $this->getDoctrine()->getRepository(SiteText::class);
 
-        $presentation = $text->findOneBy(['id' => '1']);
-        $pro = $text->findOneBy(['id' => '2']);
-        $part = $text->findOneBy(['id' => '3']);
+        $pagelabel = $organigrame->find(1);
+        $pagePhotos = $pagelabel->getSitePhotos();
+        foreach ($pagePhotos as $key => $value){
+            $pagePhoto[$value->getHook()] = [$value, $photo->findby(['id' => $value->getPhoto()]) ];
+        }
+        ksort($pagePhoto);
 
-
-        $photo = $this->getDoctrine()->getRepository(SitePhoto::class);
-
-        $entreprise = $photo->findOneBy(['id' => '3']);
-        $produit = $photo->findOneBy(['id' => '4']);
-        $immobilier = $photo->findOneBy(['id' => '5']);
-        $evenementpro = $photo->findOneBy(['id' => '6']);
-        $evenement = $photo->findOneBy(['id' => '7']);
-        $workshop = $photo->findOneBy(['id' => '8']);
-        $studio = $photo->findOneBy(['id' => '9']);
-        $animaux = $photo->findOneBy(['id' => '10']);
-        $charme = $photo->findOneBy(['id' => '11']);
-        $lifestyle = $photo->findOneBy(['id' => '12']);
-
+        $pageTexts = $pagelabel->getSiteTexts();
+        foreach ($pageTexts as $key => $value){
+            $pageText[] = $value;
+        }
+        ksort($pagePhoto);
 
         return $this->render('professionels/index.html.twig', [
-            'controller_name' => 'AccueilController', 'presentation' => $presentation,
-            'pro' => $pro, 'part' => $part, 'entreprise' => $entreprise, 'produit' => $produit, 'immobilier' => $immobilier,
-            'evenementpro' => $evenementpro, 'evenement' => $evenement, 'workshop' => $workshop, 'studio' => $studio,
-            'animaux' => $animaux, 'charme' => $charme, 'lifestyle' => $lifestyle,
+            'Photo' => $pagePhoto,
+            'Text' => $pageText,
         ]);
 
 
     }
 
     /**
-     * @Route("/professionels/presentation_entreprise", name="professionels_presentation_entreprise")
+     * @Route("/professionels/presentation-{id}", name="professionels_presentation")
      */
-    public function entreprise()
+    public function entreprise($id)
     {
+        $organigrame = $this->getDoctrine()->getRepository(Organigrame::class);
+        $sitePhoto = $this->getDoctrine()->getRepository(SitePhoto::class);
+        $photo = $this->getDoctrine()->getRepository(Photo::class);
+        $text = $this->getDoctrine()->getRepository(SiteText::class);
 
+        $pagelabel = $organigrame->find(1);
+        $pagePhotos = $pagelabel->getSitePhotos();
+        foreach ($pagePhotos as $key => $value){
+            $pagePhoto[$value->getHook()] = [$value, $photo->findby(['id' => $value->getPhoto()]) ];
+        }
+        ksort($pagePhoto);
+
+        $pageTexts = $pagelabel->getSiteTexts();
+        foreach ($pageTexts as $key => $value){
+            $pageText[$value->getHook()] = $value;
+        }
+        ksort($pagePhoto);
 
         return $this->render('professionels/detail.html.twig', [
-            'bob' => 'aaa'
+            'Photo' => $pagePhoto,
+            'Text' => $pageText,
+            'hook' => $id,
         ]);
     }
 
-    /**
-     * @Route("/professionels/presentation_produit", name="professionels_presentation_produit")
-     */
-    public function produit()
-    {
-
-
-        return $this->render('professionels/detail.html.twig', [
-            'bob' => 'bbb'
-
-        ]);
-    }
-
-
-    /**
-     * @Route("/professionels/immobilier", name="professionels_photo_immobilier")
-     */
-    public function immobilier()
-    {
-
-
-        return $this->render('professionels/detail.html.twig', [
-            'bob' => 'ccc'
-
-        ]);
-    }
-
-    /**
-     * @Route("/professionels/evenement", name="professionels_event")
-     */
-    public function event()
-    {
-
-
-        return $this->render('professionels/detail.html.twig', [
-            'bob' => 'ddd'
-
-        ]);
-    }
 }
