@@ -9,7 +9,9 @@
             <img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
         {% endif %}
     {% endfor %}
-
-
-
+    {% for item in Text %}
+        {% if item.hook == hook %}
+            <h2>{{ item.text }}</h2>
+        {% enif %}
+    {% endfor %}
 {% endblock %}
