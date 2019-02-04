@@ -59,6 +59,29 @@ class UploaderController extends AbstractController
         return $this->redirectToRoute('uploader_galeries', ['id' => $id]);
     }
 
+    /**
+     * @Route("/new", name="photo_new", methods={"GET","POST"})
+     */
+    public function new(Request $request): Response
+    {
+        $photo = new Photo();
+        $form = $this->createForm(PhotoType::class, $photo);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($photo);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('photo_index');
+        }
+
+        return $this->render('photo/new.html.twig', [
+            'photo' => $photo,
+            'form' => $form->createView(),
+        ]);
+    }
+
 
 
 

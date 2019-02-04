@@ -18,7 +18,7 @@
                 {% if elem.Galery.id ==  galeryId %}
                 <img src="{{ elem.path }}">
                     {% set photo = { 'photo': elem } %}
-                    {% include 'photo/_delete_form.html.twig' with photo %}
+                    {% include 'uploader/_delete_form.html.twig' with photo %}
                 {% endif %}
             {% endfor %}
 

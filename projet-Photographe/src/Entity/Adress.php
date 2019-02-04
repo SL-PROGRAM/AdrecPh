@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AdressRepository")
+ *
  */
 class Adress
 {
