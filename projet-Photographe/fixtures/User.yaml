@@ -1,7 +1,15 @@
 App\Entity\User:
-  users{0..10}:
+  admin:
+    email: 'admin@admin.com'
+    password: '\$argon2i\$v=19\$m=1024,t=2,p=2\$cExEcVNaMVhJMmlteHRZNA\$vdmnxFfz8opC4NYnuaaSqUwHvMv7LVjuQsj0TxwTtTc'
+    roles: '[ROLE_ADMIN]'
+    username: 'admin'
+    salt: '6I0EFTMdvzfaEN3xl9zHrQc1J//9899X39IWP3x5cz8'
     Date_inscription: '<DateTime()>'
-    Galery: '<@galeries*>'
+
+  users{1..100}:
+    Date_inscription: '<DateTime()>'
+    Galery: '@galeries*'
     username: '<name()>'
     email: '<email()>'
     password: '<password()>'

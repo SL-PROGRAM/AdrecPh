@@ -1,6 +1,7 @@
 App\Entity\SiteText:
-  sitetexts:
+  sitetexts{0..20}:
     text: '<text()>'
-    organigrame: '<@organigrames*>'
+    organigrame: '@organigrames*'
     Titre: '<sentence()>'
+
 

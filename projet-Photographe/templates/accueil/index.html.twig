@@ -1,78 +1,15 @@
 {% extends 'base.html.twig' %}
-
+{% dump %}
 {% block title %}Benoit Mansanarez Photographie{% endblock %}
 
 {% block body %}
-    <div class="container">
     <div class="presentation-photographe">
         <img id="BO-photo-presentation-accueil" src="/asset/img/Fond-de-presentation.jpg" alt = "Photo du photographe">
-        {% for item in Text %}
-            {% if item.hook == 1 %}
-        <p class="text-presentation-photographe">{{ item.text }}</p>
-            {% endif %}
-        {% endfor %}
+        <p class="text-presentation-photographe">{{ presentation.text }}</p>
     </div>
 
-                {% dump %}
-
-
-        <section class="section-presentation pro">
-            <div>
-                {% for item in Text %}
-                    {% if item.hook == 2 %}
-                        <h1> {{ item.titre | upper }}</h1>
-                        <h2 id="BO-text-presentation-pro"> {{ item.text }}</div>
-                    {% endif %}
-                {% endfor %}
-            <div class="presentation-global">
-                <div class="presentation">
-
-                </div>
-                {% for item in Photo %}
-                    {% if item.0.hook in [1,2,3,4,5,6,7,8,9,10] %}
-                <div class="presentation">
-                    <a href="professionels"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.Photo | imagine_filter('squared_thumbnail') }}">
-                        <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ item.0.titre }} </P> </a>
-                </div>
-                    {% endif %}
-                {% endfor %}
-
-            </div>
-            <div class="presentation-global">
-
-                <img class="logo-client" src="/asset/img/Presentation.jpg">
-
-                <img class="logo-client" src="/asset/img/Presentation.jpg">
-
-                <img class="logo-client" src="/asset/img/Presentation.jpg">
-
-                <img class="logo-client" src="/asset/img/Presentation.jpg">
-
-                <img class="logo-client" src="/asset/img/Presentation.jpg">
-            </div>
-        </section>
-
-        <section class="section-presentation particulier">
-                <div>
-                    {% for item in Text %}
-                      {% if item.hook == 3 %}
-                        <h1> {{ item.titre | upper }}</h1>
-                        <h2 id="BO-text-presentation-pro"> {{ item.text }}</h2>
-                       {% endif %}
-                    {% endfor %}
-                </div>
-            <div class="presentation-global">
-                <div class="presentation"></div>
-                    {% for item in Photo %}
-                        {% if item.0.hook in [11,12,13,14,15,16,17,18,19,20] %}
-                            <div class="presentation">
-                                <a href="particuliers"><img class="photo-presentation" id="BO-photo-1-presentation-particulier" src="{{ item.0.Photo | imagine_filter('squared_thumbnail') }}">
-                                    <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ item.0.titre }} </P> </a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-
-            </div>
-        </section>
+    <div class="container">
+        {% include 'professionels/index.html.twig' %}
+        {% include 'particuliers/index.html.twig' %}
     </div>
 {% endblock %}

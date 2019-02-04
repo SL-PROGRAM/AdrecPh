@@ -1,4 +1,4 @@
 App\Entity\LivreDOr:
-  livredors:
+  livredors{0..1000}:
     text: '<text()>'
-    user: '<@users*>'
+    user: '@users*'
