@@ -20,6 +20,11 @@ security:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
       security: false
     main:
+      form_login:
+        login_path: /login
+        check_path: /fr/login_check
+        provider: fos_userbundle
+        csrf_token_generator: security.csrf.token_manager
       logout:
         path:  /logout
       anonymous: true
@@ -27,9 +32,8 @@ security:
         # authenticators:
       #  - App\Security\LoginFormAuthenticator
 
-      form_login:
-        provider: fos_userbundle
-        csrf_token_generator: security.csrf.token_manager
+
+
 
       # activate different ways to authenticate
 

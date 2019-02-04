@@ -1,5 +1,5 @@
 App\Entity\Commande:
-  commandes:
+  commandes{0..200}:
     Statut: '<randomDigit()>'
     Date: '<dateTime()>'
-    User: '<@users*>'
+    User: '@users*'

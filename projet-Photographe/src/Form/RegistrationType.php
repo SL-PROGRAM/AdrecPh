@@ -13,7 +13,9 @@ use App\Entity\User;
 use App\Repository\AdressRepository;
 use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\Mapping\Entity;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormTypeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -30,18 +32,7 @@ class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $adress = new Adress();
 
-        $builder->add('nom')
-                ->add("prenom")
-                ->add('adress', CollectionType::class
-            , array(
-                        'entry_type' => AdressType::class,
-                        'entry_options' => array('label' => false),
-                        'allow_add' => true,
-
-                        ))
-        ;
     }
 
     public function getParent()

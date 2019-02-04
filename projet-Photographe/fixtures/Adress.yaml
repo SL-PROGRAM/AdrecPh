@@ -1,11 +1,12 @@
 App\Entity\Adress:
-  adresses:
+  adresses{0..50}:
     Nom: '<lastName()>'
     Prenom: '<firstName()>'
-    Tel: '<phoneNumber()>'
+    Tel: '<numberBetween(0400000010,0799999999)>'
     Number: '<buildingNumber()>'
     adress_1: '<streetName()>'
-    adress_2: '<20% streetName()>'
-    CP: '<postcode()>'
+    adress_2: '20%? <streetName()>'
+    CP: '<numberBetween(01000,99999)>'
     City: '<city()>'
-    User: '<@uses*>'
+    User: '@users*'
+

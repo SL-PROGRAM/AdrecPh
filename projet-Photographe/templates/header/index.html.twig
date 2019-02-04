@@ -1,47 +1,47 @@
 
 
-<a href="/">
-    <img class="logo" src="asset/img/logo/Logo-BM.png">
+<a href="{{ path('accueil') }}">
+    <img class="logo" src="/asset/img/logo/Logo-BM.png">
 </a>
 
 <div class="menu">
-    <a href="/">
-        <img class="signature" src="asset/img/logo/signature.png">
+    <a href="{{ path('accueil') }}">
+        <img class="signature" src="/asset/img/logo/signature.png">
     </a>
 
     <div class="aa">
         <div class="titres">
-            <p class="submenu">PARTICULIER</p>
-            <p class="submenu" >PROFESSIONEL</p>
-            <p class="submenu" >GALERIES</p>
-            <p class="submenu" >CONTACT</p>
+            <p class="submenu">{{ 'menu.home.particulier' | trans }}</p>
+            <p class="submenu" >{{ 'menu.home.professionnel' | trans }}</p>
+            <p class="submenu" >{{ 'menu.home.galery' | trans }}</p>
+            <p class="submenu" >{{ 'menu.home.contact' | trans }}</p>
         </div>
 
         <div class="titres">
             <div class="submenu">
-                <a href="particuliers">Evenement</a>
-                <a href="particuliers">Workshop</a>
-                <a href="particuliers">Studio</a>
-                <a href="particuliers">Animaux</a>
-                <a href="particuliers">Charme</a>
-                <a href="particuliers">Lifestyle</a>
+                <a href="{{ path('particuliers') }}"> {{ 'menu.particulier.event' | trans }}</a>
+                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.workshop' | trans }}</a>
+                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.studio' | trans }}</a>
+                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.animal' | trans }}</a>
+                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.playmate' | trans }}</a>
+                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.lifestyle' | trans }}</a>
             </div>
 
             <div class="submenu">
-                <a href="professionels">Présentation d'entreprise</a>
-                <a href="professionels">Présentation de produit</a>
-                <a href="professionels">Photo d'immobilier</a>
-                <a href="professionels">Couverture d'évenement</a>
+                <a href="{{ path('professionels') }}">{{ 'menu.professionnal.entreprise' | trans }}</a>
+                <a href="{{ path('professionels') }}">{{ 'menu.professionnal.product' | trans }}</a>
+                <a href="{{ path('professionels') }}">{{ 'menu.professionnal.immobilier' | trans }}</a>
+                <a href="{{ path('professionels') }}">{{ 'menu.professionnal.event' | trans }}</a>
             </div>
             <div class="submenu">
-                <a href="galerie">Croute</a>
-                <a href="galerie">Bigre</a>
-                <a href="galerie">Isseo</a>
-                <a href="galerie">...</a>
+                <a href="{{ path('galerie') }}">{{ 'menu.galery.name1' | trans }}</a>
+                <a href="{{ path('galerie') }}">{{ 'menu.galery.name2' | trans }}</a>
+                <a href="{{ path('galerie') }}">{{ 'menu.galery.name3' | trans }}</a>
+                <a href="{{ path('galerie') }}">{{ 'menu.galery.name4' | trans }}</a>
             </div>
             <div class="submenu">
-                <a href="contact">Contact</a>
-                <a>Livre d'Or</a>
+                <a href="{{ path('contact') }}">Contact</a>
+                <a href="{{ path('contact') }}">Livre d'Or</a>
             </div>
         </div>
     </div>

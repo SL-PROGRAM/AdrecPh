@@ -16,13 +16,9 @@ class SiteText
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=45)
-     */
-    private $Site_path;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $Text;
 
@@ -32,22 +28,26 @@ class SiteText
      */
     private $organigrame;
 
+    /**
+     * @ORM\Column(type="string", length=150)
+     */
+    private $Titre;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $hook;
+
+
+    public function __toString() {
+        return $this->getTitre();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getSitePath(): ?string
-    {
-        return $this->Site_path;
-    }
-
-    public function setSitePath(string $Site_path): self
-    {
-        $this->Site_path = $Site_path;
-
-        return $this;
-    }
 
     public function getText(): ?string
     {
@@ -69,6 +69,30 @@ class SiteText
     public function setOrganigrame(?Organigrame $organigrame): self
     {
         $this->organigrame = $organigrame;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->Titre;
+    }
+
+    public function setTitre(string $Titre): self
+    {
+        $this->Titre = $Titre;
+
+        return $this;
+    }
+
+    public function getHook(): ?int
+    {
+        return $this->hook;
+    }
+
+    public function setHook(?int $hook): self
+    {
+        $this->hook = $hook;
 
         return $this;
     }

@@ -2,10 +2,10 @@
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
-.env
-var/
+/var/
 .idea/
 ../.idea/
+vendor/
 composer.lock
 phpunit.xml
 .php_cs.cache

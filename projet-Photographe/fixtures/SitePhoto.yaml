@@ -1,5 +1,5 @@
 App\Entity\SitePhoto:
-  sitephotos:
-    photo: '<@photos*>'
-    organigrame: '<@organigrames*>'
+  sitephotos{0..20}:
+    photo: '@photos*'
+    organigrame: '@organigrames*'
     Titre: '<sentence()>'

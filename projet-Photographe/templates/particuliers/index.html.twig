@@ -1,20 +1,33 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% extends 'base.html.twig' %}
+{% dump %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section class="section-presentation particulier">
+        {% for item in Text  %}
+            {% if item.hook == 3 %}
+        <h1> {{ item.titre | upper }} </h1>
+        <h2 id="BO-text-presentation-particulier"> {{ item.text }} </h2>
+            {% endif %}
+        {% endfor %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <div class="presentation-global">
+            {% for item in Photo %}
+                {% if item.0.hook in [11,12,13,14,15,16,17,18,19,20] %}
+            <div class="presentation">
+                <a href="particuliers/presentation-{{ item.0.hook }}"><img class="photo-presentation" id="BO-photo-1-presentation-particulier" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
+                    <P class="text-presentation" id="BO-titre-photo-1-particulier"> {{ item.0.titre }} </P> </a>
+            </div>
+                    {% endif %}
+            {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/ParticuliersController.php'|file_link(0) }}">src/Controller/ParticuliersController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/particuliers/index.html.twig'|file_link(0) }}">templates/particuliers/index.html.twig</a></code></li>
-    </ul>
-</div>
+        </div>
+    </section>
+
+
+
+
+
+
+
 {% endblock %}

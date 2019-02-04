@@ -19,7 +19,7 @@ class Photo
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=255)
      */
     private $Path;
 
@@ -38,6 +38,12 @@ class Photo
      * @ORM\OneToMany(targetEntity="App\Entity\SitePhoto", mappedBy="photo", orphanRemoval=true)
      */
     private $sitePhotos;
+
+    public function __toString() {
+        return $this->getPath();
+    }
+
+
 
     public function __construct()
     {

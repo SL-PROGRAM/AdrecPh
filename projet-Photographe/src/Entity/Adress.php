@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AdressRepository")
@@ -16,6 +18,21 @@ class Adress
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     */
+    protected $Nom;
+
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     */
+    protected $Prenom;
+
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    protected $Tel;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -42,11 +59,6 @@ class Adress
      */
     private $City;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\StreetType", inversedBy="adresses")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $Street_type;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="adresses")
@@ -54,9 +66,37 @@ class Adress
      */
     private $User;
 
+    public function __toString() {
+        return $this->getNom();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->Nom;
+    }
+
+    public function setNom(string $Nom): self
+    {
+        $this->Nom = $Nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->Prenom;
+    }
+
+    public function setPrenom(string $Prenom): self
+    {
+        $this->Prenom = $Prenom;
+
+        return $this;
     }
 
     public function getNumber(): ?int
@@ -119,18 +159,6 @@ class Adress
         return $this;
     }
 
-    public function getStreetType(): ?StreetType
-    {
-        return $this->Street_type;
-    }
-
-    public function setStreetType(?StreetType $Street_type): self
-    {
-        $this->Street_type = $Street_type;
-
-        return $this;
-    }
-
     public function getUser(): ?User
     {
         return $this->User;
@@ -142,4 +170,17 @@ class Adress
 
         return $this;
     }
+
+    public function getTel(): ?string
+    {
+        return $this->Tel;
+    }
+
+    public function setTel(?string $Tel): self
+    {
+        $this->Tel = $Tel;
+
+        return $this;
+    }
+
 }

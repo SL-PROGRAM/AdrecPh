@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% dump %}
+
+{% block body %}
+
+    {% for item in Photo %}
+        {% if item.0.hook == hook %}
+            <h1>{{ item.0.titre }}</h1>
+            <img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
+        {% endif %}
+    {% endfor %}
+
+
+
+{% endblock %}

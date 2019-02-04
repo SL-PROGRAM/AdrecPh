@@ -1,0 +1,87 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+        Utilisateurs:
+            class: App\Entity\User
+            form:
+                fields:
+                    - 'username'
+                    - 'email'
+                    - 'adresses'
+                    - 'Galery'
+                    - 'roles'
+
+        Adress:
+            class: App\Entity\Adress
+            form :
+                fields :
+                    - 'Nom'
+                    - 'Prenom'
+                    - 'Tel'
+                    - 'Number'
+                    - 'adress_1'
+                    - 'adress_2'
+                    - 'CP'
+                    - 'City'
+                    - 'User'
+
+        Galery:
+            class: App\Entity\Galery
+
+        Photo:
+            class: App\Entity\Photo
+            list:
+                fields:
+                    - { property: 'Path', type: 'image', base_path: '/' }
+                    - { property: 'galery', sortable : true }
+
+
+
+        LivreDOr:
+            class: App\Entity\LivreDOr
+
+        Commande:
+            class: App\Entity\Commande
+            form:
+                fields:
+                    - 'Statut'
+                    - 'User'
+
+        SitePhoto:
+            class: App\Entity\SitePhoto
+            list:
+                fields:
+                    - { property: 'Titre', type: 'string'}
+                    - { property: 'Photo', type: 'image', base_path: '/' }
+                    - { property: 'Organigrame', type: 'string'}
+                    - 'hook'
+#                    - { property: 'photo', template : 'admin/form.html.twig'}
+
+#            form:
+#                fields:
+#                    - { property: 'Titre', type_options: { block_name: 'custom_title' } }
+#                    - { property: 'photo', template : 'admin/form.html.twig'}
+#                    - { property: 'Organigrame'}
+
+
+#                        show:
+#                            fields:
+#                                - { property: 'Photo', type: 'image', base_path: '/' }
+#            form:
+#                fields:
+#                    - 'Titre'
+#                    - 'Organigrame'
+#                    - 'Photo'
+
+        SiteText:
+            class: App\Entity\SiteText
+
+        Organigramme:
+            class:  App\Entity\Organigrame
+
+    design:
+        templates:
+            layout: 'bundles/admin/layout.html.twig'
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+
