@@ -1,9 +1,10 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 {% endblock %}
+{% dump %}
 
 
-<form action="{{ oneup_uploader_endpoint('gallery') }}" method="post" class="dropzone">
+<form action="{{ oneup_uploader_endpoint('gallery') }}?id={{ galeryId }}" method="post" class="dropzone">
 </form>
 
 
