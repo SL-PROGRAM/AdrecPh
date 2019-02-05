@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\GaleryRepository;
+use App\Repository\PhotoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
@@ -12,12 +13,10 @@ class GalerieController extends AbstractController
     /**
      * @Route("/galerie", name="galerie")
      */
-    public function index(GaleryRepository $galeryRepository)
+    public function index(PhotoRepository $photoRepository, GaleryRepository $galeryRepository)
     {
-        $galeryRepository->findAll();
-
-
-
+        $photos = $photoRepository->findAll();
+        $galeries = $galeryRepository->findAll();
 
 
         $user = $this->getUser();
@@ -30,13 +29,15 @@ class GalerieController extends AbstractController
 
         return $this->render('galerie/index.html.twig', [
             'user' => $username,
+            'photos' => $photos,
+            'galeries' => $galeries,
         ]);
     }
 
     /**
-     * @Route("/galerie", name="galerie_image")
+     * @Route("/galerie/galery-{id}", name="galerie_image")
      */
-    public function galery()
+    public function galery($id)
     {
         $user = $this->getUser();
         if($user == null){

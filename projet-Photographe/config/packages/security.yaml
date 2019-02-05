@@ -21,7 +21,7 @@ security:
       security: false
     main:
       form_login:
-        login_path: /login
+        login_path: /fr/login
         check_path: /fr/login_check
         provider: fos_userbundle
         csrf_token_generator: security.csrf.token_manager

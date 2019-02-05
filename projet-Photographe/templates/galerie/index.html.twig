@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% dump %}
 {% block title %}Bonjour {{ user | capitalize }} !{% endblock %}
 
 {% block head %}
@@ -14,17 +14,30 @@
 {% block body %}
 
 <div id="galerie-menu">
-    <nav><a href="#" tabindex="0" title="Allez, vas y!"    ><img src="http://lorempixel.com/400/300/sports/1/"  alt="sport 1"  />
-        </a><a href="#" tabindex="0" title="J'y vais"         ><img src="http://lorempixel.com/400/300/sports/2/"  alt="sport 2"  />
-        </a><a href="#" tabindex="0" title="Tenir la distance"><img src="http://lorempixel.com/400/300/sports/3/"  alt="sport 3"  />
-        </a><a href="#" tabindex="0" title="Surf"             ><img src="http://lorempixel.com/400/300/sports/4/"  alt="sport 4"  />
-        </a><a href="#" tabindex="0" title="Sur du velours   "><img src="http://lorempixel.com/400/300/sports/5/"  alt="sport 5"  />
-        </a><a href="#" tabindex="0" title="Couché de soleil" ><img src="http://lorempixel.com/400/300/sports/6/"  alt="sport 6"  />
-        </a><a href="#" tabindex="0" title="Plongez!"         ><img src="http://lorempixel.com/400/300/sports/7/"  alt="sport 7"  />
-        </a><a href="#" tabindex="0" title="Je vole !"        ><img src="http://lorempixel.com/400/300/sports/8/"  alt="sport 8"  />
-        </a><a href="#" tabindex="0" title="1er jusqu'au bout"><img src="http://lorempixel.com/400/300/sports/9/"  alt="sport 9"  />
-        </a><a href="#" tabindex="0" title="Prêt, contact !"  ><img src="http://lorempixel.com/400/300/sports/10/" alt="sport 10" />
-        </a></nav>
+    <nav>
+        {% for item in galeries %}
+            {% if item.Statut == 0 %}
+        <a href="{{ item.id }}" tabindex="0" title="{{ item.name }}"    ><img src="http://lorempixel.com/300/300/sports/1/"  alt="sport 1"  />
+        </a>
+            {% endif %}
+        {% endfor %}
+    </nav>
 </div>
+
+<div>
+    {% for item in galeries %}
+        {% if item.Statut == 0 %}
+             <div>
+                <a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>
+            </div>
+            {% for elem in photos %}
+                {% if item.name == elem.galery.name %}
+                    <img src="{{ elem.Path }}"/>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</div>
+
 
 {% endblock %}

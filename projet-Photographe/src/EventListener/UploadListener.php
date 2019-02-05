@@ -35,28 +35,9 @@ class UploadListener
 //        $num_galerie = $request->get('gallery');
         $gallery = $this->om->getRepository(Galery::class);
 
+        //recuperation id passer en get
+        $id = $request->query->get('id');
 
-
-        /*
-         * recupération du numero de la galerie via l'adress url d'appel du listener
-         */
-        foreach ($_SERVER as $item => $value){
-            if ($item === "HTTP_REFERER"){
-                $adress = $value;
-            }
-        }
-
-
-
-        $controle = (substr($adress, -2, 1));
-
-        if ($controle === '-'){
-            $id = substr($adress, -1, 1);
-        }
-
-        else{
-                $id = substr($adress, -2, 2);
-            }
 
         $num_galerie = $gallery->findOneBy(['id' => $id]);
         $file = $event->getFile();
