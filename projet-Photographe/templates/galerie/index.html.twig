@@ -17,22 +17,27 @@
     <nav>
         {% for item in galeries %}
             {% if item.Statut == 0 %}
-        <a href="{{ item.id }}" tabindex="0" title="{{ item.name }}"    ><img src="http://lorempixel.com/300/300/sports/1/"  alt="sport 1"  />
+        <a href="/fr/galerie/galery-{{ item.id }}" tabindex="0" title="{{ item.name }}"    ><img src="{{ item.photos.0.path}}"  alt="sport 1"  />
         </a>
             {% endif %}
         {% endfor %}
     </nav>
 </div>
 
-<div>
-    {% for item in galeries %}
+    <div id="fullSize" class ="hide"  onclick="hide()"> </div>
+
+
+    <div class="thumbnail">
+    {% for item in galerie %}
         {% if item.Statut == 0 %}
              <div>
                 <a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>
             </div>
             {% for elem in photos %}
                 {% if item.name == elem.galery.name %}
-                    <img src="{{ elem.Path }}"/>
+                    <a class="zoom" href="#" onclick="show(this.title)" title={{ elem.Path }}>
+                    <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
+                    </a>
                 {% endif %}
             {% endfor %}
         {% endif %}
