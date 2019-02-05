@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 
 class UploaderController extends AbstractController
 {
@@ -50,6 +52,10 @@ class UploaderController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$photo->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+            $fileSystem = new Filesystem();
+            $file = $photo->getPath();
+            $file = substr($file, 1);
+            $fileSystem->remove([$file]);
             $entityManager->remove($photo);
             $entityManager->flush();
             $id = $photo->getGalery()->getId();
