@@ -35,9 +35,9 @@ class GalerieController extends AbstractController
     }
 
     /**
-     * @Route("/galerie", name="galerie_image")
+     * @Route("/galerie/galery-{id}", name="galerie_image")
      */
-    public function galery()
+    public function galery($id)
     {
         $user = $this->getUser();
         if($user == null){
