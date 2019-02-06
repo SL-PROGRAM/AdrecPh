@@ -189,6 +189,7 @@ header{
 #galerie-menu
 {
     height:300px;
+    width: 50%;
     margin:3em auto;
     border:solid;
     border-radius:5px;
@@ -202,7 +203,7 @@ header{
 {
     display:inline-block;
     vertical-align:top;
-    width:100px;
+    width:200px;
     height:300px;
     overflow:hidden;
     position:relative;
@@ -229,7 +230,7 @@ header{
 {
     content:attr(title);
     text-align:center;
-    height:100px;
+    height:30px;
     width:300px;
     position:absolute;
     bottom:0;
@@ -244,7 +245,7 @@ header{
 }
 #galerie-menu , #galerie-menu a
 {
-    height:100px;
+    height:200px;
     transitions:1s;
 }
 #galerie-menu:hover , #galerie-menu:hover  a
