@@ -35,7 +35,7 @@
             </div>
             {% for elem in photos %}
                 {% if item.name == elem.galery.name %}
-                    <a class="zoom"  onclick="show(this.name)" name="{{ elem.Path }}">
+                    <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">
                     <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
                     </a>
                 {% endif %}
