@@ -1,3 +1,4 @@
+
 {% extends 'base.html.twig' %}
 {% dump %}
 
@@ -6,12 +7,38 @@
     {% for item in Photo %}
         {% if item.0.hook == hook %}
             <h1>{{ item.0.titre }}</h1>
-            <img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
+            <img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('my_watermark_filter') }}">
         {% endif %}
     {% endfor %}
-    {% for item in Text %}
-        {% if item.hook == hook %}
-            <h2>{{ item.text }}</h2>
-        {% enif %}
-    {% endfor %}
+
+
+    <div class="form-container">
+
+        <form class="form">
+            {% for elem in Text %}
+                {% if elem.hook == hook %}
+                    <h2>{{ elem.text }}</h2>
+                {% endif %}
+            {% endfor %}
+
+            {#<div class="radio">#}
+            {#<label for="Particulier">Particulier</label>#}
+            {#<input type="radio" name="Choice" value="Particulier">#}
+            {#<label for="Professionel">Professionel</label>#}
+            {#<input type="radio" name="Choice" value="Professionel">#}
+            {#</div>#}
+            <div class="input">
+                <input type="text" placeholder="Prénom" required>
+                <input type="text" placeholder="Nom" required>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Téléphone" required>
+                <input type="text" placeholder="E mail" required>
+            </div>
+            <div class="textarea">
+                <textarea rows="10" cols="50" placeholder="Entrer votre texte"></textarea>
+            </div>
+            <button class="button">Envoyer</button>
+        </form>
+    </div>
 {% endblock %}

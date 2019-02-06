@@ -13,7 +13,7 @@
         {% endfor %}
     <div class="presentation-global">
         {% for item in Photo %}
-            {% if item.0.hook in [1,2,3,4,5,6,7,8,9,10] %}
+            {% if item.0.hook in [1,2,3,4,5,6,7,8,9,10] and item.0.Organigrame == 'Accueil' %}
         <div class="presentation">
             <a href=" professionels/presentation-{{ item.0.hook }}"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
                 <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ item.0.titre }} </P> </a>

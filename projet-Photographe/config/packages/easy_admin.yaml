@@ -33,9 +33,10 @@ easy_admin:
             list:
                 fields:
                     - { property: 'Path', type: 'image', base_path: '/' }
-                    - { property: 'galery', sortable : true }
-
-
+                    - 'galery'
+            search:
+                fields:
+                    - 'galery'
 
         LivreDOr:
             class: App\Entity\LivreDOr

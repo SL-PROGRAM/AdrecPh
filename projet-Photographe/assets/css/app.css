@@ -1,7 +1,3 @@
-body {
-    background-color: lightgray;
-}
-
 a {
     transition: display 1s;
 }
@@ -10,15 +6,13 @@ a {
     width : 300px;
     height : auto;
     overflow: no-display;
-    transition: width 1s;
+    transition: transform 1s;
     position : relative;
     z-index : 1;
 
 }
 .thumb:hover {
-    width : 640px;
-    height : auto;
-    position: relative;
+    transform: scale(1.7);
     z-index : 2;
 }
 
