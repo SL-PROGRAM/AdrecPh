@@ -1,7 +1,10 @@
 
+{% extends 'base.html.twig' %}
 
 
-    <section class="section-presentation particulier">
+{% block body %}
+
+<section class="section-presentation particulier">
         {% for item in Text  %}
             {% if item.hook == 103 %}
         <h1> {{ item.titre | upper }} </h1>
@@ -22,8 +25,5 @@
         </div>
     </section>
 
-
-
-
-
+{% endblock %}
 
