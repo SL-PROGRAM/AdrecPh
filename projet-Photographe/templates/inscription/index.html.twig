@@ -4,72 +4,202 @@
 {% block body %}
     <div>
 
+        {#{{ form(form) }}#}
+
 
         {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-        {{ form_widget(form) }}
-        <button formaction="/inscription" type="submit">Valider</button>
-        {{ form_end(form) }}
+
 
     </div>
 
     <div class="container">
+        <h1 class="titre-contact"><span class="dot">.</span> INSCRIPTION <span class="dot">.</span></h1>
 
-        <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">
-            <h1 class="titre-contact"><span class="dot">.</span> FORMULAIRE DE CONTACT <span class="dot">.</span></h1>
-        </div>
-
-        <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
-            <p class="p-contact"> N'hésitez à m'envoyer vos avis, vos questions ou autres demandes de devis de prestation.</p>
-        </div>
 
         <div class="row">
             <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
-                <div class="radio">
-                    <label for="Particulier">Particulier</label>
-                    <input class="input" type="radio" name="Choice" value="Particulier">
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="radio">
-                    <label for="Professionel">Professionel</label>
-                    <input class="input" type="radio" name="Choice" value="Professionel">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
-                <input class="input  input-form" type="text" placeholder="Prénom" required>
+                {{ form_widget(form.Prenom, {'attr': {
+                    'placeholder': 'form.adress.firstName',
+                    'class': 'input  input-form',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.Prenom) }}
+                {{ form_help(form.Prenom) }}
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <input class="input input-form" type="text" placeholder="Nom" required>
+                {{ form_widget(form.Nom, {'attr': {
+                    'placeholder': 'form.adress.lastName',
+                    'class': 'input  input-form',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.Nom) }}
+                {{ form_help(form.Nom) }}
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
-                <input class="input  input-form" type="text" placeholder="Téléphone" required>
+                {{ form_widget(form.tel, {'attr': {
+                    'placeholder': 'form.adress.tel',
+                    'class': 'input  input-form',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.tel) }}
+                {{ form_help(form.tel) }}
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <input class="input  input-form" type="text" placeholder="E mail" required>
+                {{ form_widget(form.Number, {'attr': {
+                    'placeholder': 'form.adress.number',
+                    'class': 'input  input-form',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.Number) }}
+                {{ form_help(form.Number) }}
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
-                <div class="textarea">
-                    <textarea class="textarea-contact" rows="20" cols="100" placeholder="Entrer votre texte"></textarea>
-                </div>
+            <div class="col-lg-8 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+                {{ form_widget(form.adress_1, {'attr': {
+                    'placeholder': 'form.adress.adress_1',
+                    'class': 'input  input-form-long',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.adress_1) }}
+                {{ form_help(form.adress_1) }}
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+                {{ form_widget(form.adress_2, {'attr': {
+                    'placeholder': 'form.adress.adress_2',
+                    'class': 'input  input-form-long',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.adress_2) }}
+                {{ form_help(form.adress_2) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+                {{ form_widget(form.CP, {'attr': {
+                    'placeholder': 'form.adress.cp',
+                    'class': 'input  input-form',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.CP) }}
+                {{ form_help(form.CP) }}
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                {{ form_widget(form.City, {'attr': {
+                    'placeholder': 'form.adress.city',
+                    'class': 'input  input-form',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.City) }}
+                {{ form_help(form.City) }}
+            </div>
+        </div>
+
 
         <div class="row">
             <div class="col-lg-2 offset-lg-5 col-md-2 offset-md-5 col-sm-2 offset-sm-5">
-                <button class="button-contact">Valider</button>
+                <button class="button-contact">Envoyer</button>
             </div>
         </div>
+
     </div>
+
+
+
+    {#/*********************************************************/#}
+
+    {#<div class="container">#}
+
+        {#<div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">#}
+            {#<h1 class="titre-contact"><span class="dot">.</span> FORMULAIRE DE CONTACT <span class="dot">.</span></h1>#}
+        {#</div>#}
+
+        {#<div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">#}
+            {#<p class="p-contact"> N'hésitez à m'envoyer vos avis, vos questions ou autres demandes de devis de prestation.</p>#}
+        {#</div>#}
+
+        {#<div class="row">#}
+            {#<div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">#}
+                {#<div class="radio">#}
+                    {#<label for="Particulier">Particulier</label>#}
+                    {#<input class="input" type="radio" name="Choice" value="Particulier">#}
+                {#</div>#}
+            {#</div>#}
+
+            {#<div class="col-lg-4 col-md-4 col-sm-4">#}
+                {#<div class="radio">#}
+                    {#<label for="Professionel">Professionel</label>#}
+                    {#<input class="input" type="radio" name="Choice" value="Professionel">#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+
+        {#<div class="row">#}
+            {#<div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">#}
+                {#{{ form_widget(form.Prenom, {'attr': {#}
+                    {#'placeholder': 'Prénom',#}
+                    {#'class': 'input  input-form'}})  }}#}
+                {#{{ form_errors(form.Prenom) }}#}
+                {#{{ form_help(form.Prenom) }}#}
+            {#</div>#}
+            {#<div class="col-lg-4 col-md-4 col-sm-4">#}
+                {#{{ form_widget(form.Nom, {'attr': {#}
+                    {#'placeholder': 'Nom',#}
+                    {#'class': 'input  input-form'}})  }}#}
+                {#{{ form_errors(form.Nom) }}#}
+                {#{{ form_help(form.Nom) }}#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="row">#}
+            {#<div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">#}
+                {#{{ form_widget(form.Number, {'attr': {#}
+                    {#'placeholder': 'Number',#}
+                    {#'class': 'input  input-form'}})  }}#}
+                {#{{ form_errors(form.Number) }}#}
+                {#{{ form_help(form.Number) }}#}
+            {#</div>#}
+            {#<div class="col-lg-4 col-md-4 col-sm-4">#}
+                {#{{ form_widget(form.Nom, {'attr': {#}
+                    {#'placeholder': 'Nom',#}
+                    {#'class': 'input  input-form'}})  }}#}
+                {#{{ form_errors(form.Nom) }}#}
+                {#{{ form_help(form.Nom) }}#}
+            {#</div>#}
+        {#</div>#}
+
+        {#<div class="row">#}
+            {#<div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">#}
+                {#<input class="input  input-form" type="text" placeholder="Téléphone" required>#}
+            {#</div>#}
+            {#<div class="col-lg-4 col-md-4 col-sm-4">#}
+                {#<input class="input  input-form" type="text" placeholder="E mail" required>#}
+            {#</div>#}
+        {#</div>#}
+
+        {#<div class="row">#}
+            {#<div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">#}
+                {#<div class="textarea">#}
+                    {#<textarea class="textarea-contact" rows="20" cols="100" placeholder="Entrer votre texte"></textarea>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+
+        {#<div class="row">#}
+            {#<div class="col-lg-2 offset-lg-5 col-md-2 offset-md-5 col-sm-2 offset-sm-5">#}
+                {#<button formaction="/inscription" type="submit" class="button-contact">Valider</button>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+
+    {{ form_end(form) }}
 
 
 
