@@ -25,7 +25,7 @@
         {% endif %}
 
     <header id="header">
-            {% include 'header/index.html.twig' %}
+            {{ render(controller('App\\Controller\\HeaderController::index')) }}
     </header>
 
 
@@ -50,24 +50,24 @@
 
 
 
+        <script>
+
+            document.getElementById('header').onmouseover = function ()
+            {
+
+                document.getElementById("header-white").hidden = true;
+                document.getElementById("header-black").style.display = "block";
+            };
+
+            document.getElementById('header').onmouseout= function ()
+            {
+
+                document.getElementById("header-white").hidden = false;
+                document.getElementById("header-black").style.display = "";
+            };
+
+
+        </script>
 
 </body>
 </html>
-<script>
-
-    document.getElementById('header').onmouseover = function ()
-    {
-
-        document.getElementById("header-white").hidden = true;
-        document.getElementById("header-black").style.display = "block";
-    };
-
-    document.getElementById('header').onmouseout= function ()
-    {
-
-        document.getElementById("header-white").hidden = false;
-        document.getElementById("header-black").style.display = "";
-    };
-
-
-</script>

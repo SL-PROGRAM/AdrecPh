@@ -1,4 +1,4 @@
-
+{% dump %}
 
 <div class="background-white" id="header-white">
     <div class="container">
@@ -114,32 +114,31 @@
                     </div>
                 </div>
                 <div class="row menu offset-1 col-lg-9">
-
-
                             {#<div class="menu-white border titres "></div>#}
                                 <div class="submenu border col-sm-3 p-0 m-0">
-                                    <a href="{{ path('particuliers') }} " class="col-sm-3 a-header-black"> {{ 'menu.particulier.event' | trans }}</a>
-                                    <a href="{{ path('particuliers') }}" class="col-sm-3 a-header-black">{{ 'menu.particulier.workshop' | trans }}</a>
-                                    <a href="{{ path('particuliers') }}" class="col-sm-3 a-header-black">{{ 'menu.particulier.studio' | trans }}</a>
-                                    <a href="{{ path('particuliers') }}" class="col-sm-3 a-header-black">{{ 'menu.particulier.animal' | trans }}</a>
-                                    <a href="{{ path('particuliers') }}" class="col-sm-3 a-header-black">{{ 'menu.particulier.playmate' | trans }}</a>
-                                    <a href="{{ path('particuliers') }}" class="col-sm-3 a-header-black">{{ 'menu.particulier.lifestyle' | trans }}</a>
-                                </div>
+                                    {% for elem in sitePhoto %}
+                                        {% if elem.hook in [11, 12, 13, 14, 15, 16,17,18,19,20] %}
+                                    <a href="{{ path('particuliers_presentation', {'id' : elem.hook}) }} " class="col-sm-3 a-header-black"> {{ elem.Titre }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                   </div>
                                 <div class=" submenu border col-sm-3 p-0 m-0">
-                                    <a href="{{ path('professionels') }}" class="col-sm-3 a-header-black">{{ 'menu.professionnal.entreprise' | trans }}</a>
-                                    <a href="{{ path('professionels') }}" class="col-sm-3 a-header-black">{{ 'menu.professionnal.product' | trans }}</a>
-                                    <a href="{{ path('professionels') }}" class="col-sm-3 a-header-black">{{ 'menu.professionnal.immobilier' | trans }}</a>
-                                    <a href="{{ path('professionels') }}" class="col-sm-3 a-header-black">{{ 'menu.professionnal.event' | trans }}</a>
-                                </div>
+                                    {% for elem in sitePhoto %}
+                                        {% if elem.hook in [1,2,3,4,5,6,7,8,9,10] %}
+                                            <a href="{{ path('professionels_presentation', {'id' : elem.hook}) }} " class="col-sm-3 a-header-black"> {{ elem.Titre}}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                       </div>
                                 <div class="submenu border col-sm-3 p-0 m-0" >
-                                    <a href="{{ path('galerie') }}" class="col-sm-3 a-header-black">{{ 'menu.galery.name1' | trans }}</a>
-                                    <a href="{{ path('galerie') }}" class="col-sm-3 a-header-black">{{ 'menu.galery.name2' | trans }}</a>
-                                    <a href="{{ path('galerie') }}" class="col-sm-3 a-header-black">{{ 'menu.galery.name3' | trans }}</a>
-                                    <a href="{{ path('galerie') }}" class="col-sm-3 a-header-black">{{ 'menu.galery.name4' | trans }}</a>
+                                    {%  for elem in galeries %}
+                                        {%  if elem.Statut == 0 %}
+                                    <a href="{{ path('galerie_image', { 'id': elem.id}) }}" class="col-sm-3 a-header-black">{{ elem.Name }}</a>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
                                 <div class="submenu border col-sm-3 p-0 m-0">
                                     <a href="{{ path('contact') }}" class="col-sm-3 a-header-black">Contact</a>
-                                    <a href="{{ path('contact') }}" class="col-sm-3 a-header-black">Livre d'Or</a>
+                                    <a href="{{ path('livre_or') }}" class="col-sm-3 a-header-black">Livre d'Or</a>
                                 </div>
                             {#</div>#}
                     </div>
