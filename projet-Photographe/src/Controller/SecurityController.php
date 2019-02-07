@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use FOS\UserBundle\Security\LoginManager;
 
-class SecurityController extends LoginManager
+class SecurityController extends AbstractController
 {
     /**
      * @Route("/login", name="app_login")

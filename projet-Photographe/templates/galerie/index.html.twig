@@ -17,7 +17,7 @@
 <div id="galerie-menu">
     <nav>
         {% for item in galeries %}
-            {% if item.Statut == 0 or item.id == User.galery.id %}
+            {% if item.Statut == 0 or User.galery is defined and item.id == User.galery.id %}
         <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('my_watermark_filter') }}"  />
         </a>
             {% endif %}
@@ -30,7 +30,7 @@
 
     <div class="thumbnail">
     {% for item in galerie %}
-        {% if item.Statut == 0 or item.id == User.galery.id %}
+        {% if item.Statut == 0 or User.galery is defined and item.id == User.galery.id %}
              <div>
                 <a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>
             </div>
