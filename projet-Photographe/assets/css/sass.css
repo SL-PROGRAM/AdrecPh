@@ -67,6 +67,10 @@ header{
     z-index: 6;
 }
 
+.body-position{
+    margin-top: 200px;
+}
+
 /*----------------------HEADER WHITE------------------------------*/
 
 
@@ -81,7 +85,6 @@ header{
     height: 100%;
     max-width: 150px;
 }
-
 
 
 /* signature */
@@ -163,9 +166,6 @@ header{
     font-weight:700;
 }
 
-
-
-
 .menu{
     display: flex;
     background: black;
@@ -178,26 +178,15 @@ header{
     display: inline;
 }
 
-/*.titres div {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*margin : 20px;*/
-    /*font-size: large;*/
-/*}*/
 
 .border{
     border-right: 2px solid white;
     border-left: 2px solid white;
 }
 
-/*!*.submenus{*!*/
-    /*!*display : flex;*!*/
-/*!*}*!*/
 
 .submenu{
     margin-left: 20px;
-    /*display:block;*/
-
 }
 .submenu a{
     display: block;
@@ -208,10 +197,7 @@ header{
 }
 
 .align-header-black{
-    /*display: flex;*/
     align-self: center;
-    /*flex-direction: column;*/
-    /*width: 60%;*/
 
 }
 
@@ -222,21 +208,6 @@ aa{
 #header-black{
     display:none;
 }
-
-
-
-/*.connexion{*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*width: 20%;*/
-    /*justify-content: space-around;*/
-    /*background: black;*/
-    /*color : white;*/
-    /*padding : 30px auto;*/
-
-/*}*/
-/*Fin Header*/
-
 
 
 /*----------------------FOOTER------------------------------*/
@@ -260,4 +231,78 @@ aa{
     height: 100%;
     max-width: 150px;
     max-height: 150px;
+}
+
+/*--------------Galerie----------------------*/
+
+#galerie-menu
+{
+    height:300px;
+    width: auto;
+    margin:3em auto;
+    border:solid;
+    border-radius:5px;
+    box-shadow:1px 1px 3px gray;
+    text-align:right;
+    position:relative;
+    white-space:nowrap;
+    overflow:hidden;
+}
+#galerie-menu a, #galerie-menu:hover a:focus
+{
+    display:inline-block;
+    vertical-align:top;
+    width:200px;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+    box-shadow:0 0 15px white;
+    transition:2s;
+    transition-timing-function: cubic-bezier(0.00,0.01,0.00,1.00)
+}
+#galerie-menu a:hover , #galerie-menu a:focus
+{
+    width:400px;
+    transition:2s;
+    transition-timing-function: cubic-bezier(0.00,0.01,0.00,1.00)
+}
+#galerie-menu a:first-child, #galerie-menu:hover a:focus:first-child
+{
+    width:400px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:0;
+}
+#galerie-menu a:before
+{
+    content:attr(title);
+    text-align:center;
+    height:30px;
+    width:200px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding-right:100px;
+    font-size:30px;
+    color:white;
+    border:1px solid gray;
+    box-shadow:0 0 15px white;
+    background:rgba(0,0,0,0.3);
+    line-height:28px;
+}
+#galerie-menu , #galerie-menu a
+{
+    height:200px;
+    transitions:1s;
+}
+#galerie-menu:hover , #galerie-menu:hover  a
+{
+    height:300px;
+    transition:1s;
+}
+
+.galImg{
+    height: 100%;
 }
