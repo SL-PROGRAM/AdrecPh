@@ -216,6 +216,10 @@ aa{
 
 /*----------------------FOOTER------------------------------*/
 
+#footer{
+    margin-top: 100px;
+}
+
 
 .photo-footer{
     padding: 0px 0px 0px 0px;
