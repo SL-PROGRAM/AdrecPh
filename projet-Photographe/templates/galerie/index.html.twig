@@ -17,7 +17,7 @@
     <nav>
         {% for item in galeries %}
             {% if item.Statut == 0 %}
-        <a href="/fr/galerie/galery-{{ item.id }}" tabindex="0" title="{{ item.name }}"    ><img src="{{ item.photos.0.path}}"  alt="sport 1"  />
+        <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('my_watermark_filter') }}"  />
         </a>
             {% endif %}
         {% endfor %}
@@ -35,7 +35,7 @@
             </div>
             {% for elem in photos %}
                 {% if item.name == elem.galery.name %}
-                    <a class="zoom" href="#" onclick="show(this.title)" title={{ elem.Path }}>
+                    <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">
                     <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
                     </a>
                 {% endif %}

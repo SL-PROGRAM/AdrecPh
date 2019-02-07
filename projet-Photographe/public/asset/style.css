@@ -189,7 +189,7 @@ header{
 #galerie-menu
 {
     height:300px;
-    width: 50%;
+    width: auto;
     margin:3em auto;
     border:solid;
     border-radius:5px;
@@ -231,7 +231,7 @@ header{
     content:attr(title);
     text-align:center;
     height:30px;
-    width:300px;
+    width:200px;
     position:absolute;
     bottom:0;
     left:0;
@@ -252,5 +252,9 @@ header{
 {
     height:300px;
     transition:1s;
+}
+
+.galImg{
+    height: 100%;
 }
 /*Fin Galerie*/
