@@ -3,54 +3,51 @@
 <head>
     <meta charset="UTF-8">
     {#<title>{% block title %}Welcome!{% endblock %}</title>#}
-    <link href="/asset/style.css" rel="stylesheet">
-    <link href="/build/app.css" rel="stylesheet">
-    {% block stylesheets %}{% endblock %}
+    {#<link href="/asset/style.css" rel="stylesheet">#}
+    {#<link href="/build/app.css" rel="stylesheet">#}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/css.css') }}">
+    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ '/asset/favicon.ico' }}" />
 </head>
 <body>
-<header>
-    <div class="bandeau">
-        {% include 'header/index.html.twig' %}
-        <div class="connexion">
-            {% if is_granted('ROLE_USER') %}
-                {{ render(controller('App\\Controller\\LoggedInController::index')) }}
-            {% else %}
-
-
-
-                <form action="{{ path("fos_user_security_check") }}" method="post">
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-
-
-                    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label><br>
-                    <input type="text" id="username" name="_username" required="required" autocomplete="username" /><br>
-
-                    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label><br>
-                    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" /><br>
-
-                    <div>
-                        <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
-                        <a href="register" style="text-decoration: none; color: white">{{ 'base.header.lien.signIn' | trans }}</a>
+        {% if app.request.hasPreviousSession  %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ type }}">
+                        {{ message|trans  }}
                     </div>
 
-                   <div>
-                       <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                       <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+    <header id="header">
+            {% include 'header/index.html.twig' %}
+    </header>
 
 
-                   </div>
-                </form>
+
+    {% block body %}
+
+
+    {% endblock %}
 
 
 
-            {% endif %}
-        </div>
-    </div>
-</header>
-{% block body %}{% endblock %}
+    <footer>
+        {% include 'footer/index.html.twig' %}
+    </footer>
+
+
 {% block javascripts %}{% endblock %}
-<script src="/asset/script.js"></script>
-<script src="/build/app.js"></script>
+    <script src="/asset/script.js"></script>
+    <script src="/build/app.js"></script>
+    <script src="/build/header.js"></script>
+
+
+
+
 </body>
 </html>

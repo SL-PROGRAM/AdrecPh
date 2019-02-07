@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/livre_or.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="boxcontainer">
+    <div class="box">
+        <h1> <span class="dot">.</span> LIVRE D'OR <span class="dot">.</span></h1>
+        <p class=" veuillez"> Veuillez vous connecter pour laisser vos messages</p>
+
+        <textarea rows="20" cols="100" placeholder="Entrer votre texte"></textarea>
+
+        <button class="envoyer">Envoyer</button>
+    </div>
+</div>
+
+<div class="livredor">
+    <h1> <span class="dot">.</span> LIVRE D'OR <span class="dot">.</span></h1>
+    <p> "Je recommande vivement ce photographe très pro" </p>
+</div>
+
+</div>
+
+{% endblock %}

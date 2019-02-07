@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 {% dump %}
-{% block title %}Benoit Mansanarez Photographie{% endblock %}
+{% block title %}Photographie{% endblock %}
 
 {% block body %}
+
     <div class="presentation-photographe">
         <img id="BO-photo-presentation-accueil" src="/asset/img/Fond-de-presentation.jpg" alt = "Photo du photographe">
         {% for item in Text %}
@@ -12,7 +13,7 @@
         {% endfor %}
     </div>
 
-    <div class="container">
+    <div>
         {% include 'professionels/index.html.twig' %}
         {% include 'particuliers/index.html.twig' %}
     </div>

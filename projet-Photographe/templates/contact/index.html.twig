@@ -1,36 +1,70 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-    <h1> <span class="dot">.</span> FORMULAIRE DE CONTACT <span class="dot">.</span></h1>
-    <div class="form-container">
-        <p> N'hésitez à m'nvoyer vos avis, vos questions ou autres demandes de devis de prestation.</p>
-        <form class="form">
+
+
+
+
+<div class="container">
+
+    <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">
+        <h1 class="titre-contact"><span class="dot">.</span> FORMULAIRE DE CONTACT <span class="dot">.</span></h1>
+    </div>
+
+    <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
+        <p class="p-contact"> N'hésitez à m'envoyer vos avis, vos questions ou autres demandes de devis de prestation.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
             <div class="radio">
                 <label for="Particulier">Particulier</label>
                 <input type="radio" name="Choice" value="Particulier">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="radio">
                 <label for="Professionel">Professionel</label>
                 <input type="radio" name="Choice" value="Professionel">
             </div>
-            <div class="input">
-                <input type="text" placeholder="Prénom" required>
-                <input type="text" placeholder="Nom" required>
-            </div>
-            <div class="input">
-                <input type="text" placeholder="Téléphone" required>
-                <input type="text" placeholder="E mail" required>
-            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+            <input class="input" type="text" placeholder="Prénom" required>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <input class="input" type="text" placeholder="Nom" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+            <input class="input" type="text" placeholder="Téléphone" required>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <input class="input" type="text" placeholder="E mail" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
             <div class="textarea">
-                <textarea rows="10" cols="50" placeholder="Entrer votre texte"></textarea>
+                <textarea class="textarea-contact" rows="20" cols="100" placeholder="Entrer votre texte"></textarea>
             </div>
-            <button class="button">Envoyer</button>
-        </form>
+        </div>
     </div>
 
-
-
-    <div class="livredor">
-        <p>Livre d'or</p>
+    <div class="row">
+        <div class="col-lg-2 offset-lg-5 col-md-2 offset-md-5 col-sm-2 offset-sm-5">
+            <button class="button-contact">Valider</button>
+        </div>
     </div>
+</div>
 {% endblock %}

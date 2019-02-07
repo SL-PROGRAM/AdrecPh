@@ -1,0 +1,263 @@
+/*page contact*/
+
+
+.dot{
+    font-size : 70px;
+    border-radius : 10px;
+}
+
+.titre-contact{
+    font-size: 18px;
+    text-align : center;
+    margin-bottom: 0px;
+}
+
+.p-contact{
+    font-weight: 600;
+    text-align : center;
+    font-family: cambria;
+    margin: 0px 0 50px 0;
+}
+
+.radio{
+    text-align : center;
+    display: inline-flex;
+    font-family: cambria;
+}
+
+.input{
+    padding-left: 10px;
+    box-shadow:3px 3px 6px #4e4e4e inset;
+    border-radius:8px;
+    border:1.5px solid black;
+    height: 30px;
+    width: auto;
+}
+
+.textarea-contact{
+    padding-left: 10px;
+    box-shadow:3px 3px 8px #4e4e4e inset;
+    border-radius:6px;
+    border:1.5px solid black;
+    margin-top: 35px;
+}
+
+.button-contact{
+    margin: 40px 0 0 10px;
+    border:none;
+    padding:6px 50px 6px 50px;
+    border-radius:9px;
+    box-shadow:2px 2px 6px #999;
+    background:black;
+    font-family: Cambria;
+    color:white;
+}
+
+.bloc-container{
+    margin-top: 50px;
+}
+
+/*--------------------------------Header-------------------------*/
+
+header{
+    width : 100%;
+    top: 0px;
+    bottom : auto;
+    position : fixed;
+    z-index: 6;
+}
+
+/*----------------------HEADER WHITE------------------------------*/
+
+
+/* logo */
+.background-white{
+    background: white;
+    padding-top: 10px;
+}
+
+.logo-header{
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    max-width: 150px;
+}
+
+
+
+/* signature */
+
+.signature{
+    margin-top: 20px;
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    max-width: 250px;
+
+}
+
+
+/* menu */
+
+.menu-white{
+    padding: 0px 0px 0px 0px;
+    min-width: 490px;
+    margin-top: 45px;
+    font-family: cambria;
+    font-weight:700;
+}
+
+.a-header-white:visited{
+    color:black;
+}
+
+.a-header-white{
+    text-decoration: none;
+    color:black;
+}
+
+/* formulaire */
+
+.input{
+    font: 12px Cambria;
+    margin-bottom: 15px;
+    padding:6px 40px 6px 45px;
+    border:1px solid black;
+    border-radius:9px;
+    width:157px;
+    box-shadow:3px 3px 9px #ece9e9 inset;
+    color:#cecece;
+}
+
+.button-header{
+    border:none;
+    padding:6px 50px 6px 50px;
+    border-radius:8px;
+    box-shadow:2px 2px 6px #999;
+    background:black;
+    font:bold 12px Cambria;
+    color:white;
+}
+
+/*--------------------HEADER BLACK----------------------------------*/
+
+
+
+.background-black{
+    background: black;
+    padding-top: 10px;
+}
+
+.a-header-black:visited{
+    color:white;
+}
+
+.a-header-black{
+    text-decoration: none;
+    color:white;
+}
+
+.menu-black{
+    padding: 0px 0px 0px 0px;
+    min-width: 490px;
+    margin-top: 45px;
+    font-family: cambria;
+    font-weight:700;
+}
+
+
+
+
+.menu{
+    display: flex;
+    background: black;
+    color: white;
+    justify-content: space-around;
+}
+
+.titres{
+    justify-content: space-around;
+    display: inline;
+}
+
+/*.titres div {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*margin : 20px;*/
+    /*font-size: large;*/
+/*}*/
+
+.border{
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+}
+
+/*!*.submenus{*!*/
+    /*!*display : flex;*!*/
+/*!*}*!*/
+
+.submenu{
+    margin-left: 20px;
+    /*display:block;*/
+
+}
+.submenu a{
+    display: block;
+    font-size: small;
+    justify-content: center;
+    text-decoration: none;
+    color : white;
+}
+
+.align-header-black{
+    /*display: flex;*/
+    align-self: center;
+    /*flex-direction: column;*/
+    /*width: 60%;*/
+
+}
+
+aa{
+    align-content: center;
+}
+
+#header-black{
+    display:none;
+}
+
+
+
+/*.connexion{*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*width: 20%;*/
+    /*justify-content: space-around;*/
+    /*background: black;*/
+    /*color : white;*/
+    /*padding : 30px auto;*/
+
+/*}*/
+/*Fin Header*/
+
+
+
+/*----------------------FOOTER------------------------------*/
+
+
+.photo-footer{
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.lien{
+    height: 100%;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+#logo-footer{
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    max-width: 150px;
+    max-height: 150px;
+}
