@@ -5,6 +5,10 @@
     {#<title>{% block title %}Welcome!{% endblock %}</title>#}
     {#<link href="/asset/style.css" rel="stylesheet">#}
     {#<link href="/build/app.css" rel="stylesheet">#}
+    {% block head_stylesheets %}
+
+
+    {% endblock %}
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('build/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('build/css.css') }}">
@@ -38,11 +42,11 @@
 
 
 
-
+    {% block footer %}
     <footer>
         {% include 'footer/index.html.twig' %}
     </footer>
-
+    {% endblock %}
 {% block javascripts %}
     <script src="/build/app.js"></script>
     <script src="/build/header.js"></script>

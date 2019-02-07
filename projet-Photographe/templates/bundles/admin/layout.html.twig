@@ -1,4 +1,4 @@
-{% include 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block general %}
 <!DOCTYPE html>
@@ -13,8 +13,8 @@
         <title>{% block page_title %} Administration {{ block('content_title')|striptags|raw }}{% endblock %}</title>
 
         {% block head_stylesheets %}
-            <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app.css') }}">
-            <link rel="stylesheet" href="{{ asset('asset/style.css') }}">
+                <link rel="stylesheet" href="{{ asset('bundles/easyadmin/app.css') }}">
+                {#<link rel="stylesheet" href="{{ asset('asset/style.css') }}">#}
 
             <style>
                 :root { --color-primary: {{ easyadmin_config('design.brand_color') }}; }
@@ -46,19 +46,19 @@
         {% block wrapper %}
             <aside class="main-sidebar">
             {% block sidebar %}
-                <header class="main-header">
-                    {% block header %}
-                        <nav class="navbar" role="navigation">
-                            <div id="header-logo">
-                                {% block header_logo %}
-                                    <a class="logo {{ easyadmin_config('site_name')|length > 14 ? 'logo-long' }}" title="{{ easyadmin_config('site_name')|striptags }}" href="{{ path('easyadmin') }}">
-                                        {{ easyadmin_config('site_name')|raw }}
-                                    </a>
-                                {% endblock header_logo %}
-                            </div>
-                        </nav>
-                    {% endblock header %}
-                </header>
+                {#<header class="main-header">#}
+                    {#{% block header %}#}
+                        {#<nav class="navbar" role="navigation">#}
+                            {#<div id="header-logo">#}
+                                {#{% block header_logo %}#}
+                                    {#<a class="logo {{ easyadmin_config('site_name')|length > 14 ? 'logo-long' }}" title="{{ easyadmin_config('site_name')|striptags }}" href="{{ path('easyadmin') }}">#}
+                                        {#{{ easyadmin_config('site_name')|raw }}#}
+                                    {#</a>#}
+                                {#{% endblock header_logo %}#}
+                            {#</div>#}
+                        {#</nav>#}
+                    {#{% endblock header %}#}
+                {#</header>#}
 
                 <section class="sidebar">
                     {% block main_menu_wrapper %}

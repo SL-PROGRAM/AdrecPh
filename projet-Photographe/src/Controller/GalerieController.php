@@ -55,7 +55,7 @@ class GalerieController extends AbstractController
 
 
         return $this->render('galerie/index.html.twig', [
-            'user' => $username,
+            'User' => $user,
             'photos' => $photos,
             'galeries' => $galeries,
             'galerie' => $galerie,
