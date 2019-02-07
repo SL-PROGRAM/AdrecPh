@@ -306,3 +306,81 @@ aa{
 .galImg{
     height: 100%;
 }
+
+
+/*---------------format page ------------------------*/
+
+.format-page{
+    line-height: 40px;
+    text-align: center;
+}
+
+
+/*---------------------Formulaire------------------------*/
+
+.input-form{
+    padding-left: 10px;
+    box-shadow: 3px 3px 6px #4e4e4e inset;
+    border-radius: 8px;
+    border: 1.5px solid black;
+    height: 30px;
+    width: auto;
+}
+
+/*--------------------Livre d'or -------------------------*/
+
+.boxcontainer{
+    display: flex;
+
+}
+
+
+.bienvenue{
+    font:24px Cambria;
+    margin:24px 0 0 0;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+
+
+.box button{
+    margin-bottom: 10px;
+    border:none;
+    padding:6px 50px 6px 50px;
+    border-radius:8px;
+    box-shadow:2px 2px 6px #999;
+    background:black;
+    font-family: Cambria;
+    color:white;
+
+}
+
+
+.livrebox{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.livrebox div:last-child{
+    align-content: flex-end;
+    margin: auto;
+}
+
+
+.livre1{
+    display: flex;
+    background: grey;
+}
+
+.livre2{
+    display: flex;
+    background: grey;
+}
