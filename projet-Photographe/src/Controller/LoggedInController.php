@@ -13,7 +13,7 @@ class LoggedInController extends AbstractController
      */
     public function index()
     {
-        $user = $this->getUser()->getUserName();
+        $user = $this->getUser();
         return $this->render('logged_in/index.html.twig', [
             'User' => $user,
         ]);

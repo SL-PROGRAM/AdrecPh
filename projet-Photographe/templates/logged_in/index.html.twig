@@ -1,8 +1,11 @@
 <div>
-    <p>Bonjour {{ User |capitalize }}</p>
+    <p>Bonjour {{ User.username |capitalize }}</p>
 </div>
 <div class="submenu">
-    <a href="galerie" >Ma galerie</a>
+    {% dump %}
+    {% if User.galery %}
+    <a href="{{ path('galerie_image',{'id': User.galery.id}) }}" >Ma galerie</a>
+    {% endif %}
     {% if is_granted('ROLE_ADMIN') %}
         <a href="/fr/admin">Panneau d'administration</a>
         <a href="/fr/uploader">Upload de contenu</a>
