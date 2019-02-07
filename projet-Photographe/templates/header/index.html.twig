@@ -95,26 +95,21 @@
                                 <div class="adherent">
                                     <form action="{{ path("fos_user_security_check") }}" method="post">
                                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-                                        {#<label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label><br>#}
                                         <input  class="input" type="text" id="username" name="_username" required="required" autocomplete="username" placeholder="Identifiant"/><br>
-                                        {#<label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label><br>#}
                                         <input  class="input" type="password" id="password" name="_password" required="required" autocomplete="current-password" placeholder="Mot de passe"/><br>
-                                        <div>
-                                            <input  class="login button-header" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
-                                            {#<a href="register" style="text-decoration: none; color: white">{{ 'base.header.lien.signIn' | trans }}</a>#}
-                                        </div>
-                                        {#<div>#}
-                                        {#<input  class="input" type="checkbox" id="remember_me" name="_remember_me" value="on" />#}
-                                        {#<label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>#}
-                                        {#</div>#}
+                                        <input  class="login button-header" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+
                                     </form>
                                 </div>
                             </div>
                         {% endif %}
                     </div>
+                    <div class="col-lg-12 align-right">
+                        <a class="align-right" href="register" style="text-decoration: none; color: white">{{ 'base.header.lien.signIn' | trans }}</a>
+                    </div>
                 </div>
-                <div class="row menu offset-1 col-lg-9">
-                            {#<div class="menu-white border titres "></div>#}
+                <div class="row">
+                    <div class="menu offset-1 col-lg-9">
                                 <div class="submenu border col-sm-3 p-0 m-0">
                                     {% for elem in sitePhoto %}
                                         {% if elem.hook in [11, 12, 13, 14, 15, 16,17,18,19,20] %}
@@ -140,13 +135,14 @@
                                     <a href="{{ path('contact') }}" class="col-sm-3 a-header-black">Contact</a>
                                     <a href="{{ path('livre_or') }}" class="col-sm-3 a-header-black">Livre d'Or</a>
                                 </div>
-                            {#</div>#}
                     </div>
 
+                </div>
 
 
 
-                    {#<div class="col-xl-2 col-md-2">#}
+
+                        {#<div class="col-xl-2 col-md-2">#}
                         {#<div class="adherent">#}
                             {#<form class="form-login" method="post" action="traitement.php">#}
                                 {#<input type="text" id="identifiant" name="identifiant" class="login" placeholder="Identifiant">#}

@@ -40,6 +40,7 @@
     border-radius:6px;
     border:1.5px solid black;
     margin-top: 35px;
+    height: 200px;
 }
 
 .button-contact{
@@ -209,6 +210,9 @@ aa{
     display:none;
 }
 
+.align-right{
+    text-align: right;
+}
 
 /*----------------------FOOTER------------------------------*/
 
