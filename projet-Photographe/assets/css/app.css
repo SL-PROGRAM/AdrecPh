@@ -49,8 +49,8 @@ div.thumbnail {
     display : block;
     margin-left: auto ;
     margin-right: auto ;
-    width : auto;
-    height : 80%;
+    width : 80%;
+    height : auto;
     animation-name: zoom;
 
     animation-duration: 1s;
@@ -58,6 +58,6 @@ div.thumbnail {
 }
 
 @keyframes zoom {
-    0%{height :10px; vertical-align: middle;}
-    100%{height : 80%;}
+    0%{width :10px; vertical-align: middle;}
+    100%{width : 80%;}
 }
