@@ -18,11 +18,11 @@
     <nav>
         {% for item in galeries %}
             {% if item.Statut == 0 %}
-        <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('my_watermark_filter') }}"  />
+        <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />
         </a>
             {% elseif User.galery != null %}
                 {% if item.id == User.galery.id %}
-                    <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('my_watermark_filter') }}"  />
+                    <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />
                     </a>
                 {% endif %}
             {% endif %}
@@ -62,6 +62,8 @@
         {% endif %}
     {% endfor %}
 </div>
+
+    <script src="/asset/script.js"></script>
 
 
 {% endblock %}
