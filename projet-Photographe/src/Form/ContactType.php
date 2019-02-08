@@ -10,6 +10,7 @@ namespace App\Form;
 
 
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\Form\AbstractType;
@@ -36,7 +37,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
             ->add('Nom')
             ->add('Tel')
             ->add('email')
-            ->add('text')
+            ->add('text', TextareaType::class)
 
         ;
     }
