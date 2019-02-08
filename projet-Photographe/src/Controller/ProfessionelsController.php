@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
+use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Organigrame;
 use App\Entity\SitePhoto;
 use App\Entity\SiteText;
@@ -46,7 +48,7 @@ class ProfessionelsController extends AbstractController
     /**
      * @Route("/professionels/presentation-{id}", name="professionels_presentation")
      */
-    public function entreprise($id)
+    public function entreprise($id, Request $request)
     {
         $organigrame = $this->getDoctrine()->getRepository(Organigrame::class);
         $sitePhoto = $this->getDoctrine()->getRepository(SitePhoto::class);
@@ -66,10 +68,14 @@ class ProfessionelsController extends AbstractController
         }
         ksort($pagePhoto);
 
+        $form = $this->createForm(ContactType::class);
+        $form->handleRequest($request);
+
         return $this->render('professionels/detail.html.twig', [
             'Photo' => $pagePhoto,
             'Text' => $pageText,
             'hook' => $id,
+            'form' => $form->createView()
         ]);
     }
 

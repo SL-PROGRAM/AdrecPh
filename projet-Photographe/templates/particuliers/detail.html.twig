@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
 
     {% for item in Photo %}
@@ -10,33 +11,144 @@
     {% endfor %}
 
 
-    <div class="form-container">
+    {#<div class="form-container">#}
 
-        <form class="form">
-            {% for elem in Text %}
-                {% if elem.hook == hook %}
-                    <h2>{{ elem.text }}</h2>
-                {% endif %}
-            {% endfor %}
+    {#<form class="form">#}
+    {% for elem in Text %}
+        {% if elem.hook == hook %}
+            <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
 
-            {#<div class="radio">#}
-            {#<label for="Particulier">Particulier</label>#}
-            {#<input type="radio" name="Choice" value="Particulier">#}
-            {#<label for="Professionel">Professionel</label>#}
-            {#<input type="radio" name="Choice" value="Professionel">#}
-            {#</div>#}
-            <div class="input">
-                <input type="text" placeholder="Prénom" required>
-                <input type="text" placeholder="Nom" required>
+                <h2>{{ elem.text }}</h2>
             </div>
-            <div class="input">
-                <input type="text" placeholder="Téléphone" required>
-                <input type="text" placeholder="E mail" required>
+        {% endif %}
+    {% endfor %}
+
+    {#<div class="radio">#}
+    {#<label for="Particulier">Particulier</label>#}
+    {#<input type="radio" name="Choice" value="Particulier">#}
+    {#<label for="Professionel">Professionel</label>#}
+    {#<input type="radio" name="Choice" value="Professionel">#}
+    {#</div>#}
+    {#<div class="input">#}
+    {#<input type="text" placeholder="Prénom" required>#}
+    {#<input type="text" placeholder="Nom" required>#}
+    {#</div>#}
+    {#<div class="input">#}
+    {#<input type="text" placeholder="Téléphone" required>#}
+    {#<input type="text" placeholder="E mail" required>#}
+    {#</div>#}
+    {#<div class="textarea">#}
+    {#<textarea rows="10" cols="50" placeholder="Entrer votre texte"></textarea>#}
+    {#</div>#}
+    {#<button class="button">Envoyer</button>#}
+    {#</form>#}
+    {#</div>#}
+
+    {{ form_start(form) }}
+
+
+
+
+
+    <div class="container">
+
+        <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">
+            <h1 class="titre-contact"><span class="dot">.</span> FORMULAIRE DE CONTACT <span class="dot">.</span></h1>
+        </div>
+
+        <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
+            <p class="p-contact"> N'hésitez à m'envoyer vos avis, vos questions ou autres demandes de devis de prestation.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+                <div class="radio">
+                    {#<label for="Particulier">Particulier</label>#}
+                    {{ form_label(form.token)}}
+
+                    {{ form_widget(form.token, {'attr': {
+                        'required': 'true',
+                    }})  }}
+                    {{ form_errors(form.token) }}
+                    {{ form_help(form.token) }}
+                </div>
             </div>
-            <div class="textarea">
-                <textarea rows="10" cols="50" placeholder="Entrer votre texte"></textarea>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="radio">
+                    {{ form_label(form.token2)}}
+                    {{ form_widget(form.token2, {'attr': {
+                        'placeholder': 'form.adress.firstName',
+                        'required': 'true',
+                    }})  }}
+                    {{ form_errors(form.token2) }}
+                    {{ form_help(form.token2) }}
+                </div>
             </div>
-            <button class="button">Envoyer</button>
-        </form>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+                {{ form_widget(form.Prenom, {'attr': {
+                    'placeholder': 'form.adress.firstName',
+                    'class': 'input  input-form-long',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.Prenom) }}
+                {{ form_help(form.Prenom) }}
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                {{ form_widget(form.Nom, {'attr': {
+                    'placeholder': 'form.adress.lastName',
+                    'class': 'input  input-form-long',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.Nom) }}
+                {{ form_help(form.Nom) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+                {{ form_widget(form.Tel, {'attr': {
+                    'placeholder': 'form.adress.tel',
+                    'class': 'input  input-form-long',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.Tel) }}
+                {{ form_help(form.Tel) }}
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                {{ form_widget(form.email, {'attr': {
+                    'placeholder': 'form.adress.email',
+                    'class': 'input  input-form-long',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.email) }}
+                {{ form_help(form.email) }}
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
+        <div class="textarea">
+        {{ form_widget(form.text, {'attr': {
+        'placeholder': 'form.adress.text',
+        'class': 'textarea-contact',
+        'required': 'true',
+        }})  }}
+        {{ form_errors(form.text) }}
+        {{ form_help(form.text) }}
+        </div>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 offset-lg-5 col-md-2 offset-md-5 col-sm-2 offset-sm-5">
+                <button class="button-contact">Valider</button>
+            </div>
+        </div>
     </div>
+
+    {{ form_end(form) }}
 {% endblock %}

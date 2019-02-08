@@ -15,6 +15,8 @@ use Symfony\Component\HttpFoundation\File\Exception\UploadException;
 use App\EventListener\UploadListener;
 use App\Controller\OneUpUploader\Naming;
 use App\Form;
+use App\Form\ContactType;
+
 
 
 class ParticuliersController extends AbstractController
@@ -52,7 +54,7 @@ class ParticuliersController extends AbstractController
     /**
      * @Route("/particuliers/presentation-{id}", name="particuliers_presentation")
      */
-    public function particuliers($id)
+    public function particuliers($id, Request $request)
     {
         $organigrame = $this->getDoctrine()->getRepository(Organigrame::class);
         $sitePhoto = $this->getDoctrine()->getRepository(SitePhoto::class);
@@ -72,10 +74,14 @@ class ParticuliersController extends AbstractController
         }
         ksort($pagePhoto);
 
+        $form = $this->createForm(ContactType::class);
+        $form->handleRequest($request);
         return $this->render('professionels/detail.html.twig', [
             'Photo' => $pagePhoto,
             'Text' => $pageText,
             'hook' => $id,
+            'form' => $form->createView()
+
         ]);
     }
 
