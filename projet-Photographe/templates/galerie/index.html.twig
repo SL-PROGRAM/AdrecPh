@@ -20,11 +20,11 @@
             {% if item.Statut == 0 %}
         <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />
         </a>
-            {% elseif User.galery != null %}
-                {% if item.id == User.galery.id %}
-                    <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />
-                    </a>
-                {% endif %}
+            {#{% elseif User.galery != null %}#}
+                {#{% if item.id == User.galery.id %}#}
+                    {#<a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />#}
+                    {#</a>#}
+                {#{% endif %}#}
             {% endif %}
         {% endfor %}
     </nav>
@@ -43,22 +43,24 @@
                 {% if item.name == elem.galery.name %}
                     <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">
                     <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
+                        {%  include 'galerie/_telechargement.html.twig' %}
+                        {%  include 'galerie/_impression.html.twig' %}
                     </a>
                 {% endif %}
             {% endfor %}
-            {% elseif User.galery != null %}
-                {% if item.id == User.galery.id %}
-                    <div>
-                        <a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>
-                    </div>
-                    {% for elem in photos %}
-                        {% if item.name == elem.galery.name %}
-                            <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">
-                                <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
+            {#{% elseif User.galery != null %}#}
+                {#{% if item.id == User.galery.id %}#}
+                    {#<div>#}
+                        {#<a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>#}
+                    {#</div>#}
+                    {#{% for elem in photos %}#}
+                        {#{% if item.name == elem.galery.name %}#}
+                            {#<a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">#}
+                                {#<img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>#}
+                            {#</a>#}
+                        {#{% endif %}#}
+                    {#{% endfor %}#}
+                {#{% endif %}#}
         {% endif %}
     {% endfor %}
 </div>

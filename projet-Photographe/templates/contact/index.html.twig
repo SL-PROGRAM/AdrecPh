@@ -40,7 +40,7 @@
             <div class="radio">
                 {{ form_label(form.token2)}}
                 {{ form_widget(form.token2, {'attr': {
-                    'placeholder': 'form.adress.firstName',
+                    'placeholder': 'form.contact.firstName',
                     'required': 'true',
                 }})  }}
                 {{ form_errors(form.token2) }}
@@ -52,7 +52,7 @@
     <div class="row">
         <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
             {{ form_widget(form.Prenom, {'attr': {
-                'placeholder': 'form.adress.firstName',
+                'placeholder': 'form.contact.firstName',
                 'class': 'input  input-form-long',
                 'required': 'true',
             }})  }}
@@ -61,7 +61,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
             {{ form_widget(form.Nom, {'attr': {
-                'placeholder': 'form.adress.lastName',
+                'placeholder': 'form.contact.lastName',
                 'class': 'input  input-form-long',
                 'required': 'true',
             }})  }}
@@ -73,7 +73,7 @@
     <div class="row">
         <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
             {{ form_widget(form.Tel, {'attr': {
-                'placeholder': 'form.adress.tel',
+                'placeholder': 'form.contact.tel',
                 'class': 'input  input-form-long',
                 'required': 'true',
             }})  }}
@@ -82,7 +82,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
             {{ form_widget(form.email, {'attr': {
-                'placeholder': 'form.adress.email',
+                'placeholder': 'form.contact.email',
                 'class': 'input  input-form-long',
                 'required': 'true',
             }})  }}
@@ -95,7 +95,7 @@
         <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
             <div class="textarea">
                 {{ form_widget(form.text, {'attr': {
-                    'placeholder': 'form.adress.text',
+                    'placeholder': 'form.contact.text',
                     'class': 'textarea-contact',
                     'required': 'true',
                 }})  }}

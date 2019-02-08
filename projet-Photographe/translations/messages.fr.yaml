@@ -31,6 +31,16 @@ form:
         cp: "Code postal"
         city: "Ville"
         tel: "Téléphone"
+    contact:
+        Particulier: 'Particulier'
+        Professionnel: 'Professionnel'
+        email: 'entrez votre E-mail'
+        firstName: 'entrez votre prénom'
+        lastName: 'entrez votre nom'
+        tel: 'entrez votre téléphone'
+        text: 'entrez votre message pour le photographe'
+    livreor:
+        text: 'entrez votre commenatire sur le travail du photographe '
 base:
     header:
         lien:

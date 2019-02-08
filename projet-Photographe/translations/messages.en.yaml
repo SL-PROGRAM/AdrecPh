@@ -32,10 +32,21 @@ form:
     cp: "Zip Code"
     city: "City"
     tel: "Phone"
+  contact:
+    Particulier: 'Personnel'
+    Professionnel: 'Professional'
+    email: 'enter your E-mail'
+    firstName: 'enter your  prénom'
+    lastName: 'enter your  nom'
+    tel: 'enter your  téléphone'
+    text: 'enter your  message'
+  livreor:
+    text: 'enter your  message'
 
 base:
   header:
       lien:
         signIn: "Sign in !"
+
 
 
