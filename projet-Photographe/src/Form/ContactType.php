@@ -25,11 +25,19 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         $builder
             ->add('token', RadioType::class, [
                 'value' => 'Particulier',
+                'label' => 'Particulier',
             ])
+            ->add('token2', RadioType::class, [
+                'value' => 'Professionnel',
+                'label' => 'Professionnel',
+            ])
+
             ->add('Prenom')
             ->add('Nom')
             ->add('Tel')
             ->add('email')
+            ->add('text')
+
         ;
     }
 }

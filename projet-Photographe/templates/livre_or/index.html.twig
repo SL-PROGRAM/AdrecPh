@@ -1,23 +1,72 @@
 {% extends 'base.html.twig' %}
 
+{%  dump  %}
+
 {% block body %}
-<div class="boxcontainer section">
+
+    {% if is_granted('ROLE_USER') %}
+
+
+
+    {{ form_start(form) }}
+
+
+
+    <div class="boxcontainer section">
     <div class="box">
         <h1> <span class="dot">.</span> LIVRE D'OR <span class="dot">.</span></h1>
-        <div class=" veuillez"> Veuillez vous connecter pour laisser vos messages</div>
 
+        {{ form_widget(form.text, {'attr': {
+            'required': 'true',
+            'placeholder': "Entrer votre texte",
+            'class': 'textarea-contact',
+            'row': '20',
+        }})  }}
+        {{ form_errors(form.text) }}
+        {{ form_help(form.text) }}
 
-            <textarea class="textarea-contact" rows="20" cols="100" placeholder="Entrer votre texte"></textarea>
+            {#<textarea class="textarea-contact" rows="20" cols="100" placeholder="Entrer votre texte"></textarea>#}
             <button class="button-contact">Envoyer</button>
 
     </div>
 </div>
 
-<div class="boxcontainer section">
+    {{ form_end(form) }}
+
+
+    <div class="boxcontainer section">
     <div class="box">
         <h1> <span class="dot">.</span> LIVRE D'OR <span class="dot">.</span></h1>
-        <p> "Je recommande vivement ce photographe très pro" </p>
+
+        <p> {{ livre_or.text }} </p>
     </div>
 </div>
+
+
+
+
+    {% else %}
+
+
+<div class="boxcontainer section">
+    <div class="box">
+        <div class=" veuillez"> Veuillez vous connecter pour laisser vos messages</div>
+
+
+            <div class="adherent">
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                    <input  class="input" type="text" id="username" name="_username" required="required" autocomplete="username" placeholder="Identifiant"/><br>
+                    <input  class="input" type="password" id="password" name="_password" required="required" autocomplete="current-password" placeholder="Mot de passe"/><br>
+                    <div>
+                        <input  class="login button-header" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                    </div>
+
+                </form>
+            </div>
+    </div>
+</div>
+
+    {% endif %}
 
 {% endblock %}

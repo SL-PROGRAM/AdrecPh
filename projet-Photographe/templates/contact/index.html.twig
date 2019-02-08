@@ -6,6 +6,9 @@
 
 {% block body %}
 
+    {{ form_start(form) }}
+
+
 
 
 
@@ -22,41 +25,82 @@
     <div class="row">
         <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
             <div class="radio">
-                <label for="Particulier">Particulier</label>
-                <input class="input" type="radio" name="Choice" value="Particulier">
+                {#<label for="Particulier">Particulier</label>#}
+                {{ form_label(form.token)}}
+
+                {{ form_widget(form.token, {'attr': {
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.token) }}
+                {{ form_help(form.token) }}
             </div>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="radio">
-                <label for="Professionel">Professionel</label>
-                <input class="input" type="radio" name="Choice" value="Professionel">
+                {{ form_label(form.token2)}}
+                {{ form_widget(form.token2, {'attr': {
+                    'placeholder': 'form.adress.firstName',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.token2) }}
+                {{ form_help(form.token2) }}
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
-            <input class="input  input-form" type="text" placeholder="Prénom" required>
+            {{ form_widget(form.Prenom, {'attr': {
+                'placeholder': 'form.adress.firstName',
+                'class': 'input  input-form-long',
+                'required': 'true',
+            }})  }}
+            {{ form_errors(form.Prenom) }}
+            {{ form_help(form.Prenom) }}
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <input class="input input-form" type="text" placeholder="Nom" required>
+            {{ form_widget(form.Nom, {'attr': {
+                'placeholder': 'form.adress.lastName',
+                'class': 'input  input-form-long',
+                'required': 'true',
+            }})  }}
+            {{ form_errors(form.Nom) }}
+            {{ form_help(form.Nom) }}
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
-            <input class="input  input-form" type="text" placeholder="Téléphone" required>
+            {{ form_widget(form.Tel, {'attr': {
+                'placeholder': 'form.adress.tel',
+                'class': 'input  input-form-long',
+                'required': 'true',
+            }})  }}
+            {{ form_errors(form.Tel) }}
+            {{ form_help(form.Tel) }}
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <input class="input  input-form" type="text" placeholder="E mail" required>
+            {{ form_widget(form.email, {'attr': {
+                'placeholder': 'form.adress.email',
+                'class': 'input  input-form-long',
+                'required': 'true',
+            }})  }}
+            {{ form_errors(form.email) }}
+            {{ form_help(form.email) }}
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
             <div class="textarea">
-                <textarea class="textarea-contact" rows="20" cols="100" placeholder="Entrer votre texte"></textarea>
+                {{ form_widget(form.text, {'attr': {
+                    'placeholder': 'form.adress.text',
+                    'class': 'input  input-form-long',
+                    'required': 'true',
+                }})  }}
+                {{ form_errors(form.text) }}
+                {{ form_help(form.text) }}
             </div>
         </div>
     </div>
@@ -68,7 +112,9 @@
     </div>
 </div>
 
+    {{ form_end(form) }}
 
-    {{ include('contact/_form.html.twig') }}
+
+    {#{{ include('contact/_form.html.twig') }}#}
 
 {% endblock %}
