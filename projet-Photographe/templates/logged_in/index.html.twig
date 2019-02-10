@@ -3,6 +3,7 @@
 </div>
 <div class="submenu">
     {% dump %}
+    <a href="{{ path('commande') }}" >Mes commandes</a>
     {% if User.galery %}
     <a href="{{ path('galerie_image',{'id': User.galery.id}) }}" >Ma galerie</a>
     {% endif %}
