@@ -21,6 +21,8 @@ Encore
 
     .addEntry('app', './assets/js/app.js')
     .addEntry('header', './assets/js/header.js')
+    .addEntry('dropZone', './assets/js/dropzone.js')
+    .addEntry('galeries', './assets/js/script.js')
     //.addEntry('page2', './assets/js/page2.js')
     .addStyleEntry('bootstrap', './assets/css/bootstrap-grid.css')
     .addStyleEntry('css', './assets/css/sass.css')
@@ -28,7 +30,7 @@ Encore
 
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
-    .enableSingleRuntimeChunk()
+    // .enableSingleRuntimeChunk()
 
     /*
      * FEATURE CONFIG

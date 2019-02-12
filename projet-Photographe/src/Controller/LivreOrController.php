@@ -9,10 +9,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class LivreOrController extends AbstractController
 {
     /**
      * @Route("/livreor", name="livre_or")
+     * @IsGranted("ROLE_USER")
      */
     public function index(Request $request, LivreDOrRepository $livreDOrRepository)
     {

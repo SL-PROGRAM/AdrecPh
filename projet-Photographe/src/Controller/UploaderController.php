@@ -11,11 +11,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 class UploaderController extends AbstractController
 {
     /**
      * @Route("/uploader", name="uploader")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(GaleryRepository $repository)
     {
