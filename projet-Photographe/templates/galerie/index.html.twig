@@ -5,9 +5,10 @@
 {% block head %}
     <meta charset="UTF-8">
     <title>Mon joli menu en HTML/CSS !</title>
-    <link rel="stylesheet" href="style.css" />  <!-- Fichier CSS -->
+    {#<link rel="stylesheet" href="style.css" />  <!-- Fichier CSS -->#}
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
     <![endif]-->
 {% endblock %}
 
@@ -17,27 +18,52 @@
     <nav>
         {% for item in galeries %}
             {% if item.Statut == 0 %}
-        <a href="{{ item.id }}" tabindex="0" title="{{ item.name }}"    ><img src="http://lorempixel.com/300/300/sports/1/"  alt="sport 1"  />
+        <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />
         </a>
+            {% elseif User.galery != null %}
+                {% if item.id == User.galery.id %}
+                    <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />
+                    </a>
+                {% endif %}
             {% endif %}
         {% endfor %}
     </nav>
 </div>
 
-<div>
-    {% for item in galeries %}
+    <div id="fullSize" class ="hide"  onclick="hide()"> </div>
+
+
+    <div class="thumbnail">
+    {% for item in galerie %}
         {% if item.Statut == 0 %}
              <div>
                 <a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>
             </div>
             {% for elem in photos %}
                 {% if item.name == elem.galery.name %}
-                    <img src="{{ elem.Path }}"/>
+                    <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">
+                    <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
+                    </a>
                 {% endif %}
             {% endfor %}
+            {% elseif User.galery != null %}
+                {% if item.id == User.galery.id %}
+                    <div>
+                        <a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>
+                    </div>
+                    {% for elem in photos %}
+                        {% if item.name == elem.galery.name %}
+                            <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">
+                                <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
         {% endif %}
     {% endfor %}
 </div>
+
+    <script src="/asset/script.js"></script>
 
 
 {% endblock %}

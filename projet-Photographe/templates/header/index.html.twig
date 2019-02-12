@@ -1,49 +1,127 @@
 
 
-<a href="{{ path('accueil') }}">
-    <img class="logo" src="/asset/img/logo/Logo-BM.png">
-</a>
+<div class="background-white" id="header-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row">
+                    <a href="{{ path('accueil') }}">
+                        <img class="col-xl-2 col-md-2 logo-header" src="/asset/img/logo/Logo-BM.png">
+                    </a>
+                    <img class="d-none d-xl-block col-xl-2 signature" src="/asset/img/logo/watermark.png">
+                    <div class="d-block d-md-none col-md-2">LogoMenu</div>
 
-<div class="menu">
-    <a href="{{ path('accueil') }}">
-        <img class="signature" src="/asset/img/logo/signature.png">
-    </a>
+                    <div class="d-none d-md-block col-xl-6 col-md-7 col-sm-6">
+                        <div class="menu-white">
+                            <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.particulier' | trans }}</a>
+                            <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.professionnel' | trans }}</a>
+                            <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.galery' | trans }}</a>
+                            <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.contact' | trans }}</a>
+                        </div>
+                    </div>
+                    <div>
+                        {% if is_granted('ROLE_USER') %}
+                            {{ render(controller('App\\Controller\\LoggedInController::index')) }}
+                        {% else %}
+                            <div class="col-xl-2 col-md-2">
+                                <div class="adherent">
+                                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                                        <input  class="input" type="text" id="username" name="_username" required="required" autocomplete="username" placeholder="Identifiant"/><br>
+                                        <input  class="input" type="password" id="password" name="_password" required="required" autocomplete="current-password" placeholder="Mot de passe"/><br>
+                                        <div>
+                                            <input  class="login button-header" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                                        </div>
 
-    <div class="aa">
-        <div class="titres">
-            <p class="submenu">{{ 'menu.home.particulier' | trans }}</p>
-            <p class="submenu" >{{ 'menu.home.professionnel' | trans }}</p>
-            <p class="submenu" >{{ 'menu.home.galery' | trans }}</p>
-            <p class="submenu" >{{ 'menu.home.contact' | trans }}</p>
-        </div>
-
-        <div class="titres">
-            <div class="submenu">
-                <a href="{{ path('particuliers') }}"> {{ 'menu.particulier.event' | trans }}</a>
-                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.workshop' | trans }}</a>
-                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.studio' | trans }}</a>
-                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.animal' | trans }}</a>
-                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.playmate' | trans }}</a>
-                <a href="{{ path('particuliers') }}">{{ 'menu.particulier.lifestyle' | trans }}</a>
-            </div>
-
-            <div class="submenu">
-                <a href="{{ path('professionels') }}">{{ 'menu.professionnal.entreprise' | trans }}</a>
-                <a href="{{ path('professionels') }}">{{ 'menu.professionnal.product' | trans }}</a>
-                <a href="{{ path('professionels') }}">{{ 'menu.professionnal.immobilier' | trans }}</a>
-                <a href="{{ path('professionels') }}">{{ 'menu.professionnal.event' | trans }}</a>
-            </div>
-            <div class="submenu">
-                <a href="{{ path('galerie') }}">{{ 'menu.galery.name1' | trans }}</a>
-                <a href="{{ path('galerie') }}">{{ 'menu.galery.name2' | trans }}</a>
-                <a href="{{ path('galerie') }}">{{ 'menu.galery.name3' | trans }}</a>
-                <a href="{{ path('galerie') }}">{{ 'menu.galery.name4' | trans }}</a>
-            </div>
-            <div class="submenu">
-                <a href="{{ path('contact') }}">Contact</a>
-                <a href="{{ path('contact') }}">Livre d'Or</a>
+                                    </form>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
+
+
+
+<div class="background-black" id="header-black">
+    <div class="container">
+        <div class="row ">
+            <div class="col-xl-12 connexion">
+                <div class="row">
+                    <a href="{{ path('accueil') }}">
+                        <img class="col-xl-2 col-md-2 logo-header" src="/asset/img/logo/Logo-BM.png">
+                    </a>
+                    <div class="d-block d-md-none col-md-2">LogoMenu</div>
+
+                    <div class="d-none d-md-block col-lg-8 col-md-7 col-sm-6 align-header-black">
+                        <div class=" menu-black menu">
+
+                                <a href="#" class="col-sm-3 a-header-black ">{{ 'menu.home.particulier' | trans }}</a>
+                                <a href="#" class="col-sm-3 a-header-black">{{ 'menu.home.professionnel' | trans }}</a>
+                                <a href="#" class="col-sm-3 a-header-black">{{ 'menu.home.galery' | trans }}</a>
+                                <a href="#" class="col-sm-3 a-header-black">{{ 'menu.home.contact' | trans }}</a>
+
+                        </div>
+                    </div>
+
+                    <div class="connexion">
+                        {% if is_granted('ROLE_USER') %}
+                            {{ render(controller('App\\Controller\\LoggedInController::index')) }}
+                        {% else %}
+                            <div class="col-xl-2 col-md-2">
+                                <div class="adherent">
+                                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                                        <input  class="input" type="text" id="username" name="_username" required="required" autocomplete="username" placeholder="Identifiant"/><br>
+                                        <input  class="input" type="password" id="password" name="_password" required="required" autocomplete="current-password" placeholder="Mot de passe"/><br>
+                                        <input  class="login button-header" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+
+                                    </form>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-12 align-right">
+                        <a class="align-right" href="register" style="text-decoration: none; color: white">{{ 'base.header.lien.signIn' | trans }}</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="menu offset-1 col-lg-9">
+                                <div class="submenu border col-sm-3 p-0 m-0">
+                                    {% for elem in sitePhoto %}
+                                        {% if elem.hook in [11, 12, 13, 14, 15, 16,17,18,19,20] %}
+                                    <a href="{{ path('particuliers_presentation', {'id' : elem.hook}) }} " class="col-sm-3 a-header-black"> {{ elem.Titre }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                   </div>
+                                <div class=" submenu border col-sm-3 p-0 m-0">
+                                    {% for elem in sitePhoto %}
+                                        {% if elem.hook in [1,2,3,4,5,6,7,8,9,10] %}
+                                            <a href="{{ path('professionels_presentation', {'id' : elem.hook}) }} " class="col-sm-3 a-header-black"> {{ elem.Titre}}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                       </div>
+                                <div class="submenu border col-sm-3 p-0 m-0" >
+                                    {%  for elem in galeries %}
+                                        {%  if elem.Statut == 0 %}
+                                    <a href="{{ path('galerie_image', { 'id': elem.id}) }}" class="col-sm-3 a-header-black">{{ elem.Name }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="submenu border col-sm-3 p-0 m-0">
+                                    <a href="{{ path('contact') }}" class="col-sm-3 a-header-black">Contact</a>
+                                    <a href="{{ path('livre_or') }}" class="col-sm-3 a-header-black">Livre d'Or</a>
+                                </div>
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

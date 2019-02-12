@@ -13,7 +13,7 @@ use App\Entity\Galery;
 use App\Entity\Photo;
 use Doctrine\Common\Persistence\ObjectManager;
 use Oneup\UploaderBundle\Event\PostPersistEvent;
-use Symfony\Component\HttpFoundation\ServerBag;
+
 
 
 class UploadListener
@@ -32,29 +32,35 @@ class UploadListener
     {
         $adress = null;
         $request = $event->getRequest();
-//        $num_galerie = $request->get('gallery');
         $gallery = $this->om->getRepository(Galery::class);
 
         //recuperation id passer en get
         $id = $request->query->get('id');
 
+        if( is_int($id)){
+            $num_galerie = $gallery->findOneBy(['id' => $id]);
+            $file = $event->getFile();
 
-        $num_galerie = $gallery->findOneBy(['id' => $id]);
-        $file = $event->getFile();
-
-        $photo = (new Photo())
+            $photo = (new Photo())
                 ->setPath('/uploads/'.$file->getFilename())
                 ->setGalery($num_galerie)
-        ;
+            ;
 
 
-        $this->om->persist($photo);
-        $this->om->flush();
+            $this->om->persist($photo);
+            $this->om->flush();
 
-        //if everything went fine
+            //if everything went fine
+            $response = $event->getResponse();
+            $response['success'] = true;
+            return $response;
+        }
+
         $response = $event->getResponse();
-        $response['success'] = true;
+        $response['success'] = false;
         return $response;
+
+
     }
 }
 

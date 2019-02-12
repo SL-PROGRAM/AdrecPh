@@ -17,6 +17,7 @@ class GalerieController extends AbstractController
     {
         $photos = $photoRepository->findAll();
         $galeries = $galeryRepository->findAll();
+        $galerie = $galeryRepository->findAll();
 
 
         $user = $this->getUser();
@@ -24,20 +25,20 @@ class GalerieController extends AbstractController
             $username = "invité";
         }else{
             $username = $this->getUser()->getUserName();
-
         }
 
         return $this->render('galerie/index.html.twig', [
             'user' => $username,
             'photos' => $photos,
             'galeries' => $galeries,
+            'galerie' => $galerie,
         ]);
     }
 
     /**
      * @Route("/galerie/galery-{id}", name="galerie_image")
      */
-    public function galery($id)
+    public function galery($id, PhotoRepository $photoRepository, GaleryRepository $galeryRepository)
     {
         $user = $this->getUser();
         if($user == null){
@@ -46,9 +47,18 @@ class GalerieController extends AbstractController
             $username = $this->getUser()->getUserName();
 
         }
+        $photos = $photoRepository->findAll();
+        $galeries = $galeryRepository->findAll();
+        $galerie = $galeryRepository->findby([
+            'id' => $id
+        ]);
+
 
         return $this->render('galerie/index.html.twig', [
-            'user' => $username,
+            'User' => $user,
+            'photos' => $photos,
+            'galeries' => $galeries,
+            'galerie' => $galerie,
         ]);
     }
 }

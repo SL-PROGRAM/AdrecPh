@@ -26,7 +26,6 @@ class AdressType extends AbstractType
             ->add('CP', NumberType::class,['label' => 'form.adress.cp' ])
             ->add('City', TextType::class,['label' => 'form.adress.city' ])
             ->add('tel', TelType::class,['label' => 'form.adress.tel' ])
-
         ;
     }
 

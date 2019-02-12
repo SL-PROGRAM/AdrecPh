@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandeController!{% endblock %}
+
+{% block body %}
+<h2>Bonjour {{ user.username }}</h2>
+    <a href="{{ path('commande') }}" >Retour à mes commandes</a>
+
+    <p>Votre commande n°{{ id }}</p>
+    <ul>
+        {% for elem in lien %}
+            <li><img src="{{  elem.photo.path | imagine_filter('galery_thumbnail') }}"/></li>
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,518 @@
+/*page contact*/
+
+
+.dot{
+    font-size : 70px;
+    border-radius : 10px;
+}
+
+.titre-contact{
+    font-size: 18px;
+    text-align : center;
+    margin-bottom: 0px;
+}
+
+.p-contact{
+    font-weight: 600;
+    text-align : center;
+    font-family: cambria;
+    margin: 0px 0 50px 0;
+}
+
+.radio{
+    text-align : center;
+    display: inline-flex;
+    font-family: cambria;
+}
+
+.input{
+    padding-left: 10px;
+    box-shadow:3px 3px 6px #4e4e4e inset;
+    border-radius:8px;
+    border:1.5px solid black;
+    height: 30px;
+    width: auto;
+}
+
+.textarea-contact{
+    padding-left: 10px;
+    box-shadow:3px 3px 8px #4e4e4e inset;
+    border-radius:6px;
+    border:1.5px solid black;
+    margin-top: 35px;
+    height: 200px;
+    width: 100%;
+}
+
+.button-contact{
+    margin: 40px 0 0 10px;
+    border:none;
+    padding:6px 50px 6px 50px;
+    border-radius:9px;
+    box-shadow:2px 2px 6px #999;
+    background:black;
+    font-family: Cambria;
+    color:white;
+}
+
+.bloc-container{
+    margin-top: 50px;
+}
+
+/*--------------------------------Header-------------------------*/
+
+header{
+    width : 100%;
+    top: 0px;
+    bottom : auto;
+    position : fixed;
+    z-index: 6;
+}
+
+.body-position{
+    margin-top: 200px;
+}
+
+/*----------------------HEADER WHITE------------------------------*/
+
+
+/* logo */
+.background-white{
+    background: white;
+    padding-top: 10px;
+}
+
+.logo-header{
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    max-width: 150px;
+}
+
+
+/* signature */
+
+.signature{
+    margin-top: 20px;
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    max-width: 250px;
+
+}
+
+
+/* menu */
+
+.menu-white{
+    padding: 0px 0px 0px 0px;
+    min-width: 490px;
+    margin-top: 45px;
+    font-family: cambria;
+    font-weight:700;
+}
+
+.a-header-white:visited{
+    color:black;
+}
+
+.a-header-white{
+    text-decoration: none;
+    color:black;
+}
+
+/* formulaire */
+
+.input{
+    font: 12px Cambria;
+    margin-bottom: 15px;
+    padding:6px 40px 6px 45px;
+    border:1px solid black;
+    border-radius:9px;
+    width:157px;
+    box-shadow:3px 3px 9px #ece9e9 inset;
+    color:#cecece;
+}
+
+.button-header{
+    border:none;
+    padding:6px 50px 6px 50px;
+    border-radius:8px;
+    box-shadow:2px 2px 6px #999;
+    background:black;
+    font:bold 12px Cambria;
+    color:white;
+}
+
+/*--------------------HEADER BLACK----------------------------------*/
+
+
+
+.background-black{
+    background: black;
+    padding-top: 10px;
+}
+
+.a-header-black:visited{
+    color:white;
+}
+
+.a-header-black{
+    text-decoration: none;
+    color:white;
+}
+
+.menu-black{
+    padding: 0px 0px 0px 0px;
+    min-width: 490px;
+    margin-top: 45px;
+    font-family: cambria;
+    font-weight:700;
+}
+
+.menu{
+    display: flex;
+    background: black;
+    color: white;
+    justify-content: space-around;
+}
+
+.titres{
+    justify-content: space-around;
+    display: inline;
+}
+
+
+.border{
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+}
+
+
+.submenu{
+    margin-left: 20px;
+}
+.submenu a{
+    display: block;
+    font-size: small;
+    justify-content: center;
+    text-decoration: none;
+    color : white;
+}
+
+.align-header-black{
+    align-self: center;
+
+}
+
+aa{
+    align-content: center;
+}
+
+#header-black{
+    display:none;
+}
+
+.align-right{
+    text-align: right;
+}
+
+/*----------------------FOOTER------------------------------*/
+
+#footer{
+    margin-top: 100px;
+}
+
+
+.photo-footer{
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.lien{
+    height: 100%;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+#logo-footer{
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+/*--------------Galerie----------------------*/
+
+#galerie-menu
+{
+    height:300px;
+    width: auto;
+    margin:3em auto;
+    border:solid;
+    border-radius:5px;
+    box-shadow:1px 1px 3px gray;
+    text-align:right;
+    position:relative;
+    white-space:nowrap;
+    overflow:hidden;
+}
+#galerie-menu a, #galerie-menu:hover a:focus
+{
+    display:inline-block;
+    vertical-align:top;
+    width:200px;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+    box-shadow:0 0 15px white;
+    transition:2s;
+    transition-timing-function: cubic-bezier(0.00,0.01,0.00,1.00)
+}
+#galerie-menu a:hover , #galerie-menu a:focus
+{
+    width:400px;
+    transition:2s;
+    transition-timing-function: cubic-bezier(0.00,0.01,0.00,1.00)
+}
+#galerie-menu a:first-child, #galerie-menu:hover a:focus:first-child
+{
+    width:400px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:0;
+}
+#galerie-menu a:before
+{
+    content:attr(title);
+    text-align:center;
+    height:30px;
+    width:200px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding-right:100px;
+    font-size:30px;
+    color:white;
+    border:1px solid gray;
+    box-shadow:0 0 15px white;
+    background:rgba(0,0,0,0.3);
+    line-height:28px;
+}
+#galerie-menu , #galerie-menu a
+{
+    height:200px;
+    transitions:1s;
+}
+#galerie-menu:hover , #galerie-menu:hover  a
+{
+    height:300px;
+    transition:1s;
+}
+
+.galImg{
+    height: 100%;
+}
+
+
+/*---------------format page ------------------------*/
+
+.format-page{
+    line-height: 40px;
+    text-align: center;
+}
+
+
+/*---------------------Formulaire------------------------*/
+
+.input-form{
+    padding-left: 10px;
+    box-shadow: 3px 3px 6px #4e4e4e inset;
+    border-radius: 8px;
+    border: 1.5px solid black;
+    height: 30px;
+    width: 100%;
+}
+
+.input-form-long{
+    padding-left: 10px;
+    box-shadow: 3px 3px 6px #4e4e4e inset;
+    border-radius: 8px;
+    border: 1.5px solid black;
+    height: 30px;
+    width: 100%;
+}
+
+/*--------------------Livre d'or -------------------------*/
+
+.boxcontainer{
+    display: flex;
+
+}
+
+
+.bienvenue{
+    font:24px Cambria;
+    margin:24px 0 0 0;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+
+
+.box button{
+    margin-bottom: 10px;
+    border:none;
+    padding:6px 50px 6px 50px;
+    border-radius:8px;
+    box-shadow:2px 2px 6px #999;
+    background:black;
+    font-family: Cambria;
+    color:white;
+
+}
+
+
+.livrebox{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.livrebox div:last-child{
+    align-content: flex-end;
+    margin: auto;
+}
+
+
+.livre1{
+    display: flex;
+    background: grey;
+}
+
+.livre2{
+    display: flex;
+    background: grey;
+}
+
+.thumb {
+    width : 300px;
+    height : auto;
+    overflow: no-display;
+    transition: transform 1s;
+    position : relative;
+    z-index : 1;
+
+}
+.thumb:hover {
+    transform: scale(1.7);
+    z-index : 2;
+}
+
+div.hide {
+    z-index: 2;
+}
+div.show{ display : block}
+
+div.thumbnail {
+    z-index: 1;
+}
+
+
+#fullSize   { display: none;
+    position: fixed;
+    z-index: 104;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+#img {
+    display : block;
+    margin-left: auto ;
+    margin-right: auto ;
+    width : auto;
+    height : 80%;
+    animation-name: zoom;
+    animation-duration: 1s;
+}
+
+@keyframes zoom {
+    0%{height :10px; vertical-align: middle;}
+    100%{height : 80%;}
+}
+
+/*---------------Accueil---------------*/
+.accueil-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo-presentation{
+    width: 225px;
+    height: 225px;
+}
+
+.presentation-photographe{
+    width: 100%;
+    position: relative;
+}
+
+.logo-client{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.section-presentation{
+    width: 45%;
+    padding: 2%;
+    min-width: 400px ;
+}
+
+.presentation{
+    padding: 5px;
+    text-align: center;
+}
+
+#BO-photo-presentation-accueil{
+    height: 250px;
+    width: 100%;
+    position: static;
+}
+
+.text-presentation-photographe{
+    position: absolute;
+    border: 1px solid red;
+    top: 70px;
+    left: 15px;
+    margin: 25px;
+    width: 50%;
+    color : #bfe5f1;
+}
+
+.presentation-global{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#BO-text-presentation-pro{
+    text-align:justify;
+}
+#BO-text-presentation-particulier{
+    text-align:justify;
+}
+/*-----------------Fin d'accueil------------------*/

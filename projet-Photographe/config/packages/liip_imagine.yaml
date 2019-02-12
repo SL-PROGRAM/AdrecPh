@@ -33,3 +33,77 @@ liip_imagine:
                     size:     [256, 256]
                     position: center
                     color:    '#000'
+
+        galery_thumbnail:
+
+            # set your image quality defaults
+            jpeg_quality:          85
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+
+                # auto rotate the image using EXIF metadata
+                auto_rotate: ~
+
+                # strip the image of all metadata
+                strip: ~
+
+                # scale and square the image to the given dimensions
+                thumbnail:
+                    size:          [640, 426]
+                    mode:          outbound
+                    allow_upscale: true
+
+                # create border by placing image on larger black background
+                background:
+                    size:     [644, 430]
+                    position: center
+                    color:    '#000'
+
+                watermark:
+
+                    # path to the watermark file (prepended with "%kernel.root_dir%")
+                    image: ../public/asset/watermark.png
+
+                    # size of the water mark relative to the input image
+                    size: 0.6
+
+                    # set the position of the watermark
+                    position: bottom
+
+
+        # name our filter set "my_watermark_filter"
+        my_watermark_filter:
+
+            filters:
+
+                # use and setup the "watermark" filter
+                watermark:
+
+                    # path to the watermark file (prepended with "%kernel.root_dir%")
+                    image: ../public/asset/watermark.png
+
+                    # size of the water mark relative to the input image
+                    size: 0.5
+
+                    # set the position of the watermark
+                    position: bottom
+
+        watermark_full:
+
+            filters:
+
+                # use and setup the "watermark" filter
+                watermark:
+
+                    # path to the watermark file (prepended with "%kernel.root_dir%")
+                    image: ../public/asset/watermarkfull.png
+
+                    # size of the water mark relative to the input image
+                    size: 1
+
+                    opacity : 0.5
+
+                    # set the position of the watermark
+                    position: center
