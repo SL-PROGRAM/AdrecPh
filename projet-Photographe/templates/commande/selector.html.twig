@@ -1,0 +1,8 @@
+<select name="{{ lien.vars.id }}" class="photo-select">
+    <option value="">Acheter cette photo ?</option>
+    {% for elem in format %}
+        <option value="{{ elem.id }}">{{ elem.format }}</option>
+    {% endfor %}
+</select>
+
+    {#{{ form_widget(form) }}#}

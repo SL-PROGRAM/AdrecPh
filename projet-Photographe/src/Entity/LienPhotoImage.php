@@ -23,7 +23,7 @@ class LienPhotoImage
     private $commande;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Photo", inversedBy="lienPhotoImages")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Photo", inversedBy="lienPhotoImages", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $photo;
@@ -33,6 +33,12 @@ class LienPhotoImage
      * @ORM\JoinColumn(nullable=false)
      */
     private $format;
+
+    public function __toString()
+    {
+        $string = $this->getId();
+        return (string)$string;
+    }
 
     public function getId(): ?int
     {

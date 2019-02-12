@@ -29,7 +29,7 @@ class Commande
     private $Date;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\LienPhotoImage", mappedBy="commande", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\LienPhotoImage", mappedBy="commande", orphanRemoval=true, cascade={"persist"})
      */
     private $lienPhotoImages;
 
@@ -43,6 +43,8 @@ class Commande
     {
         $this->lienPhotoImages = new ArrayCollection();
     }
+
+
 
     public function getId(): ?int
     {

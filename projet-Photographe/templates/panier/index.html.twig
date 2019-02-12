@@ -7,81 +7,95 @@
 
     <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">VOTRE COMMANDE DE TIRAGE</div>
 
+    <h2>Bonjour {{ user.username }}</h2>
+    <a href="{{ path('commande') }}" >Retour à mes commandes</a>
 
-    <div class="row">
-        <div class="col-lg-6 col-md-6 ">
-            <div class="row">
-                <div class="col-sm-6">photo</div>
-                <div class="col-sm-6">photo</div>
-            </div>
-        </div>
+    <p>Votre commande n°{{ commande.id }}</p>
+    <ul>
+        {% for elem in lien %}
+            <li><img src="{{  elem.photo.path | imagine_filter('galery_thumbnail') }}"/>
+                <p>format : {{ elem.format.format }} </p>
+            </li>
 
-        <div class="col-lg-6 col-md-6 ">
-            <div class="row">
-                <div class="col-sm-6">photo</div>
-                <div class="col-sm-6">photo</div>
-            </div>
-        </div>
+        {% endfor %}
 
-        <div class="col-lg-6 col-md-6 ">
-            <div class="row">
-                <div class="col-sm-6">photo</div>
-                <div class="col-sm-6">photo</div>
-            </div>
-        </div>
-
-        <div class="col-lg-6 col-md-6 ">
-            <div class="row">
-                <div class="col-sm-6">photo</div>
-                <div class="col-sm-6">photo</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 offset-sm-5">1-2-3-4</div>
-
-    <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">VOS TELECHARGEMENTS</div>
+    </ul>
 
 
-    <div class="row">
-        <div class="col-lg-6 col-md-6 ">
-            <div class="row">
-                <div class="col-sm-6">photo</div>
-                <div class="col-sm-6">photo</div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 ">
-            <div class="row">
-                <div class="col-sm-6">photo</div>
-                <div class="col-sm-6">photo</div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 ">
-            <div class="row">
-                <div class="col-sm-6">photo</div>
-                <div class="col-sm-6">photo</div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 ">
-            <div class="row">
-                <div class="col-sm-6">photo</div>
-                <div class="col-sm-6">photo</div>
-            </div>
-        </div>
-    </div>
+    {#<div class="row">#}
+        {#<div class="col-lg-6 col-md-6 ">#}
+            {#<div class="row">#}
+                {#<div class="col-sm-6">photo</div>#}
+                {#<div class="col-sm-6">photo</div>#}
+            {#</div>#}
+        {#</div>#}
+
+        {#<div class="col-lg-6 col-md-6 ">#}
+            {#<div class="row">#}
+                {#<div class="col-sm-6">photo</div>#}
+                {#<div class="col-sm-6">photo</div>#}
+            {#</div>#}
+        {#</div>#}
+
+        {#<div class="col-lg-6 col-md-6 ">#}
+            {#<div class="row">#}
+                {#<div class="col-sm-6">photo</div>#}
+                {#<div class="col-sm-6">photo</div>#}
+            {#</div>#}
+        {#</div>#}
+
+        {#<div class="col-lg-6 col-md-6 ">#}
+            {#<div class="row">#}
+                {#<div class="col-sm-6">photo</div>#}
+                {#<div class="col-sm-6">photo</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+
+    {#<div class="col-lg-2 col-md-2 col-sm-2 offset-sm-5">1-2-3-4</div>#}
+
+    {#<div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">VOS TELECHARGEMENTS</div>#}
 
 
-    <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">RECAPITULATIF</div>
+    {#<div class="row">#}
+        {#<div class="col-lg-6 col-md-6 ">#}
+            {#<div class="row">#}
+                {#<div class="col-sm-6">photo</div>#}
+                {#<div class="col-sm-6">photo</div>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="col-lg-6 col-md-6 ">#}
+            {#<div class="row">#}
+                {#<div class="col-sm-6">photo</div>#}
+                {#<div class="col-sm-6">photo</div>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="col-lg-6 col-md-6 ">#}
+            {#<div class="row">#}
+                {#<div class="col-sm-6">photo</div>#}
+                {#<div class="col-sm-6">photo</div>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="col-lg-6 col-md-6 ">#}
+            {#<div class="row">#}
+                {#<div class="col-sm-6">photo</div>#}
+                {#<div class="col-sm-6">photo</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
 
-    <div class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4">Détail récap'</div>
 
-    <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4">bouton</div>
-            <div class="col-lg-4 col-md-4 col-sm-4">bouton</div>
-            <div class="col-lg-4 col-md-4 col-sm-4">bouton</div>
-        </div>
-    </div>
+    {#<div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">RECAPITULATIF</div>#}
 
-    <br></br>
+    {#<div class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4">Détail récap'</div>#}
+
+    {#<div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-6 offset-sm-3">#}
+        {#<div class="row">#}
+            {#<div class="col-lg-4 col-md-4 col-sm-4">bouton</div>#}
+            {#<div class="col-lg-4 col-md-4 col-sm-4">bouton</div>#}
+            {#<div class="col-lg-4 col-md-4 col-sm-4">bouton</div>#}
+        {#</div>#}
+    {#</div>#}
+
+    {#<br></br>#}
 {% endblock %}

@@ -19,7 +19,7 @@ class Format
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $format;
 
@@ -33,12 +33,17 @@ class Format
         $this->lienPhotoImages = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getFormat();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFormat(): ?int
+    public function getFormat(): ?string
     {
         return $this->format;
     }

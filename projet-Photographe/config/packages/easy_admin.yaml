@@ -25,6 +25,9 @@ easy_admin:
                     - 'City'
                     - 'User'
 
+        Format:
+            class: App\Entity\Format
+
         Galery:
             class: App\Entity\Galery
 

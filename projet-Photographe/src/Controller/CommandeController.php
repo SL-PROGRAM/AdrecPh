@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CommandeRepository;
+use App\Repository\FormatRepository;
 use App\Repository\LienPhotoImageRepository;
 use App\Repository\PhotoRepository;
 use App\Repository\UserRepository;
@@ -28,19 +29,22 @@ class CommandeController extends AbstractController
         /**
          * @Route("/commande/{id}", name="gestion_commande")
          */
-        public function commande(UserRepository $userRepository, LienPhotoImageRepository $lienPhotoImageRepository, CommandeRepository $commandeRepository, PhotoRepository $photoRepository ,$id)
+        public function commande(UserRepository $userRepository, LienPhotoImageRepository $lienPhotoImageRepository, CommandeRepository $commandeRepository, PhotoRepository $photoRepository, FormatRepository $formatRepository ,$id)
     {
         $user = $this->getUser();
         $commande = $commandeRepository->findBy(['User' => $user->getId()]);
         $lien = $lienPhotoImageRepository->findBy(['commande' => $id]);
         $photo = $photoRepository->findAll();
+        $format = $formatRepository->findAll();
 
         dump($commande);
         dump($lien);
         return $this->render('commande/show.html.twig', [
+            'commande' => $commande,
             'lien' => $lien,
             'user' => $user,
-            'id' => $id
+            'id' => $id,
+            'format' => $format
         ]);
     }
 }

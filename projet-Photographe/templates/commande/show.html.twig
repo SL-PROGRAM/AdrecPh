@@ -3,15 +3,25 @@
 {% block title %}Hello CommandeController!{% endblock %}
 
 {% block body %}
+    {% dump %}
 <h2>Bonjour {{ user.username }}</h2>
     <a href="{{ path('commande') }}" >Retour à mes commandes</a>
 
     <p>Votre commande n°{{ id }}</p>
+    {% for item in format %}
+
     <ul>
+        <p>format : {{ item.format }} </p>
+
         {% for elem in lien %}
-            <li><img src="{{  elem.photo.path | imagine_filter('galery_thumbnail') }}"/></li>
+            {% if elem.format.format == item.format %}
+                <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.photo.Path }}">
+                    <img class="thumb" src="{{ elem.photo.Path  | imagine_filter('galery_thumbnail') }}"/>
+                </a>
+            {% endif %}
         {% endfor %}
 
     </ul>
+    {% endfor %}
 
 {% endblock %}

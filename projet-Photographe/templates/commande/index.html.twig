@@ -7,9 +7,20 @@
 <h2>Bonjour {{ user.username }} </h2>
     <p>Cliquez sur une commande pour voir les détail</p>
     <ul>
+        <p>Commandes en attente</p>
         {% for elem in commande %}
+            {% if elem.statut == 0 %}
         <li><a href="{{ path('gestion_commande', {'id' : elem.id }) }}">Commande n°{{ elem.id }}</a></li>
+            {% endif %}
         {% endfor %}
+
+        <p>Commandes validées</p>
+        {% for elem in commande %}
+            {% if elem.statut != 0 %}
+            <li><a href="{{ path('gestion_commande', {'id' : elem.id }) }}">Commande n°{{ elem.id }}</a></li>
+            {% endif %}
+        {% endfor %}
+
     </ul>
 
 {% endblock %}

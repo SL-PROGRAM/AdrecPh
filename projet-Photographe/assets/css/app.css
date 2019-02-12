@@ -19,7 +19,16 @@ div.hide {
 div.show{ display : block}
 
 div.thumbnail {
+    display: flex;
+    flex-wrap: wrap;
     z-index: 1;
+}
+
+.galery-selector{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
 }
 
 
