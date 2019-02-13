@@ -9,6 +9,7 @@ use App\Entity\Photo;
 use App\Form\CommandeType;
 use App\Form\ContactType;
 use App\Form\SelectorType;
+use App\Repository\CommandeRepository;
 use App\Repository\FormatRepository;
 use App\Repository\GaleryRepository;
 use App\Repository\PhotoRepository;
@@ -45,7 +46,7 @@ class GalerieController extends AbstractController
     /**
      * @Route("/galerie/galery-{id}", name="galerie_image" , methods={"GET","POST"})
      */
-    public function galery($id, PhotoRepository $photoRepository, GaleryRepository $galeryRepository, FormatRepository $formatRepository, Request $request)
+    public function galery($id, PhotoRepository $photoRepository, GaleryRepository $galeryRepository, FormatRepository $formatRepository, CommandeRepository $commandeRepository , Request $request)
     {
         $user = $this->getUser();
         if($user == null){
@@ -54,7 +55,7 @@ class GalerieController extends AbstractController
             $username = $this->getUser()->getUserName();
 
         }
-        $photos = $photoRepository->findAll();
+
         $format = $formatRepository->findAll();
 
         $galeries = $galeryRepository->findAll();
@@ -62,13 +63,23 @@ class GalerieController extends AbstractController
         $galerie = $galeryRepository->findOneBy([
             'id' => $id
         ]);
+        $photos = $photoRepository->findBy(['galery' => $galerie]);
+        $commande = $commandeRepository->findOneBy(['User' => $user,
+                                                    'Statut' => 0
+            ]);
 
-        $commande = new Commande();
+        dump($galerie);
+        if ($commande == null ){
+            $commande = new Commande();
+
+        }
+
 
         /** @var Photo $photo */
         foreach ($galerie->getPhotos() as $photo) {
             $lien = new LienPhotoImage();
-            $lien->setPhoto($photo);
+            $lien->setPhoto($photo)
+                ->setQuantity(0);
             $commande->addLienPhotoImage($lien);
         }
 
@@ -82,14 +93,25 @@ class GalerieController extends AbstractController
                 ->setDate(new \DateTime())
                 ->setUser($user);
 
+
+            foreach ($commande->getLienPhotoImages() as $lien) {
+                if ($lien->getFormat() == null){
+                    $commande->removeLienPhotoImage($lien);
+
+                }
+
+            }
+
             $entityManager->persist($commande);
 
             $entityManager->flush();
 
 
 
-            return $this->redirectToRoute('commande');
+            return $this->redirectToRoute('gestion_commande', ['id' => $commande->getId()]);
         }
+
+
         dump($form->createView());
         return $this->render('galerie/index.html.twig', [
             'User' => $user,

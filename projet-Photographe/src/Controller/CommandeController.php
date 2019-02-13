@@ -7,8 +7,10 @@ use App\Repository\FormatRepository;
 use App\Repository\LienPhotoImageRepository;
 use App\Repository\PhotoRepository;
 use App\Repository\UserRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\CommandeType;
 
 class CommandeController extends AbstractController
 {
@@ -29,22 +31,51 @@ class CommandeController extends AbstractController
         /**
          * @Route("/commande/{id}", name="gestion_commande")
          */
-        public function commande(UserRepository $userRepository, LienPhotoImageRepository $lienPhotoImageRepository, CommandeRepository $commandeRepository, PhotoRepository $photoRepository, FormatRepository $formatRepository ,$id)
+        public function commande(UserRepository $userRepository, LienPhotoImageRepository $lienPhotoImageRepository, CommandeRepository $commandeRepository, PhotoRepository $photoRepository, FormatRepository $formatRepository ,$id, Request $request)
     {
         $user = $this->getUser();
-        $commande = $commandeRepository->findBy(['User' => $user->getId()]);
+        $commande = $commandeRepository->findOneBy(['id' => $id]);
         $lien = $lienPhotoImageRepository->findBy(['commande' => $id]);
         $photo = $photoRepository->findAll();
         $format = $formatRepository->findAll();
 
+
+        $form = $this->createForm(CommandeType::class, $commande);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $commande->setStatut(0)
+                ->setDate(new \DateTime())
+                ->setUser($user);
+
+
+            foreach ($commande->getLienPhotoImages() as $lien) {
+                if ($lien->getFormat() == null || $lien->getQuantity() == 0){
+                    $commande->removeLienPhotoImage($lien);
+
+                }
+
+            }
+            $commande->setStatut(1);
+            $entityManager->persist($commande);
+
+            $entityManager->flush();
+
+
+
+            return $this->redirectToRoute('gestion_commande', ['id' => $commande->getId()]);
+        }
+
         dump($commande);
-        dump($lien);
+        dump($form->createView());
         return $this->render('commande/show.html.twig', [
             'commande' => $commande,
             'lien' => $lien,
             'user' => $user,
             'id' => $id,
-            'format' => $format
+            'format' => $format,
+            'form' => $form->createView()
         ]);
     }
 }

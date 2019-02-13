@@ -12,6 +12,7 @@ use App\Entity\Commande;
 use App\Entity\Format;
 
 use App\Entity\LienPhotoImage;
+use Doctrine\DBAL\Types\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -26,7 +27,15 @@ class SelectorType extends AbstractType
         $builder
             ->add('Format', EntityType::class,[
                 'class' => Format::class,
-                'label' => 'Format'
+                'choice_label' => 'Format',
+                    'placeholder' => 'Non sélectionnée',
+                'required' => false
+
+            ])
+            ->add('quantity', \Symfony\Component\Form\Extension\Core\Type\IntegerType::class,[
+                'label' => 'Quantité',
+                'empty_data' => 'Quantité',
+                'required' => false
             ])
 
 

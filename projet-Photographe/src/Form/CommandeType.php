@@ -34,8 +34,8 @@ class CommandeType extends AbstractType
                     'label' => false
                 ],
             ])
-            ->add('commander', SubmitType::class )
-            ->add('ajouter au panier', SubmitType::class )
+//            ->add('commander', SubmitType::class )
+            ->add('submit', SubmitType::class )
 
 
 

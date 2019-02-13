@@ -42,11 +42,12 @@
     <div>
         <a id="{{ galerie.id }}" href="galerie/">{{ galerie.name }}</a>
     </div>
-    <div class="thumbnail">
     {{ form_start(form) }}
 
+    <div class="thumbnail">
+
         {% for lien in form.lienPhotoImages %}
-                {#{% if galerie.name == elem.galery.name %}#}
+                {% if lien.vars.data.format == null %}
                     <span class="galery-selector">
                         <a class="zoom" href="#" onclick="show(this.name)" name="{{ lien.vars.data.photo.path }}">
                             <img class="thumb" src="{{ lien.vars.data.photo.path  | imagine_filter('galery_thumbnail') }}"/>
@@ -55,7 +56,7 @@
                         {{ form_widget(lien) }}
                     </span>
 
-                {#{% endif %}#}
+                {% endif %}
             {% endfor %}
             {#{% elseif User != null %}#}
                 {#{% if User.galery %}#}
@@ -76,8 +77,11 @@
     {#{% endfor %}#}
 </div>
 
+    {{ form_widget(form.submit,  {'label' : 'ajouter au panier'}) }}
+    <div style="display: none">
+        {{ form_rest(form) }}
 
-
+    </div>
     {{ form_end(form) }}
     <script src="/asset/script.js"></script>
 

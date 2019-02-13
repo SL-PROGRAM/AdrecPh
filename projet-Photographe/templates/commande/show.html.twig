@@ -7,21 +7,42 @@
 <h2>Bonjour {{ user.username }}</h2>
     <a href="{{ path('commande') }}" >Retour à mes commandes</a>
 
+    {{ form_start(form, {'attr' : { 'onsubmit' : "return confirm('Êtes vous sûr des format et des quantitées commandées ?');"}}) }}
     <p>Votre commande n°{{ id }}</p>
     {% for item in format %}
 
-    <ul>
-        <p>format : {{ item.format }} </p>
 
-        {% for elem in lien %}
-            {% if elem.format.format == item.format %}
-                <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.photo.Path }}">
-                    <img class="thumb" src="{{ elem.photo.Path  | imagine_filter('galery_thumbnail') }}"/>
-                </a>
+        <p>format : {{ item.format }} </p>
+        <div class="thumbnail">
+
+            {% for lien in form.lienPhotoImages %}
+                {% if lien.vars.data.format.format == item.format %}
+            <span class="galery-selector">
+                    <a class="zoom" href="#" onclick="show(this.name)" name="{{ lien.vars.data.photo.path }}">
+                        <img class="thumb" src="{{ lien.vars.data.photo.path  | imagine_filter('galery_thumbnail') }}"/>
+                    </a>
+                    {% if commande.statut == 0 %}
+                    {{ form_widget(lien) }}
+                    {% else %}
+                        <div style="display: none">
+                            {{ form_widget(lien) }}
+                        </div>
+                    {% endif %}
+            </span>
+
             {% endif %}
         {% endfor %}
+        </div>
 
-    </ul>
+
     {% endfor %}
+    {% if commande.statut == 0 %}
+        {{ form_widget(form.submit,  {'label' : 'commander'}) }}
+    {% else %}
+        <div style="display: none">
+            {{ form_rest(form) }}
+        </div>
+    {% endif %}
 
+    {{ form_end(form) }}
 {% endblock %}
