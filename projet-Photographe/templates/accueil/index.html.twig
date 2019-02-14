@@ -6,7 +6,12 @@
 {% block body %}
 
     <div class="presentation-photographe">
-        <img id="BO-photo-presentation-accueil" src="/asset/img/Fond-de-presentation.jpg" alt = "Photo du photographe">
+        {% for item in Photo %}
+            {% if item.0.hook == 101 %}
+                <div id="BO-photo-presentation-accueil" style="background-image: url({{ item.0.photo }})"></div>
+                {#<img id="BO-photo-presentation-accueil" src="{{ item.0.photo }}" alt = "Photo du photographe">#}
+            {% endif %}
+        {% endfor %}
         {% for item in Text %}
             {% if item.hook == 101 %}
         <p class="text-presentation-photographe">{{ item.text }}</p>
