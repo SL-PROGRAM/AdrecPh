@@ -37,7 +37,7 @@ class UploadListener
         //recuperation id passer en get
         $id = $request->query->get('id');
 
-        if( is_int($id)){
+
             $num_galerie = $gallery->findOneBy(['id' => $id]);
             $file = $event->getFile();
 
@@ -54,7 +54,7 @@ class UploadListener
             $response = $event->getResponse();
             $response['success'] = true;
             return $response;
-        }
+
 
         $response = $event->getResponse();
         $response['success'] = false;

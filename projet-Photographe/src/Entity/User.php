@@ -22,11 +22,6 @@ class User extends BaseUser
      */
     protected $id;
 
-
-
-
-
-
     /**
      * @ORM\Column(type="datetime", nullable=true, options={"default" : "CURRENT_TIMESTAMP"})
      */

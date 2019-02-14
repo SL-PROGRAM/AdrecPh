@@ -15,7 +15,6 @@ security:
         class: App\Entity\User
         property: Email
   firewalls:
-
     dev:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
       security: false
@@ -28,9 +27,9 @@ security:
       logout:
         path:  /logout
       anonymous: true
-        #guard:
-        # authenticators:
-      #  - App\Security\LoginFormAuthenticator
+#      guard:
+#       authenticators:
+#            - App\Security\LoginFormAuthenticator
 
 
 

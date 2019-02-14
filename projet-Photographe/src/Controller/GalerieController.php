@@ -10,30 +10,30 @@ use App\Entity\User;
 
 class GalerieController extends AbstractController
 {
-    /**
-     * @Route("/galerie", name="galerie")
-     */
-    public function index(PhotoRepository $photoRepository, GaleryRepository $galeryRepository)
-    {
-        $photos = $photoRepository->findAll();
-        $galeries = $galeryRepository->findAll();
-        $galerie = $galeryRepository->findAll();
-
-
-        $user = $this->getUser();
-        if($user == null){
-            $username = "invité";
-        }else{
-            $username = $this->getUser()->getUserName();
-        }
-
-        return $this->render('galerie/index.html.twig', [
-            'user' => $username,
-            'photos' => $photos,
-            'galeries' => $galeries,
-            'galerie' => $galerie,
-        ]);
-    }
+//    /**
+//     * @Route("/galerie", name="galerie")
+//     */
+//    public function index(PhotoRepository $photoRepository, GaleryRepository $galeryRepository)
+//    {
+//        $photos = $photoRepository->findAll();
+//        $galeries = $galeryRepository->findAll();
+//        $galerie = $galeryRepository->findAll();
+//
+//
+//        $user = $this->getUser();
+//        if($user == null){
+//            $username = "invité";
+//        }else{
+//            $username = $this->getUser()->getUserName();
+//        }
+//
+//        return $this->render('galerie/index.html.twig', [
+//            'user' => $username,
+//            'photos' => $photos,
+//            'galeries' => $galeries,
+//            'galerie' => $galerie,
+//        ]);
+//    }
 
     /**
      * @Route("/galerie/galery-{id}", name="galerie_image")

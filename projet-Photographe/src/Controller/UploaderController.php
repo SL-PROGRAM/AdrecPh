@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Galery;
 use App\Entity\Photo;
+use App\Entity\User;
 use App\Repository\GaleryRepository;
 use App\Repository\PhotoRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,8 +26,6 @@ class UploaderController extends AbstractController
     public function index(GaleryRepository $repository)
     {
         $galeries = $repository->findAll();
-
-
 
         return $this->render('uploader/index.html.twig', [
             'controller_name' => 'UploaderController',
@@ -91,7 +92,40 @@ class UploaderController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("G/{id}", name="galerie_delete", methods={"DELETE"})
+     */
+    public function galeryDelete(Request $request, Galery $galery, UserRepository $userRepository, PhotoRepository $photoRepository, $id): Response
+    {
 
+        if ($this->isCsrfTokenValid('delete'.$galery->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+
+            //supprimer les photos de la galerie
+            $photos = $photoRepository->findBy(['galery' => $galery]);
+            foreach ($photos as $photo){
+                $entityManager = $this->getDoctrine()->getManager();
+                $fileSystem = new Filesystem();
+                $file = $photo->getPath();
+                $file = substr($file, 1);
+                $fileSystem->remove([$file]);
+                $entityManager->remove($photo);
+            }
+
+            //supprimer la galerie dans l'user
+            $users = $userRepository->findoneBy(['Galery' => $galery]);
+            if (!is_null($users) ){
+                $galery->removeUser($users);
+            }
+
+            //supprimer la galerie
+            $entityManager->remove($galery);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('uploader');
+
+    }
 
 
 
