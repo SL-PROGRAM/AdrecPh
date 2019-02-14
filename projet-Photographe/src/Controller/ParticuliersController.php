@@ -8,6 +8,7 @@ use App\Entity\Photo;
 use App\Entity\SitePhoto;
 use App\Entity\SiteText;
 use App\Repository\GaleryRepository;
+use App\Service\AppMailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -54,7 +55,7 @@ class ParticuliersController extends AbstractController
     /**
      * @Route("/particuliers/presentation-{id}", name="particuliers_presentation")
      */
-    public function particuliers($id, Request $request)
+    public function particuliers($id, Request $request, AppMailer $mailer)
     {
         $organigrame = $this->getDoctrine()->getRepository(Organigrame::class);
         $sitePhoto = $this->getDoctrine()->getRepository(SitePhoto::class);
@@ -73,16 +74,37 @@ class ParticuliersController extends AbstractController
             $pageText[$value->getHook()] = $value;
         }
         ksort($pagePhoto);
-
+        dump($pagePhoto);
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $presta = $pagePhoto[$id];
+            $titre = $presta[0]->getTitre();
+            $data = $form->getData();
+            $data["Titre"] = $titre;
+            dump($data);
+
+            $mailer->send('Contact Client',
+                'admin@admin.com',
+                'mail/newContactPrestation.html.twig',
+                $data);
+
+            $this->addFlash('success', 'Votre messange a bien été envoyé');
+
+            return $this->redirectToRoute('contact');
+        }
+
+
         return $this->render('professionels/detail.html.twig', [
             'Photo' => $pagePhoto,
             'Text' => $pageText,
             'hook' => $id,
             'form' => $form->createView()
-
         ]);
+
+
+
     }
 
 

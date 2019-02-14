@@ -491,7 +491,10 @@ div.thumbnail {
 #BO-photo-presentation-accueil{
     height: 250px;
     width: 100%;
-    position: static;
+    background-size: cover;
+    background-position: center;
+    /*position: static;*/
+
 }
 
 .text-presentation-photographe{
@@ -507,6 +510,7 @@ div.thumbnail {
 .presentation-global{
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 #BO-text-presentation-pro{

@@ -53,7 +53,9 @@
                             <img class="thumb" src="{{ lien.vars.data.photo.path  | imagine_filter('galery_thumbnail') }}"/>
                         </a>
                         {#{{ include('commande/selector.html.twig') }}#}
+                        {% if User != null %}
                         {{ form_widget(lien) }}
+                        {% endif %}
                     </span>
 
                 {% endif %}
@@ -76,8 +78,9 @@
         {% endif %}
     {#{% endfor %}#}
 </div>
-
+    {% if User != null %}
     {{ form_widget(form.submit,  {'label' : 'ajouter au panier'}) }}
+    {% endif %}
     <div style="display: none">
         {{ form_rest(form) }}
 
