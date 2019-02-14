@@ -90,6 +90,11 @@ class ParticuliersController extends AbstractController
                 'mail/newContactPrestation.html.twig',
                 $data);
 
+            $mailer->send('Contact Photographe',
+                $data['email'],
+                'mail/newContactClient.html.twig',
+                $data);
+
             $this->addFlash('success', 'Votre messange a bien été envoyé');
 
             return $this->redirectToRoute('contact');
