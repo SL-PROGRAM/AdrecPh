@@ -23,7 +23,7 @@ class LienPhotoImage
     private $commande;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Photo", inversedBy="lienPhotoImages")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Photo", inversedBy="lienPhotoImages", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $photo;
@@ -33,6 +33,17 @@ class LienPhotoImage
      * @ORM\JoinColumn(nullable=false)
      */
     private $format;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $quantity;
+
+    public function __toString()
+    {
+        $string = $this->getId();
+        return (string)$string;
+    }
 
     public function getId(): ?int
     {
@@ -71,6 +82,18 @@ class LienPhotoImage
     public function setFormat(?Format $format): self
     {
         $this->format = $format;
+
+        return $this;
+    }
+
+    public function getQuantity(): ?int
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity(?int $quantity): self
+    {
+        $this->quantity = $quantity;
 
         return $this;
     }

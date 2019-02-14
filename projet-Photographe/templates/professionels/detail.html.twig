@@ -6,7 +6,7 @@
 {% for item in Photo %}
     {% if item.0.hook == hook %}
         <h1>{{ item.0.titre }}</h1>
-        <img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('my_watermark_filter') }}">
+        <img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
     {% endif %}
 {% endfor %}
 
@@ -14,7 +14,7 @@
 {#<div class="form-container">#}
 
 {#<form class="form">#}
-    {% set bob %}
+
 
     {% for elem in Text %}
         {% if elem.hook == hook %}
@@ -24,8 +24,7 @@
     </div>
         {% endif %}
     {% endfor %}
-    {% endset %}
-    {{ bob }}
+
     {#<div class="radio">#}
         {#<label for="Particulier">Particulier</label>#}
         {#<input type="radio" name="Choice" value="Particulier">#}
@@ -137,8 +136,7 @@
                 <div class="textarea">
                     {{ form_widget(form.text, {'attr': {
                         'placeholder': 'form.adress.text',
-                        'class': 'textarea-contact',
-                        'value' : bob
+                        'class': 'textarea-contact'
                                             }})  }}
                     {{ form_errors(form.text) }}
                     {{ form_help(form.text) }}

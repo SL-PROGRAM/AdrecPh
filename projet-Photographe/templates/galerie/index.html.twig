@@ -4,7 +4,6 @@
 
 {% block head %}
     <meta charset="UTF-8">
-    <title>Mon joli menu en HTML/CSS !</title>
     {#<link rel="stylesheet" href="style.css" />  <!-- Fichier CSS -->#}
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,16 +14,19 @@
 {% block body %}
 
 <div id="galerie-menu">
+
     <nav>
         {% for item in galeries %}
             {% if item.Statut == 0 %}
         <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />
         </a>
-            {% elseif User.galery != null %}
+            {% elseif User != null %}
+                {% if User.galery != null %}
                 {% if item.id == User.galery.id %}
                     <a href="{{ path('galerie_image',{'id': item.id}) }}" tabindex="0" title="{{ item.name }}"    ><img class="galImg" src="{{ item.photos.0.path | imagine_filter('galery_thumbnail') }}"  />
                     </a>
                 {% endif %}
+            {% endif %}
             {% endif %}
         {% endfor %}
     </nav>
@@ -33,37 +35,55 @@
     <div id="fullSize" class ="hide"  onclick="hide()"> </div>
 
 
+
+    {#<form method="post" action="{{ path('panier') }}" onsubmit="return confirm('Vos photo ont bien été ajoutées au panier')">#}
+    {#{% for item in galerie %}#}
+    {% if galerie.Statut == 0 %}
+    <div>
+        <a id="{{ galerie.id }}" href="galerie/">{{ galerie.name }}</a>
+    </div>
+    {{ form_start(form) }}
+
     <div class="thumbnail">
-    {% for item in galerie %}
-        {% if item.Statut == 0 %}
-             <div>
-                <a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>
-            </div>
-            {% for elem in photos %}
-                {% if item.name == elem.galery.name %}
-                    <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">
-                    <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
-                    </a>
+
+        {% for lien in form.lienPhotoImages %}
+                {% if lien.vars.data.format == null %}
+                    <span class="galery-selector">
+                        <a class="zoom" href="#" onclick="show(this.name)" name="{{ lien.vars.data.photo.path }}">
+                            <img class="thumb" src="{{ lien.vars.data.photo.path  | imagine_filter('galery_thumbnail') }}"/>
+                        </a>
+                        {#{{ include('commande/selector.html.twig') }}#}
+                        {{ form_widget(lien) }}
+                    </span>
+
                 {% endif %}
             {% endfor %}
-            {% elseif User.galery != null %}
-                {% if item.id == User.galery.id %}
-                    <div>
-                        <a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>
-                    </div>
-                    {% for elem in photos %}
-                        {% if item.name == elem.galery.name %}
-                            <a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">
-                                <img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
+            {#{% elseif User != null %}#}
+                {#{% if User.galery %}#}
+                {#{% if item.id == User.galery.id %}#}
+                    {#<div>#}
+                        {#<a id="{{ item.id }}" href="galerie/">{{ item.name }}</a>#}
+                    {#</div>#}
+                    {#{% for elem in photos %}#}
+                        {#{% if item.name == elem.galery.name %}#}
+                            {#<a class="zoom" href="#" onclick="show(this.name)" name="{{ elem.Path }}">#}
+                                {#<img class="thumb" src="{{ elem.Path  | imagine_filter('galery_thumbnail') }}"/>#}
+                            {#</a>#}
+                        {#{% endif %}#}
+                    {#{% endfor %}#}
+                {#{% endif %}#}
+                {#{% endif %}#}
         {% endif %}
-    {% endfor %}
+    {#{% endfor %}#}
 </div>
 
-    {#<script src="/asset/script.js"></script>#}
+    {{ form_widget(form.submit,  {'label' : 'ajouter au panier'}) }}
+    <div style="display: none">
+        {{ form_rest(form) }}
+
+    </div>
+    {{ form_end(form) }}
+    <script src="/asset/script.js"></script>
 
 
 {% endblock %}

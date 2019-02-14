@@ -9,7 +9,7 @@
 
 }
 .thumb:hover {
-    transform: scale(1.7);
+    transform: scale(1.2);
     z-index : 2;
 }
 
@@ -19,7 +19,16 @@ div.hide {
 div.show{ display : block}
 
 div.thumbnail {
+    display: flex;
+    flex-wrap: wrap;
     z-index: 1;
+}
+
+.galery-selector{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
 }
 
 
