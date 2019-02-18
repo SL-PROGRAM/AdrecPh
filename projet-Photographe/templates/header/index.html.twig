@@ -1,29 +1,33 @@
 {% dump %}
 
 <div class="background-white" id="header-white">
-    <div class="container">
         <div class="row">
-            <div class="col-xl-12">
+            <div class="col-xl-12  m-auto center-elem">
                 <div class="row">
-                    <a href="{{ path('accueil') }}">
-                        <img class="col-xl-2 col-md-2 logo-header" src="/asset/img/logo/Logo-BM.png">
-                    </a>
-                    <img class="d-none d-xl-block col-xl-2 signature" src="/asset/img/logo/watermark.png">
-                    <div class="d-block d-md-none col-md-2">LogoMenu</div>
-
-                    <div class="d-none d-md-block col-xl-6 col-md-7 col-sm-6">
-                        <div class="menu-white">
-                            <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.particulier' | trans }}</a>
-                            <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.professionnel' | trans }}</a>
-                            <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.galery' | trans }}</a>
-                            <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.contact' | trans }}</a>
-                        </div>
+                    <div class=" col-xl-2 col-md-2 col-sm-12  m-auto center-elem">
+                        <a href="{{ path('accueil') }}">
+                            <img class="logo-header"  src="/asset/img/logo/Logo-BM.png">
+                        </a>
                     </div>
-                    <div>
+                    <div class="d-none d-xl-block col-xl-2  m-auto center-elem">
+                        <img class="signature" src="/asset/img/logo/watermark.png">
+                    </div>
+                    <div class="d-block d-lg-none col-md-6 col-sm-12  m-auto center-elem">
+                        <img class="burger" src="/asset/img/Logo_burger.png">
+                    </div>
+
+                    <div class="d-none d-lg-block col-xl-6 col-md-6 col-sm-6 row menu-white  m-auto center-elem">
+                                <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.particulier' | trans }}</a>
+                                <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.professionnel' | trans }}</a>
+
+                                <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.galery' | trans }}</a>
+                                <a href="#" class="col-sm-3 a-header-white">{{ 'menu.home.contact' | trans }}</a>
+                    </div>
+                    <div class="m-auto center-elem">
                         {% if is_granted('ROLE_USER') %}
                             {{ render(controller('App\\Controller\\LoggedInController::index')) }}
                         {% else %}
-                            <div class="col-xl-2 col-md-2">
+                            <div class="col-xl-2 col-md-2 col-sm-12 ">
                                 <div class="adherent">
                                     <form action="{{ path("fos_user_security_check") }}" method="post">
                                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
@@ -41,7 +45,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 
