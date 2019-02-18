@@ -1,34 +1,33 @@
 
 <section class="section-presentation pro">
-    <div>
-        {% for item in Text %}
-            {% if item.hook == 102 %}
-                <h1> {{ item.titre | upper }}</h1>
-                <h2 id="BO-text-presentation-pro"> {{ item.text }}</div>
-            {% endif %}
-        {% endfor %}
-    <div class="presentation-global">
-        {% for item in Photo %}
-            {% if item.0.hook in [1,2,3,4,5,6,7,8,9,10] and item.0.Organigrame == 'Accueil' %}
-        <div class="presentation">
-            <a href=" professionels/presentation-{{ item.0.hook }}"><img class="photo-presentation" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
-                <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ item.0.titre }} </P> </a>
+    <div class="BLOC">
+        <div>
+            {% for item in Text %}
+                {% if item.hook == 102 %}
+                    <div class="TITRE"> {{ item.titre | upper }}</div>
+                    <p class="text-titre"> {{ item.text }}</div>
+                {% endif %}
+            {% endfor %}
+
+        <div class="row">
+            <article class="">
+                <div class="row">
+                    {#<div class="col-sm-6 flex-accueil">#}
+                        {% for item in Photo %}
+                            {% if item.0.hook in [1,2,3,4,5,6,7,8,9,10] and item.0.Organigrame == 'Accueil' %}
+                                <div class="presentation col-4">
+                                    <a href=" professionels/presentation-{{ item.0.hook }}"><img class="photo" id="BO-photo-1-presentation-pro" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
+                                        <P class="text-presentation" id="BO-titre-photo-1-pro"> {{ item.0.titre }} </P> </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {#</div>#}
+            </article>
+
+
         </div>
-            {% endif %}
-        {% endfor %}
 
-    </div>
-    <div class="presentation-global">
-
-        <img class="logo-client" src="/asset/img/Presentation.jpg">
-
-        <img class="logo-client" src="/asset/img/Presentation.jpg">
-
-        <img class="logo-client" src="/asset/img/Presentation.jpg">
-
-        <img class="logo-client" src="/asset/img/Presentation.jpg">
-
-        <img class="logo-client" src="/asset/img/Presentation.jpg">
     </div>
 </section>
 

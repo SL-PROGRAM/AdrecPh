@@ -469,6 +469,46 @@ div.thumbnail {
 }
 
 /*---------------Accueil---------------*/
+
+.fond{
+    width: 100%;
+}
+
+
+.text-pres{
+    background-color: grey;
+    opacity: 0.7;
+}
+
+.BLOC{
+    margin: 50px 25px 50px 25px;
+}
+
+.TITRE{
+    font-size:24px;
+    font-weight:700;
+}
+
+.text-titre{
+    font-size:12px;
+    font-weight:700;
+    margin-bottom: 25px
+}
+
+.photo{
+    width: 100%;
+    max-width: 150px;
+    max-height: 150px;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.flex-accueil{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
 .accueil-container{
     display: flex;
     flex-wrap: wrap;
@@ -512,13 +552,14 @@ div.thumbnail {
 
 .text-presentation-photographe{
     position: absolute;
+    bottom : 0px;
     border: 1px solid red;
-    top: 70px;
     left: 15px;
     margin: 25px;
-    width: 50%;
+    width: 80%;
     color : #bfe5f1;
 }
+
 
 .presentation-global{
     display: flex;
