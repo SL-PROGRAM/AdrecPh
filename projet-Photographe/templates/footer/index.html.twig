@@ -1,23 +1,56 @@
 
-
+{% dump %}
 <div class="row">
     <div class="col-lg-12">
         <div class="row">
-            <div class="d-none d-lg-block col-lg-2">
+            <div class="d-none d-lg-block col-lg-2 m-auto center-elem">
                 <img  src="/asset/img/logo/Logo-BM.png" class="photo-footer">
             </div>
-            <div class="d-none d-lg-block col-lg-3">Adresse</div>
-            <div class="col-lg-2 col-sm-4">
-                <div class="row">
-                    <img class="col-sm-3 lien" src="lien facebook.png ">
-                    <img class="col-sm-3 lien" src="lien flickr.png">
-                    <img class="col-sm-3 lien" src="lien linked.png">
-                    <img class="col-sm-3 lien" src="lien twitter.png">
+            <div class="d-none d-lg-block col-lg-3 m-auto center-elem">
+                <div>Adresse : </div>
+                <div>15, rue du chemin du chasseur</div>
+                <div>63100 Clermont Ferrand</div>
+                <div> Auvergne- Puy de Dome </div>
+            </div>
+            <div class="col-lg-2 col-sm-4  m-auto mb-3 center-elem">
+                <div class="row center-elem">
+                    <div class="center-elem">
+                        <div class="lien ">
+                            <img  src="/asset/img/lien facebook.png ">
+                        </div>
+                        <div class="lien ">
+                            <img src="/asset/img/lien flickr.png">
+                        </div>
+                    </div>
+                    <div class="center-elem">
+                        <div class="lien">
+                            <img src="/asset/img/lien linked.png">
+                        </div>
+                        <div class="lien" >
+                            <img src="/asset/img/lien twitter.png">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-4">Mention</div>
-            <div class="col-lg-2 col-sm-4" >
-                <img alt="bob" src="/asset/img/logo/Logo-BM.png" class="logo-footer">
+            <div class="col-lg-3 col-sm-4 m-auto mb-3 center-elem">
+                <div>Site : </div>
+
+
+                <div class="row">
+                        <div class="col-12">
+                            <a href="{{ path('accueil') }}">Accueil </a>
+                        </div>
+                        <div   class="col-12">
+                            <a href="{{ path('contact') }}">Contact</a>
+                        </div>
+                        <div  class="col-12">
+                            <a href="{{ path('livre_or') }}">Livre d'Or</a>
+                        </div>
+                    </div>
+
+                </div>
+            <div class="col-lg-2 col-sm-4 m-auto center-elem" >
+                <img alt="bob" src="/asset/img/logo/Logo-BM.png" class="photo-footer">
             </div>
         </div>
 </div>

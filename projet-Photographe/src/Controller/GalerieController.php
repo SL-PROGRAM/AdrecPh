@@ -21,27 +21,27 @@ use App\Entity\User;
 class GalerieController extends AbstractController
 {
 
-    public function index(PhotoRepository $photoRepository, GaleryRepository $galeryRepository, FormatRepository $formatRepository)
-    {
-        $photos = $photoRepository->findAll();
-        $galeries = $galeryRepository->findAll();
-        $galerie = $galeryRepository->findAll();
-        $format = $formatRepository->findAll();
-
-        $user = $this->getUser();
-        if($user == null){
-            $username = "invité";
-        }else{
-            $username = $this->getUser()->getUserName();
-        }
-
-        return $this->render('galerie/index.html.twig', [
-            'user' => $username,
-            'photos' => $photos,
-            'galeries' => $galeries,
-            'galerie' => $galerie,
-        ]);
-    }
+//    public function index(PhotoRepository $photoRepository, GaleryRepository $galeryRepository, FormatRepository $formatRepository)
+//    {
+//        $photos = $photoRepository->findAll();
+//        $galeries = $galeryRepository->findAll();
+//        $galerie = $galeryRepository->findAll();
+//        $format = $formatRepository->findAll();
+//
+//        $user = $this->getUser();
+//        if($user == null){
+//            $username = "invité";
+//        }else{
+//            $username = $this->getUser()->getUserName();
+//        }
+//
+//        return $this->render('galerie/index.html.twig', [
+//            'user' => $username,
+//            'photos' => $photos,
+//            'galeries' => $galeries,
+//            'galerie' => $galerie,
+//        ]);
+//    }
 
     /**
      * @Route("/galerie/galery-{id}", name="galerie_image" , methods={"GET","POST"})
