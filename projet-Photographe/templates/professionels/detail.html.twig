@@ -63,30 +63,20 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
-                <div class="radio">
-                    {#<label for="Particulier">Particulier</label>#}
-                    {{ form_label(form.token)}}
+            {% for elem in form.token %}
+                <div class="col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-4 offset-sm-2">
+                    <div class="radio">
+                        {#<label for="Particulier">Particulier</label>#}
+                        {#{{ form_label(form.token)}}#}
 
-                    {{ form_widget(form.token, {'attr': {
-                        'required': 'true',
-                    }})  }}
-                    {{ form_errors(form.token) }}
-                    {{ form_help(form.token) }}
+                        {{ form_widget(elem, {'attr': {
+                            'required': 'true',
+                        }, })  }}
+                        {{ form_errors(elem) }}
+                        {{ form_help(elem) }}
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="radio">
-                    {{ form_label(form.token2)}}
-                    {{ form_widget(form.token2, {'attr': {
-                        'placeholder': 'form.adress.firstName',
-                        'required': 'true',
-                    }})  }}
-                    {{ form_errors(form.token2) }}
-                    {{ form_help(form.token2) }}
-                </div>
-            </div>
+            {% endfor %}
         </div>
 
         <div class="row">
