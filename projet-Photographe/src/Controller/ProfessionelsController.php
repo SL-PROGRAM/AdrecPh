@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
+use App\Service\AppMailer;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Organigrame;
 use App\Entity\SitePhoto;
@@ -48,7 +49,7 @@ class ProfessionelsController extends AbstractController
     /**
      * @Route("/professionels/presentation-{id}", name="professionels_presentation")
      */
-    public function entreprise($id, Request $request)
+    public function entreprise($id, Request $request, AppMailer $mailer)
     {
         $organigrame = $this->getDoctrine()->getRepository(Organigrame::class);
         $sitePhoto = $this->getDoctrine()->getRepository(SitePhoto::class);
@@ -70,6 +71,29 @@ class ProfessionelsController extends AbstractController
 
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $presta = $pagePhoto[$id];
+            $titre = $presta[0]->getTitre();
+            $data = $form->getData();
+            $data["Titre"] = $titre;
+            dump($data);
+
+            $mailer->send('Contact Client',
+                'admin@admin.com',
+                'mail/newContactPrestation.html.twig',
+                $data);
+
+            $mailer->send('Contact Photographe',
+                $data['email'],
+                'mail/newContactClient.html.twig',
+                $data);
+
+            $this->addFlash('success', 'Votre messange a bien été envoyé');
+
+            return $this->redirectToRoute('contact');
+        }
+
 
         return $this->render('professionels/detail.html.twig', [
             'Photo' => $pagePhoto,

@@ -7,6 +7,7 @@ use App\Repository\FormatRepository;
 use App\Repository\LienPhotoImageRepository;
 use App\Repository\PhotoRepository;
 use App\Repository\UserRepository;
+use App\Service\AppMailer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,7 +32,7 @@ class CommandeController extends AbstractController
         /**
          * @Route("/commande/{id}", name="gestion_commande")
          */
-        public function commande(UserRepository $userRepository, LienPhotoImageRepository $lienPhotoImageRepository, CommandeRepository $commandeRepository, PhotoRepository $photoRepository, FormatRepository $formatRepository ,$id, Request $request)
+        public function commande(UserRepository $userRepository, LienPhotoImageRepository $lienPhotoImageRepository, CommandeRepository $commandeRepository, PhotoRepository $photoRepository, FormatRepository $formatRepository ,$id, Request $request, AppMailer $mailer)
     {
         $user = $this->getUser();
         $commande = $commandeRepository->findOneBy(['id' => $id]);
@@ -62,6 +63,24 @@ class CommandeController extends AbstractController
 
             $entityManager->flush();
 
+            if ($form->isSubmitted() && $form->isValid()) {
+
+
+                $mailer->send('Contact Client',
+                    'admin@admin.com',
+                    'mail/newCommande.html.twig',
+                    ['user' => $user,
+                        'commande' => $commande]);
+
+                $mailer->send('Contact Photographe',
+                    $user->getEmail(),
+                    'mail/newCommandeClient.html.twig',
+                    ['commande' => $commande]);
+
+                $this->addFlash('success', 'Votre messange a bien été envoyé');
+
+                return $this->redirectToRoute('contact');
+            }
 
 
             return $this->redirectToRoute('gestion_commande', ['id' => $commande->getId()]);

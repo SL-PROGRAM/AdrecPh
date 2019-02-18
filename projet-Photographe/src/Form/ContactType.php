@@ -9,6 +9,7 @@
 namespace App\Form;
 
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Validator\Constraints\Choice;
@@ -24,14 +25,18 @@ class ContactType extends AbstractType
 public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('token', RadioType::class, [
-                'value' => 'Particulier',
-                'label' => 'Particulier',
+            ->add('token', ChoiceType::class, [
+                'choices' => [
+                    'Particulier' => 'Prticulier',
+                    'Professionnel' => 'Professionnel'
+
+                ],
+                'expanded' => true,
             ])
-            ->add('token2', RadioType::class, [
-                'value' => 'Professionnel',
-                'label' => 'Professionnel',
-            ])
+//            ->add('token2', RadioType::class, [
+//                'value' => 'Professionnel',
+//                'label' => 'Professionnel',
+//            ])
 
             ->add('Prenom')
             ->add('Nom')
