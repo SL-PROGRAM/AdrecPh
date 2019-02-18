@@ -4,25 +4,28 @@
 {% block title %}Photographie{% endblock %}
 
 {% block body %}
-
-    <div class="presentation-photographe">
+    {#<div class="container">#}
+    <div class="presentation-photographe col-lg-12 d-none d-sm-block">
         {% for item in Photo %}
             {% if item.0.hook == 101 %}
-                <div id="BO-photo-presentation-accueil" style="background-image: url({{ item.0.photo }})"></div>
+                <div id="BO-photo-presentation-accueil" style="background-image: url({{ item.0.photo }})">
+                    {% for item in Text %}
+                        {% if item.hook == 101 %}
+                            <p class="text-presentation-photographe text-titre">{{ item.text }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
                 {#<img id="BO-photo-presentation-accueil" src="{{ item.0.photo }}" alt = "Photo du photographe">#}
             {% endif %}
         {% endfor %}
-        {% for item in Text %}
-            {% if item.hook == 101 %}
-        <p class="text-presentation-photographe">{{ item.text }}</p>
-            {% endif %}
-        {% endfor %}
+
     </div>
 
-    <div class="presentation-global">
+    <div class="presentation-global row">
         {% include 'professionels/index.html.twig' %}
         {% include 'particuliers/index.html.twig' %}
     </div>
+    {#</div>#}
 
 
 {% endblock %}

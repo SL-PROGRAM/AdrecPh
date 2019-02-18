@@ -1,21 +1,29 @@
 
 <section class="section-presentation particulier">
+    <div class="BLOC">
         {% for item in Text  %}
             {% if item.hook == 103 %}
-        <h1> {{ item.titre | upper }} </h1>
-        <h2 id="BO-text-presentation-particulier"> {{ item.text }} </h2>
+        <div class="TITRE"> {{ item.titre | upper }} </div>
+        <p class="text-titre"> {{ item.text }} </p>
             {% endif %}
         {% endfor %}
 
-        <div class="presentation-global">
-            {% for item in Photo %}
-                {% if item.0.hook in [11,12,13,14,15,16,17,18,19,20] and item.0.Organigrame == 'Accueil' %}
-            <div class="presentation">
-                <a href="particuliers/presentation-{{ item.0.hook }}"><img class="photo-presentation" id="BO-photo-1-presentation-particulier" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
-                    <P class="text-presentation" id="BO-titre-photo-1-particulier"> {{ item.0.titre }} </P> </a>
-            </div>
-                    {% endif %}
-            {% endfor %}
+        <div class="row">
+            <article class="">
+                {#<div class="row">#}
+                    <div class="row">
+                        {% for item in Photo %}
+                            {% if item.0.hook in [11,12,13,14,15,16,17,18,19,20] and item.0.Organigrame == 'Accueil' %}
+                                <div class="presentation col-4">
+                                    <a href="particuliers/presentation-{{ item.0.hook }}"><img class="photo" id="BO-photo-1-presentation-particulier" src="{{ item.0.photo | imagine_filter('squared_thumbnail') }}">
+                                        <P class="text-presentation" id="BO-titre-photo-1-particulier"> {{ item.0.titre }} </P> </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {#</div>#}
 
+            </article>
         </div>
-    </section>
+    </div>
+</section>
