@@ -36,7 +36,11 @@
     <div class="box">
         <h1> <span class="dot">.</span> LIVRE D'OR <span class="dot">.</span></h1>
 
-        <p> {{ livre_or.text }} </p>
+        {% if livre_or.text is defined %}
+            <p> {{ livre_or.text }} </p>
+        {% else %}
+            <p>Aucun commentaire</p>
+        {% endif %}
     </div>
 </div>
 
