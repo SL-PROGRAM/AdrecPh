@@ -1,7 +1,7 @@
 App\Entity\User:
   admin:
     email: 'admin@admin.com'
-    password: '\$argon2i\$v=19\$m=1024,t=2,p=2\$cExEcVNaMVhJMmlteHRZNA\$vdmnxFfz8opC4NYnuaaSqUwHvMv7LVjuQsj0TxwTtTc'
+    password: '\$argon2i$v=19$m=65536,t=4,p=1$Nlh2dWFKc1gxZ2Q3OUNMTg$SBSHMVrzwiEY98HaYPl9qhgn3KvNnPmG+LJK4U70OkU'
     roles: '[ROLE_ADMIN]'
     username: 'admin'
     salt: '6I0EFTMdvzfaEN3xl9zHrQc1J//9899X39IWP3x5cz8'
